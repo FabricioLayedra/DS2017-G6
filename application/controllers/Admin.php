@@ -19,7 +19,7 @@ class Admin extends CI_Controller{
 
 	public function index(){
 		if ($this->AdminSecurityCheck()){
-            $dataHeader['titlePage'] = "";
+            $dataHeader['PageTitle'] = "";
 
             $data['header'] = $this->load->view('admin/header', $dataHeader);
             $data['menu'] = $this->load->view('admin/menu', array());
@@ -70,6 +70,58 @@ class Admin extends CI_Controller{
         }
 	}
 
+
+	/* CRUD Starts*/
+	public function admins(){
+		$debug = false;
+
+		if ($this->AdminSecurityCheck()){
+            $titulo = "Administradores";
+
+            $crud = new grocery_CRUD();
+			$crud->set_table("admin");
+			$crud->set_subject( $titulo );
+
+			$crud->display_as( 'name' , 'Nombres' );
+			$crud->display_as( 'last_name' , 'Apellidos' );
+			$crud->display_as( 'username' , 'Usuario' );
+			$crud->display_as( 'email' , 'Correo' );
+			$crud->display_as( 'password' , 'Contraseña' );
+
+			$crud->callback_edit_field('password',array($this,'set_password_input_to_empty'));
+            $crud->callback_add_field('password',array($this,'set_password_input_to_empty'));
+
+            $crud->field_type('password','password');
+
+            $crud->callback_before_update(array($this,'encrypt_pw'));
+
+			$crud->columns( 'name', 'last_name', 'username', 'email' );
+			$crud->fields( 'name', 'last_name', 'username', 'email', 'password');
+
+            $crud->unset_export();
+			$crud->unset_print();
+			$crud->unset_read();
+
+			$output = $crud->render();
+
+			$dataHeader['PageTitle'] = $titulo;
+			$dataHeader['css_files'] = $output->css_files;
+			$dataFooter['js_files'] = $output->js_files;
+			$dataContent['debug'] = $debug;
+
+            $data['header'] = $this->load->view('admin/header', $dataHeader);
+			$data['menu'] = $this->load->view('admin/menu', $dataHeader );
+
+			$data['content'] = $this->load->view('admin/blank', $output);
+			$data['footer'] = $this->load->view('admin/footer-gc', $dataFooter);
+		}else{
+			redirect("admin/login");
+		}
+	}
+
+
+	/* CRUD Ends*/
+	/* Helpers*/
 	function AdminSecurityCheck(){
 		$UserAdmin = new UserAdmin();
 		$user = $this->session->userdata('Mail');
@@ -80,18 +132,17 @@ class Admin extends CI_Controller{
 		}
 	}
 
-	public function admins(){
-		if ($this->AdminSecurityCheck()){
-            $dataHeader['titlePage'] = "Administradores";
+	function encrypt_pw($post_array, $pk) {
+		if(!empty($post_array['password'])) {
+            $post_array['password'] = md5($post_array['password']);
+        }else{
+        	unset($post_array['password']);
+        }
+        return $post_array;
+	}
 
-            $data['header'] = $this->load->view('admin/header', $dataHeader);
-            $data['menu'] = $this->load->view('admin/menu', array());
-
-            $data['contenido'] = $this->load->view('admin/admins', array());
-            $data['footer'] = $this->load->view('admin/footer-gc', array());
-		}else{
-			redirect("admin/login");
-		}
+	function set_password_input_to_empty() {
+		return "<input type='text' name='password' value='' />";
 	}
 }
 
