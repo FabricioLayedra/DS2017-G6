@@ -94,6 +94,7 @@ class Admin extends CI_Controller{
             $crud->field_type('password','password');
 
             $crud->callback_before_update(array($this,'encrypt_pw'));
+            $crud->callback_before_insert(array($this,'encrypt_pw'));
 
 			$crud->columns( 'name', 'last_name', 'username', 'email' );
 			$crud->fields( 'name', 'last_name', 'username', 'email', 'password');
@@ -119,6 +120,59 @@ class Admin extends CI_Controller{
 		}
 	}
 
+	public function users(){
+		$debug = false;
+
+		if ($this->AdminSecurityCheck()){
+            $titulo = "Usuarios";
+
+            $crud = new grocery_CRUD();
+			$crud->set_table("user");
+			$crud->set_subject( $titulo );
+
+			$crud->display_as( 'name' , 'Nombres' );
+			$crud->display_as( 'last_name' , 'Apellidos' );
+			$crud->display_as( 'username' , 'Usuario' );
+			$crud->display_as( 'email' , 'Correo' );
+			$crud->display_as( 'password' , 'Contraseña' );
+			$crud->display_as( 'rol' , 'Rol' );
+
+			$crud->field_type('rol', 'dropdown', array(
+                '0' => 'Ninguno',
+                '1' => 'Asistente de restaurante'
+            ));
+
+			$crud->callback_edit_field('password',array($this,'set_password_input_to_empty'));
+            $crud->callback_add_field('password',array($this,'set_password_input_to_empty'));
+
+            $crud->field_type('password','password');
+
+            $crud->callback_before_update(array($this,'encrypt_pw'));
+            $crud->callback_before_insert(array($this,'encrypt_pw'));
+
+			$crud->columns( 'name', 'last_name', 'username', 'email', 'rol' );
+			$crud->fields( 'name', 'last_name', 'username', 'email', 'password', 'rol');
+			$crud->required_fields( 'name', 'last_name', 'username', 'email', 'rol' );
+
+			$crud->unset_print();
+			$crud->unset_read();
+
+			$output = $crud->render();
+
+			$dataHeader['PageTitle'] = $titulo;
+			$dataHeader['css_files'] = $output->css_files;
+			$dataFooter['js_files'] = $output->js_files;
+			$dataContent['debug'] = $debug;
+
+            $data['header'] = $this->load->view('admin/header', $dataHeader);
+			$data['menu'] = $this->load->view('admin/menu', $dataHeader );
+
+			$data['content'] = $this->load->view('admin/blank', $output);
+			$data['footer'] = $this->load->view('admin/footer-gc', $dataFooter);
+		}else{
+			redirect("admin/login");
+		}
+	}
 
 	/* CRUD Ends*/
 	/* Helpers*/
