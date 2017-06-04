@@ -35,6 +35,24 @@
 				<li>
 					<a href="<?php echo site_url('admin/index'); ?>"><i class="fa fa-fw fa-home"></i> Inicio</a>
 				</li>
+				<li>
+					<a href="#">
+						<i class="fa fa-fw fa-gear"></i> Configuración<span class="fa arrow"></span>
+					</a>
+					<ul class="nav nav-second-level">
+						<li>
+						<a href="#"><i class="fa fa-file"></i> Usuarios<span class="fa arrow"></span></a>
+							<ul class="nav nav-third-level">
+								<li>
+									<a href="<?php echo site_url('admin/admins'); ?>">Administradores</a>
+								</li>
+								<li>
+									<a href="<?php echo site_url('admin/users'); ?>">Usuarios</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
 			</ul>
 		</div>
 	</div>
