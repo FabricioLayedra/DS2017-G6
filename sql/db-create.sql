@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS `admin` (
   PRIMARY KEY (`id_admin`),
   UNIQUE KEY `username` (`username`),
   UNIQUE KEY `mail` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- Data exporting was unselected.
 -- Dumping structure for table ds2017.category
@@ -102,6 +102,17 @@ CREATE TABLE IF NOT EXISTS `restaurant` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Data exporting was unselected.
+-- Dumping structure for table ds2017.restaurant_assistants
+CREATE TABLE IF NOT EXISTS `restaurant_assistants` (
+  `id_restaurant` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
+  PRIMARY KEY (`id_restaurant`,`id_user`),
+  KEY `FK_restaurant_assistants_user` (`id_user`),
+  CONSTRAINT `FK_restaurant_assistants_restaurant` FOREIGN KEY (`id_restaurant`) REFERENCES `restaurant` (`id_restaurant`),
+  CONSTRAINT `FK_restaurant_assistants_user` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Data exporting was unselected.
 -- Dumping structure for table ds2017.type
 CREATE TABLE IF NOT EXISTS `type` (
   `id_type` int(11) NOT NULL AUTO_INCREMENT,
@@ -116,12 +127,13 @@ CREATE TABLE IF NOT EXISTS `user` (
   `name` varchar(50) NOT NULL,
   `last_name` varchar(50) NOT NULL,
   `username` varchar(50) NOT NULL,
-  `mail` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
   `password` varchar(250) NOT NULL,
+  `rol` tinyint(4) NOT NULL DEFAULT '0' COMMENT '0: Normal, 1:Assistant',
   PRIMARY KEY (`id_user`),
   UNIQUE KEY `username` (`username`),
-  UNIQUE KEY `mail` (`mail`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  UNIQUE KEY `mail` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- Data exporting was unselected.
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
