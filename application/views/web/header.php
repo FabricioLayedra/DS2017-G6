@@ -29,6 +29,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/web/errorescss.css'); ?>" >
 
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/web/footer_style.css'); ?>">
     <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
     <!-- Important Owl stylesheet -->
     <link rel="stylesheet" href="<?php echo base_url('assets/css/web/owl.carousel.css'); ?>">
