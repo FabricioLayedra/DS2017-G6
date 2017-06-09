@@ -20,7 +20,7 @@ class Web extends CI_Controller{
 
 		$dataHeader['PageTitle'] = "";
 
-        $data['header'] = $this->load->view('web/headerLeonardo', $dataHeader);
+        $data['header'] = $this->load->view('web/header', $dataHeader);
         $data['menu'] = $this->load->view('web/menu', array());
 
         $data['contenido'] = $this->load->view('web/index', array());
@@ -28,15 +28,15 @@ class Web extends CI_Controller{
 
     }
 
-		public function login(){
+	public function login(){
 
-			$dataHeader['PageTitle'] = "";
+		$dataHeader['PageTitle'] = "";
 
-	        $data['header'] = $this->load->view('web/headerLeonardo', $dataHeader);
-	        $data['menu'] = $this->load->view('web/menu', array());
+        $data['header'] = $this->load->view('web/header', $dataHeader);
+        $data['menu'] = $this->load->view('web/menu', array());
 
-	        $data['contenido'] = $this->load->view('web/login', array());
-	        $data['footer'] = $this->load->view('web/footer', array());
+        $data['contenido'] = $this->load->view('web/login', array());
+        $data['footer'] = $this->load->view('web/footer', array());
 
 	  }
 

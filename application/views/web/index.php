@@ -78,12 +78,12 @@
 						<div class="container-fluid">
 							<div class="row">
 								<div class="col-lg-2 col-lg-offset-1">
-									<img src="<?php echo base_url('public/frontend/img/quotes-1.png'); ?>" class = 'img-responsive img-circle align-center '>
+									<img src="<?php echo base_url('assets/img/quotes-1.png'); ?>" class = 'img-responsive img-circle align-center '>
 								</div>
 								<div class="col-lg-9">
 									<blockquote>
-										<p class="quote">"Todos en este país deben aprender a programar porque te enseña a cómo pensar"</p>
-										<footer class="quote-author">Steve Jobs</footer>
+										<p class="quote">"Los sánduches de Don Germán son la pinta"</p>
+										<footer class="quote-author">Pepe Lucho, Ing. Computación.</footer>
 									</blockquote>
 								</div>
 							</div>
@@ -91,12 +91,12 @@
 						<div class="container-fluid">
 							<div class="row">
 								<div class="col-lg-2 col-lg-offset-1">
-									<img src="<?php echo base_url('public/frontend/img/quotes-2.png'); ?>" class = 'img-responsive img-circle align-center '>
+									<img src="<?php echo base_url('assets/img/quotes-2.png'); ?>" class = 'img-responsive img-circle align-center '>
 								</div>
 								<div class="col-lg-9">
 									<blockquote>
-										<p class="quote">"La mayoría de buenos programadores lo hacen no porque esperan ser pagados o reconocidos sino porque programar es divertido."</p>
-										<footer class="quote-author">Linus Torvalds</footer>
+										<p class="quote">"Los pasteles del Chino siempre son una opción de almuerzo."</p>
+										<footer class="quote-author">Galo Castillo, Ing. Computación</footer>
 									</blockquote>
 								</div>
 							</div>
@@ -104,12 +104,12 @@
 						<div class="container-fluid">
 							<div class="row">
 								<div class="col-lg-2 col-lg-offset-1">
-									<img src="<?php echo base_url('public/frontend/img/quotes-3.png'); ?>" class = 'img-responsive img-circle align-center '>
+									<img src="<?php echo base_url('assets/img/quotes-3.png'); ?>" class = 'img-responsive img-circle align-center '>
 								</div>
 								<div class="col-lg-9">
 									<blockquote>
-										<p class="quote">"Si quieres buscar los secretos del universo o tener una carrera en el siglo XXI, la programación es una habilidad básica que debes aprender."</p>
-										<footer class="quote-author">Stephen Hawking</footer>
+										<p class="quote">"Vale la pena hacer fila en FCSH, la comida es deliciosa."</p>
+										<footer class="quote-author">Madelyne Velasco</footer>
 									</blockquote>
 								</div>
 							</div>
@@ -117,12 +117,12 @@
 						<div class="container-fluid">
 							<div class="row">
 								<div class="col-lg-2 col-lg-offset-1">
-									<img src="<?php echo base_url('public/frontend/img/quotes-4.png'); ?>" class = 'img-responsive img-circle align-center '>
+									<img src="<?php echo base_url('assets/img/quotes-4.png'); ?>" class = 'img-responsive img-circle align-center '>
 								</div>
 								<div class="col-lg-9">
 									<blockquote>
-										<p class="quote">"Aprender a escribir programas expande tu mente y te ayuda a pensar mejor. Esta crea una manera de pensar acerca de las cosas que creo que es de mucha ayuda en todo ámbito."</p>
-										<footer class="quote-author">Bill Gates</footer>
+										<p class="quote">"El Comelón es mi primer recurso para saber donde comer."</p>
+										<footer class="quote-author">Juan Dávila</footer>
 									</blockquote>
 								</div>
 							</div>
@@ -130,12 +130,12 @@
 						<div class="container-fluid">
 							<div class="row">
 								<div class="col-lg-2 col-lg-offset-1">
-									<img src="<?php echo base_url('public/frontend/img/quotes-5.png'); ?>" class = 'img-responsive img-circle align-center '>
+									<img src="<?php echo base_url('assets/img/quotes-5.png'); ?>" class = 'img-responsive img-circle align-center '>
 								</div>
 								<div class="col-lg-9">
 									<blockquote>
-										<p class="quote">"Los programadores del mañana son los magos del futuro. Vas a parecer que tienes poderes mágicos en comparación a los demás."</p>
-										<footer class="quote-author">Gabe Newell</footer>
+										<p class="quote">"Si estás de apuro, los americanos de Mecánica son!"</p>
+										<footer class="quote-author">Daniela Kuffo</footer>
 									</blockquote>
 								</div>
 							</div>
