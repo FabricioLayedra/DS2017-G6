@@ -1,29 +1,68 @@
 <!-- Page Content -->
 <div id="page-wrapper">
-    <div class="container-fluid">
-        <div class="row">
-			<div class = 'container '>
-				<div class = 'row pt-lg-150 pt-sm-30'>
+	<div class="row">
+			<div class="col-lg-12">
+			
 
-					<div class="col-lg-12 col-xs-12">
-						<h1 class="header-title ttl-rsp">
-							<span id="typo"></span><span id="cursor">|</span>
-						</h1>
-					</div>
-				</div>	
-				<div class="row pt-lg-20">
-					<div class="col-lg-12 col-xs-12">
-						<div class="header-text header-dsc">
-							<p class = 'pb-0 mb-0 pt-0 mt-0'>¿Estás interesado en aprender a programar, pero no sabes por dónde empezar?</p>
-							<p class = 'pb-0 mb-0 pt-0 mt-0'>No te asustes, este curso es para ti. Aprenderás los <span class="bold">principios fundamentales</span> de una forma intuitiva y práctica.</p>
-							<p class = 'pb-0 mb-0 pt-0 mt-0'>Al final te darás cuenta que la programación es <span class="bold">fácil</span> y <span class="bold">apasionante.</span></p>
-							<p class = 'pb-0 mb-0 pt-0 mt-0'>¡A programar!</p>
-						</div>
-					</div>
-				</div> 	
+				<br>
+			  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+			    <!-- Indicators -->
+			    <ol class="carousel-indicators">
+			      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+			      <li data-target="#myCarousel" data-slide-to="1"></li>
+			      <li data-target="#myCarousel" data-slide-to="2"></li>
+			      <li data-target="#myCarousel" data-slide-to="3"></li>
+			    </ol>
+
+			    <!-- Wrapper for slides -->
+			    <div class="carousel-inner" role="listbox">
+
+			      <div class="item active">
+			        <img src="img_chania.jpg" alt="Chania" width="460" height="345">
+			        <div class="carousel-caption">
+			          <h3>Chania</h3>
+			          <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
+			        </div>
+			      </div>
+
+			      <div class="item">
+			        <img src="img_chania2.jpg" alt="Chania" width="460" height="345">
+			        <div class="carousel-caption">
+			          <h3>Chania</h3>
+			          <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
+			        </div>
+			      </div>
+			    
+			      <div class="item">
+			        <img src="img_flower.jpg" alt="Flower" width="460" height="345">
+			        <div class="carousel-caption">
+			          <h3>Flowers</h3>
+			          <p>Beautiful flowers in Kolymbari, Crete.</p>
+			        </div>
+			      </div>
+
+			      <div class="item">
+			        <img src="img_flower2.jpg" alt="Flower" width="460" height="345">
+			        <div class="carousel-caption">
+			          <h3>Flowers</h3>
+			          <p>Beautiful flowers in Kolymbari, Crete.</p>
+			        </div>
+			      </div>
+			  
+			    </div>
+
+			    <!-- Left and right controls -->
+			    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+			      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+			      <span class="sr-only">Previous</span>
+			    </a>
+			    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+			      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+			      <span class="sr-only">Next</span>
+			    </a>
+			  </div> 	
 			</div>
-		</div>
-	</div>
+</div>
 </section>
 
 <section id="porque" class="pt-50 pb-50">
@@ -151,104 +190,46 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<h1 class="section1-title">
-						Puedes lograr muchas cosas con la programación
+						Tenemos variados platos en 6 categorías
 					</h1>
 				</div>
 			</div>
+			<br>
+			<br>
 			<div class = 'row pt-10'>
-				<div class = 'col-md-offset-2 col-md-4'>
-					<img src="<?php echo base_url('public/frontend/img/cando-1.png'); ?>" class = 'img-responsive align-center'>
-					<h4 class = 'align-center pt-5'>Aplicaciones web</h4>
+				<div class = 'col-md-offset-1 col-md-3'>
+					<img src="<?php echo base_url('assets/img/cat-1.jpg'); ?>" class = 'img-responsive align-center'>
+					<h4 class = 'align-center pt-5'>Almuerzos</h4>
 				</div>
 				<div class = 'col-md-4 pt-sm-10'>
-					<img src="<?php echo base_url('public/frontend/img/cando-2.png'); ?>" class = 'img-responsive align-center'>
-					<h4 class = 'align-center pt-5''>Videojuegos</h4>
+					<img src="<?php echo base_url('assets/img/cat-2.jpg'); ?>" class = 'img-responsive align-center'>
+					<h4 class = 'align-center pt-5''>Platos Típicos</h4>
 				</div>
+			
+				<div class = 'col-md-4 pt-sm-10'>
+					<img src="<?php echo base_url('assets/img/cat-3.jpg'); ?>" class = 'img-responsive align-center'>
+					<h4 class = 'align-center pt-5''>Platos de Mar</h4>
+				</div>
+
 			</div>
 			<div class = 'row  pt-10'>
-				<div class = 'col-md-offset-2 col-md-4'>
-					<img src="<?php echo base_url('public/frontend/img/cando-3.png'); ?>" class = 'img-responsive align-center'>
-					<h4 class = 'align-center pt-5''>Aplicaciones móviles</h4>
+				<div class = 'col-md-offset-1 col-md-3'>
+					<img src="<?php echo base_url('assets/img/cat-4.jpg'); ?>" class = 'img-responsive align-center'>
+					<h4 class = 'align-center pt-5''>Cocina Internacional</h4>
+				</div>
+			
+				<div class = 'col-md-4 pt-sm-10'>
+					<img src="<?php echo base_url('assets/img/cat-5.jpg'); ?>" class = 'img-responsive align-center'>
+					<h4 class = 'align-center pt-5''>Postres</h4>
 				</div>
 				<div class = 'col-md-4 pt-sm-10'>
-					<img src="<?php echo base_url('public/frontend/img/cando-4.png'); ?>" class = 'img-responsive align-center'>
-					<h4 class = 'align-center pt-5''>Sistemas operativos</h4>
-				</div>
-			</div>
-			<div class = 'row pt-10'>
-				<div class = 'col-md-offset-2 col-md-4'>
-					<img src="<?php echo base_url('public/frontend/img/cando-5.png'); ?>" class = 'img-responsive align-center'>
-					<h4 class = 'align-center pt-5''>Motores de búsqueda</h4>
-				</div>
-				<div class = 'col-md-4 pt-sm-10'>
-					<img src="<?php echo base_url('public/frontend/img/cando-6.png'); ?>" class = 'img-responsive align-center'>
-					<h4 class = 'align-center pt-5''>Sitios Web</h4>
+					<img src="<?php echo base_url('assets/img/cat-6.jpg'); ?>" class = 'img-responsive align-center'>
+					<h4 class = 'align-center pt-5''>Piqueos</h4>
 				</div>
 			</div>
 		</div>
 	</section>
-	<section id="contenido" class="pt-lg-50 pb-50">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<h1 class="landing-section3-title">
-						Algunas cosas que aprenderás en este curso
-					</h1>
-				</div>
-			</div>
-			<div class="row mt-lg-40">
-				<div class="col-md-4 col-xs-12 pt-10">
-					<ul class="no-bullet list-unstyled">
-						<li class = 'section3-icon-container pt-10'>	
-							<div class = 'col-xs-12'>
-								<span class="daw-check section3-icon"></span><span> Variables y tipos de datos</span>
-							</div>
-						</li>
-						<li class = 'section3-icon-container pt-10'>
-							<div class = 'col-xs-12'>
-								<span class="daw-check section3-icon"></span><span> Estructuras de control</span>
-							</div>
-						</li>
-						<li class = 'section3-icon-container pt-10'>
-							<div class = 'col-xs-12'>
-								<span class="daw-check section3-icon"></span><span> Funciones</span>
-							</div>
-						</li>
-					</ul>
-				</div> 
-				<div class="col-md-4 ">
-					<div class = 'col-xs-offset-2 col-xs-8'>
-						<img src="<?php echo base_url('public/frontend/img/laptop.png'); ?>" class="img-responsive align-center">
-					</div>				
-				</div>
-				<div class="col-md-4 col-xs-12 pt-10">
-					<ul class="no-bullet list-unstyled">
-						<li class = 'section3-icon-container pt-10'>
-							<div class = 'col-xs-12'>
-								<span class="daw-check section3-icon"></span><span> Listas</span>
-							</div>
-						</li>
-						<li class = 'section3-icon-container pt-10'>
-							<div class = 'col-xs-12'>
-								<span class="daw-check section3-icon"></span><span> Arreglos N-dimensionales</span>
-							</div>
-						</li>
-						<li class = 'section3-icon-container pt-10'>
-							<div class = 'col-xs-12'>
-								<span class="daw-check section3-icon"></span><span> Colecciones</span>
-							</div>
-						</li>
-					</ul>
-				</div>
-			</div>
-			<div class="row pt-30">
-				<p class = 'align-center'>El contenido es para todos.</p>
-			</div>
-			<div class="row pt-10">
-				<div class="align-center">
-					<a href="<?php echo site_url("web/curso"); ?>" class = "btn btn-default chk-syllabus-btn ">Revisa el syllabus aquí</a>
-				</div>
-			</div>
+	
     </div>
     <!-- /.container-fluid -->
 </div>

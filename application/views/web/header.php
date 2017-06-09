@@ -8,7 +8,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/commons/custom-bootstrap-margin-padding.css'); ?>">
  	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/web/footer_style.css'); ?>">
