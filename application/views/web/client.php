@@ -9,14 +9,22 @@
 <section id="semanas-body" class="container pt-20">
 	<div class="row">
 		<div class="col-lg-offset-1 col-lg-10">
+
+      <p>Busca un plato:
+        <input type="text" id="dishQuery" name="dishQuery">
+        <button type="button" id="dishSearch" class="btn btn-default">
+          <span class="glyphicon glyphicon-search"></span> Buscar
+        </button>
+      </p>
+
+      <br>
+
 			<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-
-
 				<div class="panel panel-default">
 					<div class="panel-heading" role="tab" id="headingOne">
 						<h4 class="panel-title">
 							<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseAlmuerzo" aria-expanded="true" aria-controls="collapseAlmuerzo">
-								Almuerzos: <h6>23 Platillos </h6>
+								Almuerzos: <h6 id=almuerzoN>23 Platillos </h6>
 							</a>
 						</h4>
 					</div>
@@ -30,7 +38,7 @@
 									<div class="col-md-6">
                     <h4> <strong> Restaurante </strong> </h4>
 									</div>
-								</div>
+                </div>
 								<hr>
 							</div>
 						</div>
@@ -42,7 +50,7 @@
 					<div class="panel-heading" role="tab" id="headingTwo">
 						<h4 class="panel-title">
 							<a 	 role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTipicos" aria-expanded="false" aria-controls="collapseTipicos">
-                Platos Tipicos <h6> 7 Platillos </h6>
+                Platos Tipicos <h6 id=tipicosN> 7 Platillos </h6>
 							</a></h4>
 
 						</div>
@@ -67,7 +75,7 @@
 					<div class="panel panel-default">
 						<div class="panel-heading" role="tab" id="headingThree">
 								<h4 class="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseMar" aria-expanded="false" aria-controls="collapseMar">
-                  Platos de Mar: <h6> 2 Platillos </h6>
+                  Platos de Mar: <h6 id=marN> 2 Platillos </h6>
                 </a></h4>
 						</div>
 						<div id="collapseMar" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
@@ -92,7 +100,7 @@
 					<div class="panel panel-default">
 						<div class="panel-heading" role="tab" id="headingFour">
 								<h4 class="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseInternacional" aria-expanded="false" aria-controls="collapseInternacional">
-                  Cocina Internacional <h6> 3 Platillos </h6>
+                  Cocina Internacional <h6 id=internacionalN> 3 Platillos </h6>
                 </a></h4>
 						</div>
 						<div id="collapseInternacional" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
@@ -117,7 +125,7 @@
 					<div class="panel panel-default">
 						<div class="panel-heading" role="tab" id="headingFive">
 								<h4 class="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapsePostres" aria-expanded="false" aria-controls="collapsePostres">
-                  Postres <h6> 11 Platillos </h6>
+                  Postres <h6 id=postresN> 11 Platillos </h6>
                 </a></h4>
 						</div>
 						<div id="collapsePostres" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
@@ -142,7 +150,7 @@
 					<div class="panel panel-default">
 						<div class="panel-heading" role="tab" id="headingSix">
 								<h4 class="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapsePiqueos" aria-expanded="false" aria-controls="collapsePiqueos">
-                  Piqueos <h6> 2 Platillos </h6>
+                  Piqueos <h6 id=piqueosN> 2 Platillos </h6>
                 </a></h4>
 						</div>
 						<div id="collapsePiqueos" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
