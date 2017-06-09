@@ -62,7 +62,7 @@ function filldata(query){
   $("#collapseMar").children().children().empty()
   $("#collapseTipicos").children().children().empty()
   $("#collapsePiqueos").children().children().empty()
-  
+
   var columnHeaders = '<div class="row"><div class="col-md-6"><h4> <strong> Nombre </strong> </h4></div><div class="col-md-6"><h4> <strong> Restaurante </strong> </h4></div></div>';
 
   $("#collapsePostres").children().children().append(columnHeaders);
@@ -80,7 +80,7 @@ function filldata(query){
               continue;
           }
       }
-      var toAppend = '<div class="row"><div class="col-md-6"><h5><a href="plates/' + item.id +'">' + item.nombre + '</a></h5></div><div class="col-md-6"><h5>' + item.restaurante + '</h5></div></div>';
+      var toAppend = '<div class="row"><div class="col-md-6"><h5><a href="./plates/' + item.id +'">' + item.nombre + '</a></h5></div><div class="col-md-6"><h5>' + item.restaurante + '</h5></div></div>';
       var hola = $("#collapsePostres");
       if (item.categoria == 'postre'){
           $("#collapsePostres").children().children().append(toAppend);

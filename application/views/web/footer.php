@@ -47,7 +47,7 @@ pública o distribución sin autorización previa del titular de los derechos </
 		</div>
 
 	</div>
-	
+
 
 
   <script src="<?php echo base_url('assets/js/jquery.min.js'); ?>"></script>
@@ -55,7 +55,8 @@ pública o distribución sin autorización previa del titular de los derechos </
   <script src="<?php echo base_url('assets/js/owl.carousel.js'); ?>"></script>
 	<script src="<?php echo base_url('assets/js/owl.carousel.js'); ?>"></script>
 	<script src="<?php echo base_url('assets/js/index.js'); ?>"></script>
+	<script src="<?php echo base_url('assets/js/plates.js'); ?>"></script>
 	<script src="<?php echo base_url('assets/js/client.js'); ?>"></script>
-	
+
 </footer>
 </html>
