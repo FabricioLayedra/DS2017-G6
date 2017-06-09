@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 if( !defined('BASEPATH')) exit ("No direct script access allowed");
 
@@ -10,8 +10,8 @@ class Web extends CI_Controller{
 		$this->load->helper('form');
 		$this->load->helper(array('url'));
 		$this->load->library('form_validation');
-		
-		
+
+
 		date_default_timezone_set("America/Guayaquil");
 	}
 
@@ -20,7 +20,7 @@ class Web extends CI_Controller{
 
 		$dataHeader['PageTitle'] = "";
 
-        $data['header'] = $this->load->view('web/header', $dataHeader);
+        $data['header'] = $this->load->view('web/headerLeonardo', $dataHeader);
         $data['menu'] = $this->load->view('web/menu', array());
 
         $data['contenido'] = $this->load->view('web/index', array());
