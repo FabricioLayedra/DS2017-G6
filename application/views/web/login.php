@@ -6,7 +6,7 @@
   <div class = 'row pt-10 pb-10'>
     <div class = 'align-center'>
       <br>
-      <img src = 'http://www.espol.edu.ec/sites/default/files/espol/espol-texto-largo.png' class = 'align-center img-responsive', style='width: 25%; height: 25%;'>
+      <img src = 'http://icons.iconarchive.com/icons/graphicloads/food-drink/icons-390.jpg' class = 'align-center img-responsive', style='width: 25%; height: 25%;'>
       <br>
     </div>
   </div>
