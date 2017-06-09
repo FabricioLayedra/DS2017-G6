@@ -1,62 +1,56 @@
 <!-- Page Content -->
 <div id="page-wrapper">
 	<div class="row">
-			<div class="col-lg-12">
+			<div class="col-lg-12"  class="owl-carousel">
 			
 
 				<br>
-			  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+			  <div id="restosCarousel" class="carousel slide" data-ride="carousel">
 			    <!-- Indicators -->
 			    <ol class="carousel-indicators">
-			      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-			      <li data-target="#myCarousel" data-slide-to="1"></li>
-			      <li data-target="#myCarousel" data-slide-to="2"></li>
-			      <li data-target="#myCarousel" data-slide-to="3"></li>
+			      <li data-target="#restosCarousel" data-slide-to="0" class="active"></li>
+			      <li data-target="#restosCarousel" data-slide-to="1"></li>
+			      <li data-target="#restosCarousel" data-slide-to="2"></li>
 			    </ol>
 
 			    <!-- Wrapper for slides -->
 			    <div class="carousel-inner" role="listbox">
 
 			      <div class="item active">
-			        <img src="img_chania.jpg" alt="Chania" width="460" height="345">
+			        <img src = "<?php echo base_url('assets/img/bar-01.jpg'); ?>" alt="start" >
 			        <div class="carousel-caption">
-			          <h3>Chania</h3>
-			          <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
-			        </div>
+			          <h2>Bienvenidos a El Comelón!</h2>
+						<p>
+							Servicio de difusión y administración de los Comedores
+							y Bares Politécnicos.
+						</p>			        
+					</div>
 			      </div>
 
 			      <div class="item">
-			        <img src="img_chania2.jpg" alt="Chania" width="460" height="345">
+			        <img src = "<?php echo base_url('assets/img/bar-02.jpg'); ?>"  alt="service" >
 			        <div class="carousel-caption">
-			          <h3>Chania</h3>
-			          <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
+			          <h3>¡Servirte es nuestra recompensa!</h3>
+			          <p>Visítanos en tu facultad.</p>
 			        </div>
 			      </div>
 			    
 			      <div class="item">
-			        <img src="img_flower.jpg" alt="Flower" width="460" height="345">
+			        <img src = "<?php echo base_url('assets/img/bar-03.jpg'); ?>"  alt="barofthemonth" >
 			        <div class="carousel-caption">
-			          <h3>Flowers</h3>
-			          <p>Beautiful flowers in Kolymbari, Crete.</p>
-			        </div>
-			      </div>
-
-			      <div class="item">
-			        <img src="img_flower2.jpg" alt="Flower" width="460" height="345">
-			        <div class="carousel-caption">
-			          <h3>Flowers</h3>
-			          <p>Beautiful flowers in Kolymbari, Crete.</p>
+			          <h3>Bar del Mes</h3>
+			          <p>Frutanga. Patio de Comidas FIMCP.</p>
 			        </div>
 			      </div>
 			  
 			    </div>
 
 			    <!-- Left and right controls -->
-			    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+			    <a class="left carousel-control" href="#restosCarousel" role="button" data-slide="prev">
 			      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
 			      <span class="sr-only">Previous</span>
 			    </a>
-			    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+			    <a class="right carousel-control" href="#restosCarousel" role="button" data-slide="next">
 			      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
 			      <span class="sr-only">Next</span>
 			    </a>
@@ -135,7 +129,7 @@
 								<div class="col-lg-9">
 									<blockquote>
 										<p class="quote">"Los pasteles del Chino siempre son una opción de almuerzo."</p>
-										<footer class="quote-author">Galo Castillo, Ing. Computación</footer>
+										<footer class="quote-author">Galo Castillo</footer>
 									</blockquote>
 								</div>
 							</div>
@@ -203,28 +197,28 @@
 				</div>
 				<div class = 'col-md-4 pt-sm-10'>
 					<img src="<?php echo base_url('assets/img/cat-2.jpg'); ?>" class = 'img-responsive align-center'>
-					<h4 class = 'align-center pt-5''>Platos Típicos</h4>
+					<h4 class = 'align-center pt-5'>Platos Típicos</h4>
 				</div>
 			
 				<div class = 'col-md-4 pt-sm-10'>
 					<img src="<?php echo base_url('assets/img/cat-3.jpg'); ?>" class = 'img-responsive align-center'>
-					<h4 class = 'align-center pt-5''>Platos de Mar</h4>
+					<h4 class = 'align-center pt-5'>Platos de Mar</h4>
 				</div>
 
 			</div>
 			<div class = 'row  pt-10'>
 				<div class = 'col-md-offset-1 col-md-3'>
 					<img src="<?php echo base_url('assets/img/cat-4.jpg'); ?>" class = 'img-responsive align-center'>
-					<h4 class = 'align-center pt-5''>Cocina Internacional</h4>
+					<h4 class = 'align-center pt-5'>Cocina Internacional</h4>
 				</div>
 			
 				<div class = 'col-md-4 pt-sm-10'>
 					<img src="<?php echo base_url('assets/img/cat-5.jpg'); ?>" class = 'img-responsive align-center'>
-					<h4 class = 'align-center pt-5''>Postres</h4>
+					<h4 class = 'align-center pt-5'>Postres</h4>
 				</div>
 				<div class = 'col-md-4 pt-sm-10'>
 					<img src="<?php echo base_url('assets/img/cat-6.jpg'); ?>" class = 'img-responsive align-center'>
-					<h4 class = 'align-center pt-5''>Piqueos</h4>
+					<h4 class = 'align-center pt-5'>Piqueos</h4>
 				</div>
 			</div>
 		</div>
