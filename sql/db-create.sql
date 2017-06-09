@@ -13,24 +13,9 @@
 
 
 -- Dumping database structure for ds2017
-DROP DATABASE IF EXISTS `ds2017`;
 CREATE DATABASE IF NOT EXISTS `ds2017` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `ds2017`;
 
--- Dumping structure for table ds2017.admin
-CREATE TABLE IF NOT EXISTS `admin` (
-  `id_admin` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(50) DEFAULT NULL,
-  `last_name` varchar(50) DEFAULT NULL,
-  `username` varchar(50) DEFAULT NULL,
-  `email` varchar(50) DEFAULT NULL,
-  `password` varchar(250) DEFAULT NULL,
-  PRIMARY KEY (`id_admin`),
-  UNIQUE KEY `username` (`username`),
-  UNIQUE KEY `mail` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
-
--- Data exporting was unselected.
 -- Dumping structure for table ds2017.category
 CREATE TABLE IF NOT EXISTS `category` (
   `id_category` int(11) NOT NULL AUTO_INCREMENT,
@@ -72,23 +57,23 @@ CREATE TABLE IF NOT EXISTS `dish` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Data exporting was unselected.
--- Dumping structure for table ds2017.rbac_admin_group
-CREATE TABLE IF NOT EXISTS `rbac_admin_group` (
-  `id_admin` int(11) NOT NULL,
-  `id_group` int(11) NOT NULL,
-  PRIMARY KEY (`id_admin`,`id_group`),
-  KEY `FK_rbac_admin_grupo_rbac_grupo` (`id_group`),
-  CONSTRAINT `FK_rbac_admin_grupo_admins` FOREIGN KEY (`id_admin`) REFERENCES `admin` (`id_admin`),
-  CONSTRAINT `FK_rbac_admin_grupo_rbac_grupo` FOREIGN KEY (`id_group`) REFERENCES `rbac_group` (`id_group`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='rbac control for admins';
-
--- Data exporting was unselected.
 -- Dumping structure for table ds2017.rbac_group
 CREATE TABLE IF NOT EXISTS `rbac_group` (
   `id_group` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id_group`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='rbac control for admins';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='rbac control for admins';
+
+-- Data exporting was unselected.
+-- Dumping structure for table ds2017.rbac_user_group
+CREATE TABLE IF NOT EXISTS `rbac_user_group` (
+  `id_user` int(11) NOT NULL,
+  `id_group` int(11) NOT NULL,
+  PRIMARY KEY (`id_user`,`id_group`),
+  KEY `FK_rbac_admin_grupo_rbac_grupo` (`id_group`),
+  CONSTRAINT `FK_rbac_admin_grupo_admins` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`),
+  CONSTRAINT `FK_rbac_admin_grupo_rbac_grupo` FOREIGN KEY (`id_group`) REFERENCES `rbac_group` (`id_group`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='rbac control for admins';
 
 -- Data exporting was unselected.
 -- Dumping structure for table ds2017.restaurant
@@ -129,7 +114,6 @@ CREATE TABLE IF NOT EXISTS `user` (
   `username` varchar(50) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(250) NOT NULL,
-  `rol` tinyint(4) NOT NULL DEFAULT '0' COMMENT '0: Normal, 1:Assistant',
   PRIMARY KEY (`id_user`),
   UNIQUE KEY `username` (`username`),
   UNIQUE KEY `mail` (`email`)
