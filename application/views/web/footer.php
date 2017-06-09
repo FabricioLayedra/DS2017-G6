@@ -25,11 +25,6 @@ pública o distribución sin autorización previa del titular de los derechos </
 		</div>
 
     <div>
-			<i class="fa fa-fax"></i>
-			<p>(593-4) 2 854629</p>
-		</div>
-
-    <div>
 			<i class="fa fa-clock-o"></i>
 			<p> De 08h00 a 16h30, de lunes a viernes</p>
 		</div>
@@ -40,7 +35,7 @@ pública o distribución sin autorización previa del titular de los derechos </
 
 		<p class="footer-company-about">
 			<span>Quejas</span>
-			En caso de  presentarse algún problema con la comida o el servicio que se ofrece, se deben acercar a las oficinas de la Unidad de Bienestar Estudiantil y Politécnico. Presentar su queja por escrito a nombre del Director de la Unidad de Bienestar Estudiantil y Politécnico, el mismo que debe ser evidenciado (puede ser una foto o un video de celular) para poder proceder y tomar las acciones correctivas y de esa manera evitar que surjan inconvenientes similares.
+			En caso de  presentarse algún problema con la comida o el servicio que se ofrece, se deben acercar a las oficinas de la Unidad de Bienestar Estudiantil y Politécnico y presentar su queja por escrito a nombre del Director de la Unidad de Bienestar Estudiantil y Politécnico.
 		</p>
 
 		<div class="footer-icons">
