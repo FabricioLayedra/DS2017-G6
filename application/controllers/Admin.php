@@ -9,7 +9,7 @@ class Admin extends CI_Controller{
 		$this->load->helper('url');
 		$this->load->helper('form');
 		$this->load->helper(array('url'));
-		$this->load->model('UserAdmin');
+		$this->load->model('User');
 		$this->load->library('form_validation');
 		$this->load->library('grocery_CRUD');
 		
@@ -45,7 +45,7 @@ class Admin extends CI_Controller{
 
 	public function logout(){
 		if ($this->AdminSecurityCheck()){
-			$userAdmin = new UserAdmin();
+			$userAdmin = new User();
 			$userAdmin->logout();
 			redirect("admin/login");
 		}else{
@@ -61,8 +61,6 @@ class Admin extends CI_Controller{
 
 		$userAdmin->login($username, $password);
 
-		print_r($this->session->userdata);
-
 		if ($this->session->userdata) {
             redirect("admin/index");
         }else{
@@ -72,14 +70,15 @@ class Admin extends CI_Controller{
 
 
 	/* CRUD Starts*/
-	public function admins(){
+
+	public function users(){
 		$debug = false;
 
 		if ($this->AdminSecurityCheck()){
-            $titulo = "Administradores";
+            $titulo = "Usuarios";
 
             $crud = new grocery_CRUD();
-			$crud->set_table("admin");
+			$crud->set_table("user");
 			$crud->set_subject( $titulo );
 
 			$crud->display_as( 'name' , 'Nombres' );
@@ -98,61 +97,7 @@ class Admin extends CI_Controller{
 
 			$crud->columns( 'name', 'last_name', 'username', 'email' );
 			$crud->fields( 'name', 'last_name', 'username', 'email', 'password');
-
-            $crud->unset_export();
-			$crud->unset_print();
-			$crud->unset_read();
-
-			$output = $crud->render();
-
-			$dataHeader['PageTitle'] = $titulo;
-			$dataHeader['css_files'] = $output->css_files;
-			$dataFooter['js_files'] = $output->js_files;
-			$dataContent['debug'] = $debug;
-
-            $data['header'] = $this->load->view('admin/header', $dataHeader);
-			$data['menu'] = $this->load->view('admin/menu', $dataHeader );
-
-			$data['content'] = $this->load->view('admin/blank', $output);
-			$data['footer'] = $this->load->view('admin/footer-gc', $dataFooter);
-		}else{
-			redirect("admin/login");
-		}
-	}
-
-	public function users(){
-		$debug = false;
-
-		if ($this->AdminSecurityCheck()){
-            $titulo = "Usuarios";
-
-            $crud = new grocery_CRUD();
-			$crud->set_table("user");
-			$crud->set_subject( $titulo );
-
-			$crud->display_as( 'name' , 'Nombres' );
-			$crud->display_as( 'last_name' , 'Apellidos' );
-			$crud->display_as( 'username' , 'Usuario' );
-			$crud->display_as( 'email' , 'Correo' );
-			$crud->display_as( 'password' , 'Contraseña' );
-			$crud->display_as( 'rol' , 'Rol' );
-
-			$crud->field_type('rol', 'dropdown', array(
-                '0' => 'Ninguno',
-                '1' => 'Asistente de restaurante'
-            ));
-
-			$crud->callback_edit_field('password',array($this,'set_password_input_to_empty'));
-            $crud->callback_add_field('password',array($this,'set_password_input_to_empty'));
-
-            $crud->field_type('password','password');
-
-            $crud->callback_before_update(array($this,'encrypt_pw'));
-            $crud->callback_before_insert(array($this,'encrypt_pw'));
-
-			$crud->columns( 'name', 'last_name', 'username', 'email', 'rol' );
-			$crud->fields( 'name', 'last_name', 'username', 'email', 'password', 'rol');
-			$crud->required_fields( 'name', 'last_name', 'username', 'email', 'rol' );
+			$crud->required_fields( 'name', 'last_name', 'username', 'email');
 
 			$crud->unset_print();
 			$crud->unset_read();
@@ -177,7 +122,7 @@ class Admin extends CI_Controller{
 	/* CRUD Ends*/
 	/* Helpers*/
 	function AdminSecurityCheck(){
-		$UserAdmin = new UserAdmin();
+		$User = new User();
 		$user = $this->session->userdata('Mail');
 		if ($user){
 			return true;
