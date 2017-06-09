@@ -44,7 +44,7 @@ class Web extends CI_Controller{
 
 			$dataHeader['PageTitle'] = "";
 
-	        $data['header'] = $this->load->view('web/headerLeonardo', $dataHeader);
+	        $data['header'] = $this->load->view('web/header', $dataHeader);
 	        $data['menu'] = $this->load->view('web/menu', array());
 
 	        $data['contenido'] = $this->load->view('web/client', array());

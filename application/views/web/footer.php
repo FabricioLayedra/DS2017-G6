@@ -47,10 +47,11 @@ pública o distribución sin autorización previa del titular de los derechos </
 		</div>
 
 	</div>
-	
+
 	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="<?php echo base_url('assets/js/owl.carousel.js'); ?>"></script>
+	<script src="<?php echo base_url('assets/js/client.js'); ?>"></script>
 
 </footer>
 </html>
