@@ -1,0 +1,11 @@
+#page-wrapper div div div div.carousel-inner div img {
+	width: 105%;
+	max-height: 500px;
+
+
+}
+
+body {
+    background-image: "<?php echo base_url('../assets/img/espol.jpg'); ?>"; 
+}
+

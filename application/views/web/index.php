@@ -17,7 +17,7 @@
 			    <div class="carousel-inner" role="listbox">
 
 			      <div class="item active">
-			        <img src = "<?php echo base_url('assets/img/bar-01.jpg'); ?>" alt="start" >
+			        <img src = "<?php echo base_url('assets/img/inicio.jpg'); ?>" alt="start" >
 			        <div class="carousel-caption">
 			          <h2>Bienvenidos a El Comelón!</h2>
 						<p>
@@ -28,7 +28,7 @@
 			      </div>
 
 			      <div class="item">
-			        <img src = "<?php echo base_url('assets/img/bar-02.jpg'); ?>"  alt="service" >
+			        <img src = "<?php echo base_url('assets/img/espol.png'); ?>"  alt="service" >
 			        <div class="carousel-caption">
 			          <h3>¡Servirte es nuestra recompensa!</h3>
 			          <p>Visítanos en tu facultad.</p>
@@ -36,7 +36,7 @@
 			      </div>
 			    
 			      <div class="item">
-			        <img src = "<?php echo base_url('assets/img/bar-03.jpg'); ?>"  alt="barofthemonth" >
+			        <img src = "<?php echo base_url('assets/img/bar-mes.png'); ?>"  alt="barofthemonth" >
 			        <div class="carousel-caption">
 			          <h3>Bar del Mes</h3>
 			          <p>Frutanga. Patio de Comidas FIMCP.</p>

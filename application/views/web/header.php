@@ -24,6 +24,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/web/made.css'); ?>" >
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/web/ivan.css'); ?>" >
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/web/icons.css'); ?>" >
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/web/images_fab.css'); ?>" >
 
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/web/profesorprofile.css'); ?>" >
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/web/errorescss.css'); ?>" >
