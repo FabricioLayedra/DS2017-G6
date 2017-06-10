@@ -6,7 +6,7 @@
 			<div class="panel panel-info">
 				<div class="panel-heading">
 					<h3 class = 'align-center  bold' id='foodName'>
-
+						Test
           </h3>
 				</div>
 				<div class="panel-body">
@@ -19,19 +19,19 @@
 								<tbody>
 									<tr>
 										<td class = 'pull-right bold' >Restaurante </td>
-										<td id='foodRestaurant' ></td>
+										<td id='foodRestaurant' > Test</td>
 									</tr>
 									<tr>
 										<td class = 'pull-right bold'>Categoría</td>
-										<td id='foodCategory'></td>
+										<td id='foodCategory'>Test</td>
 									</tr>
 									<tr>
 										<td class = 'pull-right bold'>Ingredientes</td>
-										<td id='foodIngredients'></td>
+										<td id='foodIngredients'>Test</td>
 									</tr>
 									<tr>
 										<td class = 'pull-right bold'>Descripción</td>
-										<td id='foodDescription'></td>
+										<td id='foodDescription'>Test</td>
 									</tr>
 								</tbody>
 							</table>

@@ -57,6 +57,7 @@ pública o distribución sin autorización previa del titular de los derechos </
 	<script src="<?php echo base_url('assets/js/index.js'); ?>"></script>
 	<script src="<?php echo base_url('assets/js/plates.js'); ?>"></script>
 	<script src="<?php echo base_url('assets/js/client.js'); ?>"></script>
+	<script src="<?php echo base_url('assets/js/assistant.js'); ?>"></script>
 
 </footer>
 </html>

@@ -1,7 +1,6 @@
 $( document ).ready(function() {
-    //var id = <?php echo end($this->uri->segment_array()); ?>;
-    //Somehow we gotta get the food id here :) maybe a hidden field would be ok
-    var id = 6;
+    var url = window.location.href;
+    var id = url.split("/").pop();
     fillplatedata(id);
 });
 
@@ -47,8 +46,7 @@ function fillplatedata(id){
   ]
   for (i = 0; i < data.length; i++) {
       var item = data[i];
-
-      if (item.id === id){
+      if (item.id == id){
           $("#foodName").text(item.nombre);
           $("#foodRestaurant").text(item.restaurante);
           $("#foodCategory").text(item.categoria);
