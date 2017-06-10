@@ -77,7 +77,7 @@ class Web extends CI_Controller{
 
 	  }
 
-		public function assistant(){
+		public function restaurante(){
 
 			$dataHeader['PageTitle'] = "";
 
