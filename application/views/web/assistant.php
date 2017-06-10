@@ -10,6 +10,10 @@
 	<div class="row">
 		<div class="col-lg-offset-1 col-lg-10">
 
+      <a type="button" class="btn btn-default" href="<?php echo site_url("web/agregarPlatillo"); ?>">
+        <span> Agregar Platillo </span>
+			</a>
+      <hr>
       <p>Selecciona un Restaurante:
         <select id="selectedRes" name="selectedRes">
           <option disabled selected value> -- Seleccione -- </option>
@@ -22,6 +26,7 @@
           <span class="glyphicon glyphicon-search"></span> Buscar
         </button>
       </p>
+      <hr>
 
       <br>
 
