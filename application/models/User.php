@@ -41,7 +41,7 @@ class User extends CI_Model{
 	//Returns email for admin user
 	function getMail($username){
 		$this->db->select('email');
-		$this->db->from('admin');
+		$this->db->from('user');
 		$this->db->where('username', $username);
 
 		$query = $this->db->get()->result_array();

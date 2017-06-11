@@ -57,7 +57,7 @@ class Admin extends CI_Controller{
 		$username = $this->input->post("ra_username");
 		$password = $this->input->post("ra_password");
 
-		$userAdmin = new UserAdmin();
+		$userAdmin = new User();
 
 		$userAdmin->login($username, $password);
 

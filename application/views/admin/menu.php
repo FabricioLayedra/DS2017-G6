@@ -44,9 +44,6 @@
 						<a href="#"><i class="fa fa-file"></i> Usuarios<span class="fa arrow"></span></a>
 							<ul class="nav nav-third-level">
 								<li>
-									<a href="<?php echo site_url('admin/admins'); ?>">Administradores</a>
-								</li>
-								<li>
 									<a href="<?php echo site_url('admin/users'); ?>">Usuarios</a>
 								</li>
 							</ul>
