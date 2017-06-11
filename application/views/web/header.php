@@ -14,11 +14,8 @@
  	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/web/footer_style.css'); ?>">
 
 	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-	
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/web/bootstrap.min.css'); ?>">
+
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/web/responsive.css'); ?>">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/web/bootstrap-tagsinput.css'); ?>">
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/web/custom-bootstrap-margin-padding.css'); ?>">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/web/ejerciciocss.css'); ?>" >
 
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/web/made.css'); ?>" >
