@@ -1,0 +1,283 @@
+{
+	"coordinador": {
+		"nombre": "Rafael Bonilla",
+		"foto": "https://www.fiec.espol.edu.ec/sites/fiec.espol.edu.ec/files/rafael%20bonilla.jpg",
+		"mail": "rabonilla@espol.edu.ec"
+	},
+	"profesores": [  {
+		"nombre": "Allan Avendaño",
+		"foto": "https://www.fiec.espol.edu.ec/sites/fiec.espol.edu.ec/files/no-avatar_2.jpg",
+		"mail": "aavendan@espol.edu.ec"
+	},{
+		"nombre": "Ana Tapia",
+		"foto": "https://www.fiec.espol.edu.ec/sites/fiec.espol.edu.ec/files/ana%20tapia.jpg",
+		"mail": "atapia@fiec.espol.edu.ec"
+	}, {
+		"nombre": "Ángela Carrera",
+		"foto": "https://www.fiec.espol.edu.ec/sites/fiec.espol.edu.ec/files/no-avatar_10.jpg",
+		"mail": "acarrera@espol.edu.ec"
+	},{
+		"nombre": "Carmen Vaca",
+		"foto": "https://www.fiec.espol.edu.ec/sites/fiec.espol.edu.ec/files/cvaca_0.jpg",
+		"mail": "cvaca@espol.edu.ec"
+	}, {
+		"nombre": "Cruz María Falcones",
+		"foto": "https://www.fiec.espol.edu.ec/sites/fiec.espol.edu.ec/files/cruz%20falcones.jpg",
+		"mail": " cfalcone@espol.edu.ec"
+	}, {
+		"nombre": "Dalton Noboa",
+		"foto": "https://www.fiec.espol.edu.ec/sites/fiec.espol.edu.ec/files/no-avatar_10.jpg",
+		"mail": "dgnoboa@espol.edu.ec"
+	}, {
+		"nombre": "Edison Del Rosario",
+		"foto": "https://www.fiec.espol.edu.ec/sites/fiec.espol.edu.ec/files/erosario.jpg",
+		"mail": "edelros@espol.edu.ec"
+	}, {
+		"nombre": "Eduardo Cruz",
+		"foto": "https://www.fiec.espol.edu.ec/sites/fiec.espol.edu.ec/files/eduardocruz2.jpg",
+		"mail": "escruz@espol.edu.ec"
+	}, {
+		"nombre": "Eduardo Murillo",
+		"foto": "https://www.fiec.espol.edu.ec/sites/fiec.espol.edu.ec/files/no-avatar_9.jpg",
+		"mail": "emurillo@espol.edu.ec"
+	}, {
+		"nombre": "Frank Malo",
+		"foto": "https://www.fiec.espol.edu.ec/sites/fiec.espol.edu.ec/files/no-avatar_10.jpg",
+		"mail": "fmalo@espol.edu.ec"
+	}, {
+		"nombre": "Ginger Saltos",
+		"foto": "https://www.fiec.espol.edu.ec/sites/fiec.espol.edu.ec/files/no-avatar_10.jpg",
+		"mail": "gvsaltos@espol.edu.ec"
+	}, {
+		"nombre": "Irene Cheung",
+		"foto": "https://www.fiec.espol.edu.ec/sites/fiec.espol.edu.ec/files/no-avatar_5.jpg",
+		"mail": "icheung@espol.edu.ec"
+	}, {
+		"nombre": "Jorge Magallanes",
+		"foto": "https://www.fiec.espol.edu.ec/sites/fiec.espol.edu.ec/files/jorge%20magallanes.jpg",
+		"mail": "jmagalla@espol.edu.ec"
+	}, {
+		"nombre": "Jorge Ugarte",
+		"foto": "https://www.fiec.espol.edu.ec/sites/fiec.espol.edu.ec/files/no-avatar_10.jpg",
+		"mail": "gugarte@espol.edu.ec"
+	}, {
+		"nombre": "José Villa",
+		"foto": "https://www.fiec.espol.edu.ec/sites/fiec.espol.edu.ec/files/no-avatar_10.jpg",
+		"mail": "jvilla@espol.edu.ec"
+	}, {
+		"nombre": "Lorena Carló",
+		"foto": "https://www.fiec.espol.edu.ec/sites/fiec.espol.edu.ec/files/lcarlo_0.jpg",
+		"mail": "lcarlo@espol.edu.ec"
+	},  {
+		"nombre": "Luis Rodriguez",
+		"foto": "https://www.fiec.espol.edu.ec/sites/fiec.espol.edu.ec/files/no-avatar_10.jpg",
+		"mail": "ldrodrig@espol.edu.ec"
+	},{
+		"nombre": "Marcos Calderón",
+		"foto": "https://www.fiec.espol.edu.ec/sites/fiec.espol.edu.ec/files/mcalderon.jpg",
+		"mail": "ancalder@espol.edu.ec"
+	},  {
+		"nombre": "Miguel Realpe",
+		"foto": "https://www.fiec.espol.edu.ec/sites/fiec.espol.edu.ec/files/mrealpe_0.jpg",
+		"mail": "mrealpe@espol.edu.ec"
+	}, {
+		"nombre": "Orlando Zambrano",
+		"foto": "https://www.fiec.espol.edu.ec/sites/fiec.espol.edu.ec/files/orlando%20zambrano.jpg",
+		"mail": "oezambra@espol.edu.ec"
+	},{
+		"nombre": "Rocío Mera",
+		"foto": "https://www.fiec.espol.edu.ec/sites/fiec.espol.edu.ec/files/no-avatar_10.jpg",
+		"mail": "remera@espol.edu.ec"
+	}, {
+		"nombre": "Rodrigo Saraguro",
+		"foto": "https://www.fiec.espol.edu.ec/sites/fiec.espol.edu.ec/files/saraguro.jpg",
+		"mail": "rasarag@espol.edu.ec"
+	}, {
+		"nombre": "Verónica Carrasco",
+		"foto": "https://www.fiec.espol.edu.ec/sites/fiec.espol.edu.ec/files/no-avatar_10.jpg",
+		"mail": "vcarrasc@espol.edu.ec"
+	},{
+		"nombre": "Vladimir Pincay",
+		"foto": "https://www.fiec.espol.edu.ec/sites/fiec.espol.edu.ec/files/johnny%20pincay_0.jpg",
+		"mail": "jvpincay@espol.edu.ec"
+	}, {
+		"nombre": "Wendy Yanez",
+		"foto": "https://www.fiec.espol.edu.ec/sites/fiec.espol.edu.ec/files/pyanez_0.jpg",
+		"mail": "wenpayan@espol.edu.ec"
+	}],
+	"ayudantes" :{
+		"TA": [
+			{
+				"nombre": "Galo Castillo",
+				"matricula": "201410264",
+				"correo": "gadacast@espol.edu.ec",
+				"horarios": [
+					{
+						"dia": "Lunes",
+						"aula": "24A-210",
+						"hora": "14:00-16:00"
+					},
+					{
+						"dia": "Miercoles",
+						"aula": "24A-210",
+						"hora": "14:00-16:00"
+					},
+					{
+						"dia": "Martes",
+						"aula": "Sala de Ayudantes de la FIEC",
+						"hora": "10:30-11:30"
+					},
+					{
+						"dia": "Jueves",
+						"aula": "Sala de Ayudantes de la FIEC",
+						"hora": "10:30-11:30"
+					}					
+				]
+			},
+			{
+				"nombre": "Jorge Cedeño",
+				"matricula": "201302882",
+				"correo": "jlcedeno@espol.edu.ec",
+				"horarios": [
+					{
+						"dia": "Martes",
+						"aula": "24A-103",
+						"hora": "13:30-17:30"
+					},
+					{
+						"dia": "Martes",
+						"aula": "Sala de Ayudantes de la FIEC",
+						"hora": "12:30-13:30"
+					},
+					{
+						"dia": "Jueves",
+						"aula": "Sala de Ayudantes de la FIEC",
+						"hora": "09:30-10:30"
+					}				
+				]
+			},
+			{
+				"nombre": "María Belén Guaranda",
+				"matricula": "201410871",
+				"correo": "mguarand@espol.edu.ec",
+				"horarios": [
+					{
+						"dia": "Lunes",
+						"aula": "24A-207",
+						"hora": "07:30-09:30"
+					},
+					{
+						"dia": "Miercoles",
+						"aula": "24A-113",
+						"hora": "07:30-09:30"
+					},
+					{
+						"dia": "Viernes",
+						"aula": "Sala de Ayudantes de la FIEC",
+						"hora": "11:30-12:30"
+					}				
+				]
+			},
+			{
+				"nombre": "Gerald Gutierrez",
+				"matricula": "201417433",
+				"correo": "gerfegut@espol.edu.ec",
+				"horarios": [
+					{
+						"dia": "Viernes",
+						"aula": "24A-210",
+						"hora": "07:30-10:30"
+					},
+					{
+						"dia": "Martes",
+						"aula": "24A-204",
+						"hora": "08:30-09:30"
+					},
+					{
+						"dia": "Viernes",
+						"aula": "CIB (Biblioteca)",
+						"hora": "11:30-13:30"
+					}				
+				]
+			},
+			{
+				"nombre": "Emmanuel Morán",
+				"matricula": "201304087",
+				"correo": "fnando1995@gmail.com",
+				"horarios": [
+					{
+						"dia": "Lunes",
+						"aula": "24A-103",
+						"hora": "11:30-13:30"
+					},
+					{
+						"dia": "Lunes",
+						"aula": "24A-103",
+						"hora": "07:30-09:30"
+					},
+					{
+						"dia": "Martes",
+						"aula": "Sala de Ayudantes de la FIEC",
+						"hora": "07:30-08:30"
+					},
+					{
+						"dia": "Jueves",
+						"aula": "Sala de Ayudantes de la FIEC",
+						"hora": "07:30-08:30"
+					}					
+				]
+			},
+			{
+				"nombre": "Leonardo Kuffo",
+				"matricula": "201410224",
+				"correo": "lkuffo@espol.edu.ec",
+				"horarios": [
+					{
+						"dia": "Martes",
+						"aula": "SP-01",
+						"hora": "09:30-11:30"
+					},
+					{
+						"dia": "Viernes",
+						"aula": "24A-204",
+						"hora": "11:30-14:30"
+					}				
+				]
+			},
+			{
+				"nombre": "Jorge Murillo",
+				"matricula": "N/A",
+				"correo": "jorgermurillo@gmail.com",
+				"horarios": [
+					{
+						"dia": "Martes",
+						"aula": "24A-114",
+						"hora": "14:00-16:00"
+					},
+					{
+						"dia": "Jueves",
+						"aula": "24A-103",
+						"hora": "14:00-16:00"
+					},
+					{
+						"dia": "Viernes",
+						"aula": "Sala de Ayudantes de la FIEC",
+						"hora": "10:00-11:00"
+					}				
+				]
+			},
+			{
+				"nombre": "Jorge Guerra ",
+				"matricula": "201421632",
+				"correo": "jiguerra@espol.edu.ec",
+				"horarios": [
+					{
+						"dia": "Jueves",
+						"aula": "24A-201",
+						"hora": "07:30-09:30"
+					}				
+				]
+			}
+		]
+	}	
+}
