@@ -1,11 +1,26 @@
 #page-wrapper div div div div.carousel-inner div img {
-	width: 105%;
-	max-height: 500px;
+	width: 100%;
+	height: 500px;
 
 
 }
 
 body {
-    background-image: "<?php echo base_url('../assets/img/espol.jpg'); ?>"; 
+  
+   background-image: url("https://previews.123rf.com/images/notkoo2008/notkoo20081103/notkoo2008110300310/9221254-seamless-fast-food-pattern--Stock-Vector-pizza-background.jpg");
+
 }
 
+@media (max-width: 600px) and (min-width: 340px) {
+	#page-wrapper div div div div.carousel-inner div img {
+		width: 100%;
+		height: 300px;
+	}
+}
+
+@media (max-width: 340px)  {
+	#page-wrapper div div div div.carousel-inner div img {
+		width: 100%;
+		height: 150px;
+	}
+}

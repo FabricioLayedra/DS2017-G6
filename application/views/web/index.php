@@ -17,7 +17,7 @@
 			    <div class="carousel-inner" role="listbox">
 
 			      <div class="item active">
-			        <img src = "<?php echo base_url('assets/img/inicio.jpg'); ?>" alt="start" >
+			        <img src = "<?php echo base_url('assets/img/slideshow/inicio.png'); ?>" alt="start" >
 			        <div class="carousel-caption">
 			          <h2>Bienvenidos a El Comelón!</h2>
 						<p>
@@ -28,7 +28,7 @@
 			      </div>
 
 			      <div class="item">
-			        <img src = "<?php echo base_url('assets/img/espol.png'); ?>"  alt="service" >
+			        <img src = "<?php echo base_url('assets/img/slideshow/espol.png'); ?>"  alt="service" >
 			        <div class="carousel-caption">
 			          <h3>¡Servirte es nuestra recompensa!</h3>
 			          <p>Visítanos en tu facultad.</p>
@@ -36,7 +36,7 @@
 			      </div>
 			    
 			      <div class="item">
-			        <img src = "<?php echo base_url('assets/img/bar-mes.png'); ?>"  alt="barofthemonth" >
+			        <img src = "<?php echo base_url('assets/img/slideshow/bar-mes.png'); ?>"  alt="barofthemonth" >
 			        <div class="carousel-caption">
 			          <h3>Bar del Mes</h3>
 			          <p>Frutanga. Patio de Comidas FIMCP.</p>
@@ -83,9 +83,9 @@
 								</div>
 								<div class = 'col-md-4 pt-xs-15'>
 									<span class="daw-device section2-icon align-center"></span>
-									<div class="icon-label bold pt-lg-20 align-center">Calidez</div>
+									<div class="icon-label bold pt-lg-20 align-center">Portabilidad</div>
 									<div class="description">
-										Todos nuestros asistentes estarán siempre dispuestos a servirlos con amabilidad y empatía.
+										Puedes revisar que comer y en donde desde cualquier dispositivo.
 									</div>
 								</div>
 								<div class = 'col-md-4 pt-xs-15'>
@@ -111,12 +111,12 @@
 						<div class="container-fluid">
 							<div class="row">
 								<div class="col-lg-2 col-lg-offset-1">
-									<img src="<?php echo base_url('assets/img/quotes-1.png'); ?>" class = 'img-responsive img-circle align-center '>
+									<img src="<?php echo base_url('assets/img/quotes/quotes-1.png'); ?>" class = 'img-responsive img-circle align-center '>
 								</div>
 								<div class="col-lg-9">
 									<blockquote>
 										<p class="quote">"Los sánduches de Don Germán son la pinta"</p>
-										<footer class="quote-author">Pepe Lucho, Ing. Computación.</footer>
+										<footer class="quote-author">Pepe Lucho</footer>
 									</blockquote>
 								</div>
 							</div>
@@ -124,7 +124,7 @@
 						<div class="container-fluid">
 							<div class="row">
 								<div class="col-lg-2 col-lg-offset-1">
-									<img src="<?php echo base_url('assets/img/quotes-2.png'); ?>" class = 'img-responsive img-circle align-center '>
+									<img src="<?php echo base_url('assets/img/quotes/quotes-2.png'); ?>" class = 'img-responsive img-circle align-center '>
 								</div>
 								<div class="col-lg-9">
 									<blockquote>
@@ -137,7 +137,7 @@
 						<div class="container-fluid">
 							<div class="row">
 								<div class="col-lg-2 col-lg-offset-1">
-									<img src="<?php echo base_url('assets/img/quotes-3.png'); ?>" class = 'img-responsive img-circle align-center '>
+									<img src="<?php echo base_url('assets/img/quotes/quotes-3.png'); ?>" class = 'img-responsive img-circle align-center '>
 								</div>
 								<div class="col-lg-9">
 									<blockquote>
@@ -150,12 +150,12 @@
 						<div class="container-fluid">
 							<div class="row">
 								<div class="col-lg-2 col-lg-offset-1">
-									<img src="<?php echo base_url('assets/img/quotes-4.png'); ?>" class = 'img-responsive img-circle align-center '>
+									<img src="<?php echo base_url('assets/img/quotes/quotes-4.png'); ?>" class = 'img-responsive img-circle align-center '>
 								</div>
 								<div class="col-lg-9">
 									<blockquote>
-										<p class="quote">"El Comelón es mi primer recurso para saber donde comer."</p>
-										<footer class="quote-author">Juan Dávila</footer>
+										<p class="quote">"!Una empanada de miLatto no basta, sino DOS!"</p>
+										<footer class="quote-author">Viviana Laurido</footer>
 									</blockquote>
 								</div>
 							</div>
@@ -163,12 +163,12 @@
 						<div class="container-fluid">
 							<div class="row">
 								<div class="col-lg-2 col-lg-offset-1">
-									<img src="<?php echo base_url('assets/img/quotes-5.png'); ?>" class = 'img-responsive img-circle align-center '>
+									<img src="<?php echo base_url('assets/img/quotes/quotes-5.png'); ?>" class = 'img-responsive img-circle align-center '>
 								</div>
 								<div class="col-lg-9">
 									<blockquote>
 										<p class="quote">"Si estás de apuro, los americanos de Mecánica son!"</p>
-										<footer class="quote-author">Daniela Kuffo</footer>
+										<footer class="quote-author">María Belén Guaranda</footer>
 									</blockquote>
 								</div>
 							</div>
@@ -192,32 +192,32 @@
 			<br>
 			<div class = 'row pt-10'>
 				<div class = 'col-md-offset-1 col-md-3'>
-					<img src="<?php echo base_url('assets/img/cat-1.jpg'); ?>" class = 'img-responsive align-center'>
+					<img src="<?php echo base_url('assets/img/categories/cat-1.png'); ?>" class = 'img-responsive align-center'>
 					<h4 class = 'align-center pt-5'>Almuerzos</h4>
 				</div>
 				<div class = 'col-md-4 pt-sm-10'>
-					<img src="<?php echo base_url('assets/img/cat-2.jpg'); ?>" class = 'img-responsive align-center'>
+					<img src="<?php echo base_url('assets/img/categories/cat-2.png'); ?>" class = 'img-responsive align-center'>
 					<h4 class = 'align-center pt-5'>Platos Típicos</h4>
 				</div>
 			
 				<div class = 'col-md-4 pt-sm-10'>
-					<img src="<?php echo base_url('assets/img/cat-3.jpg'); ?>" class = 'img-responsive align-center'>
+					<img src="<?php echo base_url('assets/img/categories/cat-3.png'); ?>" class = 'img-responsive align-center'>
 					<h4 class = 'align-center pt-5'>Platos de Mar</h4>
 				</div>
 
 			</div>
 			<div class = 'row  pt-10'>
 				<div class = 'col-md-offset-1 col-md-3'>
-					<img src="<?php echo base_url('assets/img/cat-4.jpg'); ?>" class = 'img-responsive align-center'>
+					<img src="<?php echo base_url('assets/img/categories/cat-4.png'); ?>" class = 'img-responsive align-center'>
 					<h4 class = 'align-center pt-5'>Cocina Internacional</h4>
 				</div>
 			
 				<div class = 'col-md-4 pt-sm-10'>
-					<img src="<?php echo base_url('assets/img/cat-5.jpg'); ?>" class = 'img-responsive align-center'>
+					<img src="<?php echo base_url('assets/img/categories/cat-5.png'); ?>" class = 'img-responsive align-center'>
 					<h4 class = 'align-center pt-5'>Postres</h4>
 				</div>
 				<div class = 'col-md-4 pt-sm-10'>
-					<img src="<?php echo base_url('assets/img/cat-6.jpg'); ?>" class = 'img-responsive align-center'>
+					<img src="<?php echo base_url('assets/img/categories/cat-6.png'); ?>" class = 'img-responsive align-center'>
 					<h4 class = 'align-center pt-5'>Piqueos</h4>
 				</div>
 			</div>
