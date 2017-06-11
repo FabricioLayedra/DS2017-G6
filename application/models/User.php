@@ -27,10 +27,9 @@ class User extends CI_Model{
 
 	//Get rbac group for user
 	function getGroup($username){
-		$this->db->select('rbac_user_group.id_group');
-		$this->db->from('rbac_user_group');
-		$this->db->join('user', 'user.id_user = rbac_user_group.id_user');
-		$this->db->where('user.username', $username);
+		$this->db->select('id_group');
+		$this->db->from('user');
+		$this->db->where('username', $username);
 
 		$query = $this->db->get()->result_array();
 		$res = $query[0]['id_group'];

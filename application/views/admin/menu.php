@@ -47,6 +47,21 @@
 									<a href="<?php echo site_url('admin/users'); ?>">Usuarios</a>
 								</li>
 							</ul>
+							<ul class="nav nav-third-level">
+								<li>
+									<a href="<?php echo site_url('admin/roles'); ?>">Roles de usuarios</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul class="nav nav-second-level">
+						<li>
+							<a href="#"><i class="fa fa-file"></i> Restaurantes<span class="fa arrow"></span></a>
+							<ul class="nav nav-third-level">
+								<li>
+									<a href="<?php echo site_url('admin/users'); ?>">Usuarios</a>
+								</li>
+							</ul>
 						</li>
 					</ul>
 				</li>

@@ -86,18 +86,20 @@ class Admin extends CI_Controller{
 			$crud->display_as( 'username' , 'Usuario' );
 			$crud->display_as( 'email' , 'Correo' );
 			$crud->display_as( 'password' , 'Contraseña' );
+			$crud->display_as( 'id_group' , 'Grupo de usuario' );
 
 			$crud->callback_edit_field('password',array($this,'set_password_input_to_empty'));
             $crud->callback_add_field('password',array($this,'set_password_input_to_empty'));
 
             $crud->field_type('password','password');
+            $crud->set_relation('id_group', 'rbac_group', 'name');
 
             $crud->callback_before_update(array($this,'encrypt_pw'));
             $crud->callback_before_insert(array($this,'encrypt_pw'));
 
-			$crud->columns( 'name', 'last_name', 'username', 'email' );
-			$crud->fields( 'name', 'last_name', 'username', 'email', 'password');
-			$crud->required_fields( 'name', 'last_name', 'username', 'email');
+			$crud->columns( 'name', 'last_name', 'username', 'email', 'id_group' );
+			$crud->fields( 'name', 'last_name', 'username', 'email', 'password', 'id_group');
+			$crud->required_fields( 'name', 'last_name', 'username', 'email', 'id_group');
 
 			$crud->unset_print();
 			$crud->unset_read();
@@ -145,7 +147,7 @@ class Admin extends CI_Controller{
 	}
 
 	function set_password_input_to_empty() {
-		return "<input type='text' name='password' value='' />";
+		return "<input type='password' name='password' value='' />";
 	}
 }
 
