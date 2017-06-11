@@ -34,6 +34,8 @@
     <!-- Default Theme -->
     <link rel="stylesheet" href="<?php echo base_url('assets/css/web/owl.theme.css'); ?>">
 
+   <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/web/restaurantes.css'); ?>">
+
 </head>
 <body>
 	<div id = 'wrapper'>
