@@ -17,7 +17,19 @@
 				<li><a href="<?php echo site_url("web/restaurantes"); ?>">Restaurantes</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="<?php echo site_url("web/login"); ?>">Inicia Sesión</a></li>
+				<?php 
+					if($this->session->Group){
+						$user = $this->session->userdata('Group');
+						if($user == 3){ ?>
+							<li><a href = "<?php echo site_url("web/client"); ?>"><?php echo $this->session->Name; ?></a></li>
+						<?php }else{ if ($user == 2){ ?>
+							<li><a href = "<?php echo site_url("web/assistant"); ?>"><?php echo $this->session->Name; ?></a></li>
+						<?php }} ?>
+						<li><a href="<?php echo site_url("web/logout"); ?>">Cerrar Sesión</a></li>
+					<?php }else{?>
+						<li><a href="<?php echo site_url("web/login"); ?>">Inicia Sesión</a></li>
+					<?php }
+				?>
 			</ul>
 		</div><!-- /.navbar-collapse -->
 	</div><!-- /.container-fluid -->

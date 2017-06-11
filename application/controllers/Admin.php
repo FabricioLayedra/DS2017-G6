@@ -123,9 +123,13 @@ class Admin extends CI_Controller{
 	/* Helpers*/
 	function AdminSecurityCheck(){
 		$User = new User();
-		$user = $this->session->userdata('Mail');
+		$user = $this->session->userdata('Group');
 		if ($user){
-			return true;
+			if($user == 1){
+				return true;
+			}else{
+				return false;
+			}
 		}else{
 			return false;
 		}

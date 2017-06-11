@@ -25,7 +25,7 @@ class User extends CI_Model{
 		}
 	}
 
-	//Get rbac group for admin user
+	//Get rbac group for user
 	function getGroup($username){
 		$this->db->select('rbac_user_group.id_group');
 		$this->db->from('rbac_user_group');
@@ -38,7 +38,7 @@ class User extends CI_Model{
 		return $res;
 	}
 
-	//Returns email for admin user
+	//Returns email for user
 	function getMail($username){
 		$this->db->select('email');
 		$this->db->from('user');
@@ -50,7 +50,7 @@ class User extends CI_Model{
 		return $res;
 	}
 
-	// Returns full name of admin user
+	// Returns full name of user
 	function getName($username){
 		$this->db->select('name, last_name');
 		$this->db->from('user');
