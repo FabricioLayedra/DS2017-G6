@@ -1,4 +1,4 @@
-<div class="container pt-70">
+<div class="container pt-70" id = "restaurantes">
 	<h1 class = 'align-center'>Bares y Restaurantes</h1>
 
 	<h2>Elegido del Mes</h2>

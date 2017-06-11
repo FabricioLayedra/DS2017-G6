@@ -1,3 +1,6 @@
+
+
+
 .containerCoordinador {
 	display: inline-flex;
 }
@@ -8,16 +11,32 @@
 	display: inline-flex;
 }
 
+.containerCoordinador * {
+	padding-left: 5px;
+}
+
+#Profesores div.row * {
+	padding-left: 5px;
+}
+
+#Ayudantes div.row * {
+	padding-left: 5px;
+}
+
 .containerCoordinador img {
 	width: 256px;
 	height: 256px;
+	padding: 5px;
 }
 
 #Profesores div.row img {
 	width: 256px;
 	height: 256px;
+	padding: 5px;
 }
 #Ayudantes div.row img {
 	width: 256px;
 	height: 256px;
+	padding: 5px;
 }
+
