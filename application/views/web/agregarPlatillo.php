@@ -15,19 +15,28 @@
 						<label for="dish-title">Nombre</label>
 						<input class="form-control validarTitulox" type="text" placeholder="Nombre del platillo" id="project-title">
 					</div>
-          <div class="form-group">
-						<label for="project-description">Categoria</label>
-						<textarea class="form-control" id="dish-description" rows="2"></textarea>
-					</div>
 
 					<div class="form-group">
 						<label for="dish-description">Descripción</label>
 						<textarea class="form-control validarDescx" id="dish-description" rows="2" placeholder="Describe brevemente de qué consiste el platillo"></textarea>
 					</div>
 
+          <div class="form-group">
+						<label for="dish-cat">Categoria</label>
+            <select class="form-control" id="dish-cat" name="dish-cat">
+              <option>Postre</option>
+              <option>Comida de Mar</option>
+              <option>Piqueo</option>
+              <option>Plato Tipico</option>
+              <option>Plato Internacional</option>
+              <option>Almuerzo</option>
+            </select>
+					</div>
+
+
 					<div class="form-group">
 						<label for="dish-servido">Servido</label>
-            <select id="dish-servido" name="dish-servido">
+            <select id="dish-servido" class="form-control" name="dish-servido">
               <option>Frio</option>
               <option>Caliente</option>
             </select>
@@ -35,7 +44,7 @@
 
           <div class="form-group">
 						<label for="dish-res">Restaurante</label>
-            <select id="dish-res" name="dish-res">
+            <select id="dish-res" class="form-control" name="dish-res">
               <option>Coca Cola</option>
               <option>Malicia</option>
               <option>Piscina</option>

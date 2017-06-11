@@ -1,7 +1,6 @@
 <div class = 'container pt-70'>
   <br>
   <h1 class = 'align-center'>Inicia Sesión</h1>
-  <h2 class = 'align-center'>El Comelon</h2>
 
   <div class = 'row pt-10 pb-10'>
     <div class = 'align-center'>

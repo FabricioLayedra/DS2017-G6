@@ -41,8 +41,8 @@ pública o distribución sin autorización previa del titular de los derechos </
 		<div class="footer-icons">
 
 			<a href="https://www.facebook.com/espol"><i class="fa fa-facebook"></i></a>
-			<a href="https://twitter.com/espol"><i class="fa fa-twitter"></i></a>
-			<a href="http://www.espol.edu.ec/es/formulario-de-contactos"><i class="fa fa-envelope"></i></a>
+			<a href="https://twitter.com/bienestarespol"><i class="fa fa-twitter"></i></a>
+			<a href="https://bienestar.espol.edu.ec/"><i class="fa fa-envelope"></i></a>
 
 		</div>
 
@@ -56,8 +56,8 @@ pública o distribución sin autorización previa del titular de los derechos </
 	<script src="<?php echo base_url('assets/js/owl.carousel.js'); ?>"></script>
 	<script src="<?php echo base_url('assets/js/index.js'); ?>"></script>
 	<script src="<?php echo base_url('assets/js/plates.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/js/client.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/js/assistant.js'); ?>"></script>
+	<!--<script src="<?php echo base_url('assets/js/client.js'); ?>"></script>-->
+	<!--<script src="<?php echo base_url('assets/js/assistant.js'); ?>"></script>-->
 
 </footer>
 </html>

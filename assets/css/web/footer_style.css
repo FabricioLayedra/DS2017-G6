@@ -50,15 +50,15 @@ footer{
 
 .common-btn, .common-btn:focus{
     font-size: 20px;
-    background-color: #01A4A4;
-    border-color: #01A4A4;
+    background-color: #ff773d;
+    border-color: #ff773d;
     color: #FFFFFF;
     transition: all 0.25s;
 }
 .common-btn:hover, .common-btn:disabled{
     background-color: #FFFFFF;
-    border-color: #01A4A4;
-    color: #01A4A4;
+    border-color: #ff773d;
+    color: #ff773d;
     transition: all 0.25s;
 }
 #reportes .form-control{

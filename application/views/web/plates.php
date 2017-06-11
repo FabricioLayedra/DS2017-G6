@@ -13,12 +13,12 @@
           </h3>
 				</div>
 				<div class="panel-body">
-					<div class="row">
-						<img alt="User Pic" src="http://icon-icons.com/icons2/131/PNG/256/dish_food_20591.png" class="img-circle img-responsive align-center">
+				<div class = 'row'>
+					<div class="col-md-4 mt-20">
+						<img alt="User Pic" src="http://icon-icons.com/icons2/131/PNG/256/dish_food_20591.png" class="img-responsive align-center">
 					</div>
-					<div class = 'row'>
-						<div class=" col-md-offset-2 col-md-8">
-							<table class="table table-user-information mt-20" style='table-layout: fixed; word-wrap: break-word;'>
+						<div class=" col-md-8">
+							<table class="table table-user-information mt-20" style='word-wrap: break-word;'>
 								<tbody>
 									<tr>
 										<td class = 'pull-right bold' >Restaurante </td>
