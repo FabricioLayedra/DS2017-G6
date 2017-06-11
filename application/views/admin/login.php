@@ -33,15 +33,6 @@
 						));?>
 					</div>
 					<div class="clearfix"></div><br>
-					<!--
-					<div class="input-group">
-						<div class="checkbox">
-							<label>
-								<input name="remember" type="checkbox" value="Recuerdame" id="remember"> Recuérdame
-							</label>
-						</div>
-					</div>
-					-->
 					<div class="clearfix"></div><br>
 					<div class="input-group pull-right">
 						<button type="submit" class="btn btn-cdr btn-sgl">Iniciar sesión</button>
