@@ -17,7 +17,7 @@
 			    <div class="carousel-inner" role="listbox">
 
 			      <div class="item active">
-			        <img src = "<?php echo base_url('assets/img/slideshow/inicio.jpg'); ?>" alt="start" >
+			        <img src = "<?php echo base_url('assets/img/slideshow/inicio.png'); ?>" alt="start" >
 			        <div class="carousel-caption">
 			          <h2>Bienvenidos a El Comelón!</h2>
 						<p>
