@@ -18,7 +18,7 @@
 		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
-	    <script type="text/javascript" src="<?php echo base_url('assets/js/metisMenu.js'); ?>"></script>
+	    <script type="text/javascript" src="<?php echo base_url('assets/js/admin/metisMenu.js'); ?>"></script>
 	    <script type="text/javascript" src="<?php echo base_url('assets/js/admin/sb-admin-2.js'); ?>"></script>
         </body>
 </html>
