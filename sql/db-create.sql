@@ -1,22 +1,13 @@
--- --------------------------------------------------------
--- Host:                         127.0.0.1
--- Server version:               10.1.23-MariaDB - mariadb.org binary distribution
--- Server OS:                    Win64
--- HeidiSQL Version:             9.4.0.5125
--- --------------------------------------------------------
-
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET NAMES utf8 */;
 /*!50503 SET NAMES utf8mb4 */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
-
--- Dumping database structure for ds2017
+DROP DATABASE IF EXISTS `ds2017`;
 CREATE DATABASE IF NOT EXISTS `ds2017` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `ds2017`;
 
--- Dumping structure for table ds2017.category
 CREATE TABLE IF NOT EXISTS `category` (
   `id_category` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) DEFAULT NULL,
@@ -24,8 +15,6 @@ CREATE TABLE IF NOT EXISTS `category` (
   UNIQUE KEY `name` (`name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
--- Data exporting was unselected.
--- Dumping structure for table ds2017.ci_sessions
 CREATE TABLE IF NOT EXISTS `ci_sessions` (
   `id` varchar(128) NOT NULL,
   `ip_address` varchar(45) NOT NULL,
@@ -34,8 +23,6 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
   KEY `ci_sessions_timestamp` (`timestamp`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Data exporting was unselected.
--- Dumping structure for table ds2017.dish
 CREATE TABLE IF NOT EXISTS `dish` (
   `id_dish` int(11) NOT NULL AUTO_INCREMENT,
   `id_restaurant` int(11) NOT NULL DEFAULT '0',
@@ -56,27 +43,12 @@ CREATE TABLE IF NOT EXISTS `dish` (
   CONSTRAINT `FK_dish_type` FOREIGN KEY (`id_type`) REFERENCES `type` (`id_type`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Data exporting was unselected.
--- Dumping structure for table ds2017.rbac_group
 CREATE TABLE IF NOT EXISTS `rbac_group` (
   `id_group` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id_group`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='rbac control for admins';
 
--- Data exporting was unselected.
--- Dumping structure for table ds2017.rbac_user_group
-CREATE TABLE IF NOT EXISTS `rbac_user_group` (
-  `id_user` int(11) NOT NULL,
-  `id_group` int(11) NOT NULL,
-  PRIMARY KEY (`id_user`,`id_group`),
-  KEY `FK_rbac_admin_grupo_rbac_grupo` (`id_group`),
-  CONSTRAINT `FK_rbac_admin_grupo_admins` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`),
-  CONSTRAINT `FK_rbac_admin_grupo_rbac_grupo` FOREIGN KEY (`id_group`) REFERENCES `rbac_group` (`id_group`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='rbac control for admins';
-
--- Data exporting was unselected.
--- Dumping structure for table ds2017.restaurant
 CREATE TABLE IF NOT EXISTS `restaurant` (
   `id_restaurant` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
@@ -86,8 +58,6 @@ CREATE TABLE IF NOT EXISTS `restaurant` (
   PRIMARY KEY (`id_restaurant`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Data exporting was unselected.
--- Dumping structure for table ds2017.restaurant_assistants
 CREATE TABLE IF NOT EXISTS `restaurant_assistants` (
   `id_restaurant` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
@@ -97,16 +67,12 @@ CREATE TABLE IF NOT EXISTS `restaurant_assistants` (
   CONSTRAINT `FK_restaurant_assistants_user` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Data exporting was unselected.
--- Dumping structure for table ds2017.type
 CREATE TABLE IF NOT EXISTS `type` (
   `id_type` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id_type`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
--- Data exporting was unselected.
--- Dumping structure for table ds2017.user
 CREATE TABLE IF NOT EXISTS `user` (
   `id_user` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
@@ -114,12 +80,14 @@ CREATE TABLE IF NOT EXISTS `user` (
   `username` varchar(50) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(250) NOT NULL,
+  `id_group` int(11) NOT NULL,
   PRIMARY KEY (`id_user`),
   UNIQUE KEY `username` (`username`),
-  UNIQUE KEY `mail` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+  UNIQUE KEY `mail` (`email`),
+  KEY `FK_user_rbac_group` (`id_group`),
+  CONSTRAINT `FK_user_rbac_group` FOREIGN KEY (`id_group`) REFERENCES `rbac_group` (`id_group`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
--- Data exporting was unselected.
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

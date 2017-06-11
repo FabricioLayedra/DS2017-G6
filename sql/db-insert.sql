@@ -4,6 +4,10 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
+DROP DATABASE IF EXISTS `ds2017`;
+CREATE DATABASE IF NOT EXISTS `ds2017` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `ds2017`;
+
 DELETE FROM `category`;
 /*!40000 ALTER TABLE `category` DISABLE KEYS */;
 INSERT INTO `category` (`id_category`, `name`) VALUES
@@ -24,14 +28,6 @@ INSERT INTO `rbac_group` (`id_group`, `name`) VALUES
 	(3, 'Usuario');
 /*!40000 ALTER TABLE `rbac_group` ENABLE KEYS */;
 
-DELETE FROM `rbac_user_group`;
-/*!40000 ALTER TABLE `rbac_user_group` DISABLE KEYS */;
-INSERT INTO `rbac_user_group` (`id_user`, `id_group`) VALUES
-	(1, 1),
-	(2, 2),
-	(3, 1);
-/*!40000 ALTER TABLE `rbac_user_group` ENABLE KEYS */;
-
 DELETE FROM `restaurant`;
 /*!40000 ALTER TABLE `restaurant` DISABLE KEYS */;
 /*!40000 ALTER TABLE `restaurant` ENABLE KEYS */;
@@ -50,10 +46,11 @@ INSERT INTO `type` (`id_type`, `name`) VALUES
 
 DELETE FROM `user`;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` (`id_user`, `name`, `last_name`, `username`, `email`, `password`) VALUES
-	(1, 'Leonardo', 'Kuffo', 'lkuffo', 'lkuffo@espol.edu.ec', '21232f297a57a5a743894a0e4a801fc3'),
-	(2, 'Fabricio', 'Layedra', 'flayedra', 'flayedra@espol.edu.ec', '21232f297a57a5a743894a0e4a801fc3'),
-	(3, 'Madelyne', 'Velasco', 'mvelasco', 'mvelasco@espol.edu.ec', '21232f297a57a5a743894a0e4a801fc3');
+INSERT INTO `user` (`id_user`, `name`, `last_name`, `username`, `email`, `password`, `id_group`) VALUES
+	(1, 'Leonardo', 'Kuffo', 'lkuffo', 'lkuffo@espol.edu.ec', '21232f297a57a5a743894a0e4a801fc3', 1),
+	(2, 'Fabricio', 'Layedra', 'flayedra', 'flayedra@espol.edu.ec', '21232f297a57a5a743894a0e4a801fc3', 2),
+	(3, 'Madelyne', 'Velasco', 'mvelasco', 'mvelasco@espol.edu.ec', '21232f297a57a5a743894a0e4a801fc3', 1),
+	(4, 'Jhonny', 'Pincay', 'jvpincay', 'jvpincay@espol.edu.ec', 'a494bfd29b0333678e84861e0bd71c23', 3);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
