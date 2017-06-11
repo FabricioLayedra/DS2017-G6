@@ -9,12 +9,15 @@
 }
 
 .containerCoordinador img {
-	width: 20%;
+	width: 256px;
+	height: 256px;
 }
 
 #Profesores div.row img {
-	width: 20%;
+	width: 256px;
+	height: 256px;
 }
 #Ayudantes div.row img {
-	width: 20%;
+	width: 256px;
+	height: 256px;
 }
