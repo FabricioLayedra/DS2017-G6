@@ -13,7 +13,7 @@
 	<div class = 'row pt-10'>
 		<div class = 'col-md-offset-3 col-md-6'>
 			<div class = 'align-center'>
-			<?php echo form_open('web/authenticate' , array('id' => 'frm-login')); ?>  
+			<?php echo form_open('web/authenticate' , array('id' => 'frm-login')); ?>
 				<fieldset>
 					<div class="input-group">
 						<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -32,7 +32,7 @@
 								'name' => 'ra_password',
 								'value' => '',
 								'required' => 'required',
-								'placeholder' => 'contraseña',
+								'placeholder' => 'Contraseña',
 								'class' => 'form-control input-sgl',
 								));?>
 							</div>
