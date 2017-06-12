@@ -181,8 +181,41 @@ class Dish extends CI_Model{
 						);
 				}
 
-				$dishes_obj_array[] = array(
-					);
+			}else{
+				return null;
+			}
+		}else{
+			return null;
+		}
+	}
+
+
+	public static function getDishByCategory($id_category){
+		if( !is_null($id_category)){
+			$instance_CI =& get_instance();
+
+			$dishes = null;
+
+			$instance_CI->db->select('dish.id_dish, dish.id_restaurant, dish.name, dish.descripcion, dish.ingredient, dish.temp, dish.img, dish.id_category, dish.id_type');
+			$instance_CI->db->from(dish);
+			$instance_CI->db->where('dish.id_category', $id_category);
+			$dishes = instance_CI->db->get()->$result_array();
+
+			if (!is_null($dishes)){
+				$dishes_obj_array = array();
+				foreach ($dishes as $dish) {
+					$dishes_obj_array[] = array(
+						'id_dish'=> $dish['id_dish'],
+						'id_restaurant'=> $dish['id_restaurant'],
+						'name'=> $dish['name'],
+						'descripcion'=> $dish['descripcion'],
+						'ingredient'=> $dish['ingredient'],
+						'temp'=> $dish['temp'],
+						'img'=> $dish['img'],
+						'id_category'=> $dish['id_category'],
+						'id_type'=> $dish['id_type']
+						);
+				}
 			}else{
 				return null;
 			}
