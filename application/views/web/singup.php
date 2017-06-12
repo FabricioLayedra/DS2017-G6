@@ -1,19 +1,14 @@
 <div class = 'container pt-70'>
 	<br>
-	<h1 class = 'align-center'>Crear Cuenta</h1>
+	<h1 class = 'align-center'>Crea tu cuenta en El Comelón</h1>
 
 	<div class = 'row pt-10 pb-10'>
-		<div class = 'align-center'>
-			<br>
-			<img src = 'http://icons.iconarchive.com/icons/graphicloads/food-drink/icons-390.jpg' class = 'align-center img-responsive', style='width: 25%; height: 25%;'>
-			<br>
-		</div>
 	</div>
 
 	<div class = 'row pt-10'>
 		<div class = 'col-md-offset-3 col-md-6'>
 			<div class = 'align-center'>
-			<?php echo form_open('web/authenticate' , array('id' => 'frm-login')); ?>
+			<?php echo form_open('web/newUser' , array('id' => 'frm-login')); ?>
 				<fieldset>
 
 					<div class="input-group">
@@ -24,6 +19,7 @@
 							'required' => 'required',
 							'placeholder' => 'Nombre',
 							'class' => 'form-control input-sgl',
+							'minlength' =>'4'
 							));?>
 						</div>
 
@@ -37,6 +33,7 @@
 								'required' => 'required',
 								'placeholder' => 'Apellido',
 								'class' => 'form-control input-sgl',
+								'minlength' =>'4'
 								));?>
 							</div>
 
@@ -49,7 +46,9 @@
 								'value' => '',
 								'required' => 'required',
 								'placeholder' => 'Correo',
+								'type' =>'email',
 								'class' => 'form-control input-sgl',
+								'minlength' =>'8'
 								));?>
 							</div>
 
@@ -63,6 +62,7 @@
 							'required' => 'required',
 							'placeholder' => 'Usuario',
 							'class' => 'form-control input-sgl',
+							'minlength' =>'4'
 							));?>
 						</div>
 
@@ -76,6 +76,7 @@
 								'required' => 'required',
 								'placeholder' => 'Contraseña',
 								'class' => 'form-control input-sgl',
+								'minlength' =>'4'
 								));?>
 						</div>
 
@@ -89,6 +90,7 @@
 								'required' => 'required',
 								'placeholder' => 'Validar Contraseña',
 								'class' => 'form-control input-sgl',
+								'minlength' =>'4'
 								));?>
 						</div>
 

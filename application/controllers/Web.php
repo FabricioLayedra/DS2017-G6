@@ -44,7 +44,7 @@ class Web extends CI_Controller{
 		$user = $this->session->userdata('Group');
 		if ($user){
 			if ($user == 3) {
-            redirect("web/client");
+            redirect("web/user");
 	        }else{
 	        	if ($user == 2){
 	        		redirect("web/assistant");
@@ -240,9 +240,9 @@ class Web extends CI_Controller{
 	    }
 	  }
 
-	public function singup(){
+	public function signup(){
 
-			$dataHeader['PageTitle'] = "";
+			$dataHeader['PageTitle'] = "Crea tu cuenta";
 
 	        $data['header'] = $this->load->view('web/header', $dataHeader);
 	        $data['menu'] = $this->load->view('web/menu', array());
@@ -298,6 +298,27 @@ class Web extends CI_Controller{
 
 		
         redirect("web/dish/".$restaurant.'/'.$id_dish);
+	}
+
+	public function newUser(){
+		$name = $this->input->post("ra_name");
+		$last_name = $this->input->post("ra_lastname");
+		$username = $this->input->post("ra_username");
+		$email = $this->input->post("ra_mail");
+		$password = $this->input->post("ra_password");
+
+		$data = array(
+			'name' => $name,
+			'last_name' => $last_name,
+			'username' => $username,
+			'email' => $email,
+			'password' => md5($password),
+			'id_group' => 3);
+
+		$this->db->insert('user', $data);
+		$id_user = $this->db->insert_id();
+		redirect("web/login");
+
 	}
 
 	 /* Helpers*/

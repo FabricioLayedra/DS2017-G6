@@ -28,7 +28,7 @@
 						<li><a href="<?php echo site_url("web/logout"); ?>">Cerrar Sesión</a></li>
 					<?php }else{?>
 						<li><a href="<?php echo site_url("web/login"); ?>">Inicia Sesión</a></li>
-						<li><a href="<?php echo site_url("web/singup"); ?>">Crear Cuenta</a></li>
+						<li><a href="<?php echo site_url("web/signup"); ?>">Crear Cuenta</a></li>
 					<?php }
 				?>
 			</ul>
