@@ -10,7 +10,7 @@
 	<div class="row">
 		<div class="col-lg-offset-1 col-lg-10">
 
-			<a type="button" class="btn btn-default" href="<?php echo site_url("web/agregarPlatillo"); ?>">
+			<a type="button" class="btn btn-default" href="<?php echo site_url("web/addPlate"); ?>">
 				<span> Agregar Platillo </span>
 			</a>
 			<hr>

@@ -207,27 +207,37 @@ class Web extends CI_Controller{
 
 
 	public function restaurantes(){
-
-			$dataHeader['PageTitle'] = "";
+		
+			$dataHeader['PageTitle'] = "";	
 
 	        $data['header'] = $this->load->view('web/header', $dataHeader);
 	        $data['menu'] = $this->load->view('web/menu', array());
 
 	        $data['contenido'] = $this->load->view('web/restaurantes', array());
 	        $data['footer'] = $this->load->view('web/footer', array());
-
+	    
 	  }
 
 	public function addPlate(){
+		if ($this->AssistantSecurityCheck()){
+			$category_list = Category::getCategories();
+			$type_list = Type::getTypes();
+			$asociados = Restaurant::getRestaurantByAssistant($this->session->userdata('ID'));
 
 			$dataHeader['PageTitle'] = "Agregar ";
+
+			$data_content['categorias'] = $category_list;
+			$data_content['tipos'] = $type_list;
+			$data_content['asociados'] = $asociados;
 
 	        $data['header'] = $this->load->view('web/header', $dataHeader);
 	        $data['menu'] = $this->load->view('web/menu', array());
 
-	        $data['contenido'] = $this->load->view('web/agregarPlatillo', array());
+	        $data['contenido'] = $this->load->view('web/agregarPlatillo', $data_content);
 	        $data['footer'] = $this->load->view('web/footer', array());
-
+	    }else{
+	    	redirect('web/index');
+	    }
 	  }
 
 	public function singup(){
@@ -242,6 +252,53 @@ class Web extends CI_Controller{
 
 	  }
 
+	/* FORM UPLOADS*/
+
+	public function newdish(){
+		//Start upload config
+		$config['upload_path']          = 'assets/uploads/dishes/';
+        $config['allowed_types']        = 'gif|jpeg|jpg|png|tiff';
+        $config['max_size']             = 2048;
+        $config['max_width']            = 1024;
+        $config['max_height']           = 768;
+        $config['encrypt_name']			= TRUE;
+        $config['remove_spaces']		= TRUE;
+        $config['detect_mime']			= TRUE;
+        //End config upload
+
+        $foto = "";
+
+        $name = $this->input->post("dish-name");
+		$restaurant = $this->input->post("dish-res");
+		$descripcion = $this->input->post("dish-description");
+		$ingredient = $this->input->post("dish-ingredient");
+		$temp = $this->input->post("dish-servido");
+		$id_category = $this->input->post("dish-cat");
+		$id_type = $this->input->post("dish-type");
+
+        $this->load->library('upload', $config);
+
+		if($this->upload->do_upload("dish-imagen")) {
+            $img_data = $this->upload->data();
+            $foto = $img_data["file_name"];
+        }
+        $data = array(
+        	'id_restaurant'=>$restaurant,
+			'name'=>$name,
+			'descripcion'=>$descripcion,
+			'ingredient'=>$ingredient,
+			'temp'=>$temp,
+			'img'=>$foto,
+			'id_category'=>$id_category,
+			'id_type'=>$id_type
+        	);
+
+		$this->db->insert('dish', $data);
+        $id_dish = $this->db->insert_id();
+
+		
+        redirect("web/dish/".$restaurant.'/'.$id_dish);
+	}
 
 	 /* Helpers*/
 	function UserSecurityCheck(){

@@ -65,5 +65,28 @@ class Type extends CI_Model{
 			return null;
 		}
 	}
+
+	public static function getTypes(){
+		$instance_CI =& get_instance();
+
+		$type = null;
+
+		$instance_CI->db->select('type.id_type, type.name');
+		$instance_CI->db->from('type');
+		$type = $instance_CI->db->get()->result_array();
+
+		if(!is_null($type)){
+			$type_obj_array = array();
+			foreach ($type as $cat) {
+				$type_obj_array[] = array(
+					'id_type'=>$cat['id_type'],
+					'name'=>$cat['name']);
+			}
+
+			return $type_obj_array;
+		}else{
+			return null;
+		}
+	}
 }
 ?>

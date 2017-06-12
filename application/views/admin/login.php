@@ -1,10 +1,7 @@
 <div class="container">
 	<div class = 'row pt-150'>
-		<div class="col-md-4 col-md-offset-4">
-<!-- 
-<img class="img-responsive" src="<?php echo base_url('assets/img/dh.png'); ?>">
--->
-</div>
+
+	</div>
 </div>
 
 <div class="row pt-80">
@@ -20,10 +17,11 @@
 					'placeholder' => 'Usuario',
 					'class' => 'form-control input-sgl',
 					));?>
-				</div>
-				<div class="clearfix"></div><br>
-				<div class="input-group">
-					<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+			</div>
+			<div class="clearfix"></div>
+			<br>
+			<div class="input-group">
+				<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
 					<?php echo form_password(array(
 						'name' => 'ra_password',
 						'value' => '',
@@ -31,15 +29,15 @@
 						'placeholder' => 'contraseña',
 						'class' => 'form-control input-sgl',
 						));?>
-					</div>
-					<div class="clearfix"></div><br>
-					<div class="clearfix"></div><br>
-					<div class="input-group pull-right">
-						<button type="submit" class="btn btn-cdr btn-sgl">Iniciar sesión</button>
-					</div>
-				</fieldset>
-				<?php echo form_close(); ?>
 			</div>
+				<div class="clearfix"></div><br>
+				<div class="clearfix"></div><br>
+				<div class="input-group pull-right">
+					<button type="submit" class="btn btn-cdr btn-sgl">Iniciar sesión</button>
+				</div>
+			</fieldset>
+			<?php echo form_close(); ?>
 		</div>
-
 	</div>
+
+</div>
