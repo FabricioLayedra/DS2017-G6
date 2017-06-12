@@ -39,9 +39,5 @@
     <script src="<?php echo base_url('assets/js/web/index.js'); ?>"></script>
   	<script src="<?php echo base_url('assets/js/web/owl.carousel.js'); ?>"></script>
 
-	<script src="<?php echo base_url('assets/js/web/plates.js'); ?>"></script>
-	<!--<script src="<?php echo base_url('assets/js/client.js'); ?>"></script>-->
-	<!--<script src="<?php echo base_url('assets/js/assistant.js'); ?>"></script>-->
-
 </footer>
 </html>
