@@ -102,7 +102,33 @@ class Web extends CI_Controller{
 	    }else{
 	    	redirect('web/index');
 	    }
-	  }
+	}
+
+	public function assistant(){
+		if ($this->AssistantSecurityCheck()){
+			$dataHeader['PageTitle'] = "Asistente de Restaurante";
+
+			$category_list = Category::getCategories();
+
+			foreach ($category_list as $index => $rest_list) {
+				$RestaurantCat[$rest_list['id_category']] = Dish::getDishByCategory($rest_list['id_category']);
+			}
+
+			$asociados = Restaurant::getRestaurantByAssistant($this->session->userdata('ID'));
+
+			$dataContent['categorias'] = $category_list;
+			$dataContent['restaurantes'] =$RestaurantCat;
+			$dataContent['asociados'] = $asociados;
+
+	        $data['header'] = $this->load->view('web/header', $dataHeader);
+	        $data['menu'] = $this->load->view('web/menu', array());
+
+	        $data['contenido'] = $this->load->view('web/assistant', $dataContent);
+	        $data['footer'] = $this->load->view('web/footer', array());
+	    }else{
+	    	redirect('web/index');
+	    }
+	}
 
 	public function dish(){
 
@@ -179,20 +205,6 @@ class Web extends CI_Controller{
 	    }
 	}
 
-
-	public function assistant(){
-		if ($this->AssistantSecurityCheck()){
-			$dataHeader['PageTitle'] = "Asistente de Restaurante";
-
-	        $data['header'] = $this->load->view('web/header', $dataHeader);
-	        $data['menu'] = $this->load->view('web/menu', array());
-
-	        $data['contenido'] = $this->load->view('web/assistant', array());
-	        $data['footer'] = $this->load->view('web/footer', array());
-	    }else{
-	    	redirect('web/index');
-	    }
-	  }
 
 	public function restaurantes(){
 
