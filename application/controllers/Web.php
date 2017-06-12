@@ -82,14 +82,22 @@ class Web extends CI_Controller{
 
     }
 
-	public function client(){
+	public function user(){
 		if ($this->UserSecurityCheck()){
-			$dataHeader['PageTitle'] = "";
+			$dataHeader['PageTitle'] = "Restaurantes";
 
+			$category_list = Category::getCategories();
+
+			foreach ($category_list as $index => $rest_list) {
+				$RestaurantCat[$rest_list['id_category']] = Dish::getDishByCategory($rest_list['id_category']);
+			}
+
+			$dataContent['categorias'] = $category_list;
+			$dataContent['restaurantes'] =$RestaurantCat;
 	        $data['header'] = $this->load->view('web/header', $dataHeader);
 	        $data['menu'] = $this->load->view('web/menu', array());
 
-	        $data['contenido'] = $this->load->view('web/client', array());
+	        $data['contenido'] = $this->load->view('web/client', $dataContent);
 	        $data['footer'] = $this->load->view('web/footer', array());
 	    }else{
 	    	redirect('web/index');

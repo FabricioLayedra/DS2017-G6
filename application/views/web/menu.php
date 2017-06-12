@@ -21,7 +21,7 @@
 					if($this->session->Group){
 						$user = $this->session->userdata('Group');
 						if($user == 3){ ?>
-							<li><a href = "<?php echo site_url("web/client"); ?>"><?php echo $this->session->Name; ?></a></li>
+							<li><a href = "<?php echo site_url("web/user"); ?>"><?php echo $this->session->Name; ?></a></li>
 						<?php }else{ if ($user == 2){ ?>
 							<li><a href = "<?php echo site_url("web/assistant"); ?>"><?php echo $this->session->Name; ?></a></li>
 						<?php }} ?>

@@ -216,6 +216,8 @@ class Dish extends CI_Model{
 						);
 				}
 
+				return $dishes_obj_array;
+
 			}else{
 				return null;
 			}
@@ -232,7 +234,7 @@ class Dish extends CI_Model{
 			$dishes = null;
 
 			$instance_CI->db->select('dish.id_dish, dish.id_restaurant, dish.name, dish.descripcion, dish.ingredient, dish.temp, dish.img, dish.id_category, dish.id_type');
-			$instance_CI->db->from(dish);
+			$instance_CI->db->from('dish');
 			$instance_CI->db->where('dish.id_category', $id_category);
 			$dishes = $instance_CI->db->get()->result_array();
 
@@ -251,6 +253,8 @@ class Dish extends CI_Model{
 						'id_type'=> $dish['id_type']
 						);
 				}
+
+				return $dishes_obj_array;
 			}else{
 				return null;
 			}

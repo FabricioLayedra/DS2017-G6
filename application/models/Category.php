@@ -64,5 +64,28 @@ class Category extends CI_Model{
 			return null;
 		}
 	}
+
+	public static function getCategories(){
+		$instance_CI =& get_instance();
+
+		$category = null;
+
+		$instance_CI->db->select('category.id_category, category.name');
+		$instance_CI->db->from('category');
+		$category = $instance_CI->db->get()->result_array();
+
+		if(!is_null($category)){
+			$category_obj_array = array();
+			foreach ($category as $cat) {
+				$category_obj_array[] = array(
+					'id_category'=>$cat['id_category'],
+					'name'=>$cat['name']);
+			}
+
+			return $category_obj_array;
+		}else{
+			return null;
+		}
+	}
 }
 ?>

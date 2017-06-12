@@ -10,51 +10,52 @@
 	<div class="row">
 		<div class="col-lg-offset-1 col-lg-10">
 
-      <p>Busca un plato:
-        <input type="text" id="dishQuery" name="dishQuery">
-        <button type="button" id="dishSearch" class="btn btn-default">
-          <span class="glyphicon glyphicon-search"></span> Buscar
-        </button>
-      </p>
+			<p>Busca un plato:
+				<input type="text" id="dishQuery" name="dishQuery">
+				<button type="button" id="dishSearch" class="btn btn-default">
+					<span class="glyphicon glyphicon-search"></span> Buscar
+				</button>
+			</p>
 
-      <br>
+			<br>
 
-			<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+			<?php foreach ($categorias as $index => $cat) {?>
+			<div class="panel-group" id="<?php echo 'accordion'.$cat['id_category']; ?>" role="tablist" aria-multiselectable="true">
 				<div class="panel panel-default">
-					<div class="panel-heading" role="tab" id="headingOne">
+					<div class="panel-heading" role="tab" id="<?php echo 'heading'.$cat['id_category']; ?>">
 						<h4 class="panel-title">
-							<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseAlmuerzo" aria-expanded="true" aria-controls="collapseAlmuerzo">
-								Almuerzos: <h6 id=almuerzoN>0 Platillos </h6>
+							<a role="button" data-toggle="collapse" data-parent="<?php echo '#accordion'.$cat['id_category']; ?>" href="<?php echo '#collapse'.$cat['id_category']; ?>" aria-expanded="false" aria-controls="<?php echo 'collapse'.$cat['id_category']; ?>">
+								<?php echo $cat['name']; ?>
 							</a>
 						</h4>
 					</div>
-					<div id="collapseAlmuerzo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+					<div id="<?php echo 'collapse'.$cat['id_category']; ?>" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="<?php echo 'heading'.$cat['id_category']; ?>">
 						<div class="panel-body">
 							<div class="container-fluid">
 								<div class="row">
-									<div class="col-md-6">
-										<h4> <strong> Nombre </strong> </h4>
-									</div>
-									<div class="col-md-6">
-                    <h4> <strong> Restaurante </strong> </h4>
-									</div>
-                </div>
-								<div class="row">
 									<div class="col-md-4">
-										<h5><a href="plates/1"> Arroz con Menestra </a></h5>
+										<h4> Nombre </h4>
 									</div>
-									<div class="col-md-6">
-										<h5> Coca Cola</h5>
+									<div class="col-md-8">
+										<h4>  Restaurante  </h4>
 									</div>
 								</div>
-
-								<hr>
+								<?php foreach($restaurantes[$cat['id_category']] as $x => $rest) {?>
+								<div class="row">
+									<div class="col-md-4">
+										<h5><a href="<?php echo site_url('web/dish/').$rest['id_dish'] ?>"> <?php echo $rest['name']?></a></h5>
+									</div>
+									<div class="col-md-8">
+										<h5> <?php echo Restaurant::getNameRestaurantNameById($rest['id_restaurant']);?></h5>
+									</div>
+								</div>
+								<?php } ?>
 							</div>
 						</div>
 					</div>
 				</div>
-
-				</div>
 			</div>
+			<?php }?>
 		</div>
-	</section>
+	</div>
+</section>

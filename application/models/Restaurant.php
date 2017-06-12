@@ -98,5 +98,27 @@ class Restaurant extends CI_Model{
 			return null;
 		}
 	}
+
+	public static function getNameRestaurantNameById($id_restaurant){
+		if (!is_null($id_restaurant)){
+			$instance_CI =& get_instance();
+
+			$restaurant = null;
+
+			$instance_CI->db->select('restaurant.name');
+			$instance_CI->db->from('restaurant');
+			$instance_CI->db->where('restaurant.id_restaurant', $id_restaurant);
+			$restaurant = $instance_CI->db->get()->row();
+
+			if (!is_null($restaurant)){
+				$res = $restaurant->name;
+				return $res;
+			}else{
+				return null;
+			}
+		}else{
+			return null;
+		}
+	}
 }
 ?>
