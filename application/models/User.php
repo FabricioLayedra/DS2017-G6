@@ -61,10 +61,22 @@ class User extends CI_Model{
 		return $res;
 	}
 
+	// Returns ID of user
+	function getID($username){
+		$this->db->select('id_user');
+		$this->db->from('user');
+		$this->db->where('username', $username);
+
+		$query = $this->db->get()->result_array();
+		$res = $query[0]['id_user'];
+
+		return $res;
+	}
+
 
 	function login($username, $password){
 		if ($this->verifyUser($username, $password)){
-			$admin_data = array("Group" => $this->getGroup($username), "Mail" => $this->getMail($username), "Name" => $this->getName($username));
+			$admin_data = array("Group" => $this->getGroup($username), "Mail" => $this->getMail($username), "Name" => $this->getName($username), "ID" => $this->getID($username));
 			$this->session->set_userdata($admin_data);
 			return true;
 		} else {

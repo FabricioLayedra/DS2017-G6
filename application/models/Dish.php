@@ -21,6 +21,7 @@ class Dish extends CI_Model{
         // Required models
         $this->load->model('Category');
         $this->load->model('Type');
+        $this->load->model('Restaurant');
 	}
 
 
@@ -104,7 +105,7 @@ class Dish extends CI_Model{
 		return $this;
 	}
 
-	public function setDish($id, $restaurant, $name, $descripcion, $ingredient, $temp, $img, Category $category, Type $type){
+	public function setDish($id, Restaurant $restaurant, $name, $descripcion, $ingredient, $temp, $img, Category $category, Type $type){
 		$this->setId($id);
 		$this->setRestaurant($restaurant);
 		$this->setName($name);
@@ -135,7 +136,7 @@ class Dish extends CI_Model{
 
 				$dish_obj->setDish(
 					 $dish->id_dish,
-					 $dish->id_restaurant,
+					 Restaurant::getRestaurantById($dish->id_restaurant),
 					 $dish->name,
 					 $dish->descripcion,
 					 $dish->ingredient, 
@@ -170,7 +171,7 @@ class Dish extends CI_Model{
 
 				$dish_obj->setDish(
 					 $dish->id_dish,
-					 $dish->id_restaurant,
+					 Restaurant::getRestaurantById($dish->id_restaurant),
 					 $dish->name,
 					 $dish->descripcion,
 					 $dish->ingredient, 
@@ -197,7 +198,7 @@ class Dish extends CI_Model{
 			$instance_CI->db->select('dish.id_dish, dish.id_restaurant, dish.name, dish.descripcion, dish.ingredient, dish.temp, dish.img, dish.id_category, dish.id_type');
 			$instance_CI->db->from(dish);
 			$instance_CI->db->where('dish.id_restaurant', $id_restaurant);
-			$dishes = $instance_CI->db->get()->$result_array();
+			$dishes = $instance_CI->db->get()->result_array();
 
 			if (!is_null($dishes)){
 				$dishes_obj_array = array();
@@ -233,7 +234,7 @@ class Dish extends CI_Model{
 			$instance_CI->db->select('dish.id_dish, dish.id_restaurant, dish.name, dish.descripcion, dish.ingredient, dish.temp, dish.img, dish.id_category, dish.id_type');
 			$instance_CI->db->from(dish);
 			$instance_CI->db->where('dish.id_category', $id_category);
-			$dishes = $instance_CI->db->get()->$result_array();
+			$dishes = $instance_CI->db->get()->result_array();
 
 			if (!is_null($dishes)){
 				$dishes_obj_array = array();

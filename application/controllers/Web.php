@@ -96,7 +96,7 @@ class Web extends CI_Controller{
 	    }
 	  }
 
-	public function plates(){
+	public function dish(){
 
 		if ($this->UserSecurityCheck()){
 			$dataHeader['PageTitle'] = "Platillo";
@@ -123,30 +123,58 @@ class Web extends CI_Controller{
 				$id_restaurant = $this->uri->segment(3);
 				$id_platillo = $this->uri->segment(4);
 
-				$platillo_obj = Dish::getDishAssistant($id_restaurant, $id_restaurant);
+				if ($this->CheckRestaurantAssistant($id_restaurant)){
+					$platillo_obj = Dish::getDishAssistant($id_restaurant, $id_platillo);
 
-				if (!is_null($platillo_obj)){
-					$data_content['platillo'] = $platillo_obj;
+					if (!is_null($platillo_obj)){
+						$data_content['platillo'] = $platillo_obj;
 
-					$data['header'] = $this->load->view('web/header', $dataHeader);
-			        $data['menu'] = $this->load->view('web/menu', array());
+						$data['header'] = $this->load->view('web/header', $dataHeader);
+				        $data['menu'] = $this->load->view('web/menu', array());
 
-			        $data['contenido'] = $this->load->view('web/plates', $data_content);
-			        $data['footer'] = $this->load->view('web/footer', array());
+				        $data['contenido'] = $this->load->view('web/plates', $data_content);
+				        $data['footer'] = $this->load->view('web/footer', array());
+					}else{
+						redirect('web/index');
+					}
 				}else{
 					redirect('web/index');
 				}
-
 			}else{
 				redirect('web/index');
 			}
 	  	}
 	}
 
+	public function editDish(){
+		if ($this->AssistantSecurityCheck()){
+
+			$id_platillo = $this->uri->segment(3);
+
+			if($this->CheckDishAssistant($id_platillo)){
+
+				$platillo_obj = Dish::getDishById($id_platillo);
+				$data_content['platillo'] = $platillo_obj;
+
+				$dataHeader['PageTitle'] = "Editar";
+
+		        $data['header'] = $this->load->view('web/header', $dataHeader);
+		        $data['menu'] = $this->load->view('web/menu', array());
+
+		        $data['contenido'] = $this->load->view('web/agregarPlatillo', $data_content);
+		        $data['footer'] = $this->load->view('web/footer', array());
+			}else{
+				redirect('web/index');
+			}
+	    }else{
+	    	redirect('web/index');
+	    }
+	}
+
 
 	public function assistant(){
 		if ($this->AssistantSecurityCheck()){
-			$dataHeader['PageTitle'] = "";
+			$dataHeader['PageTitle'] = "Asistente de Restaurante";
 
 	        $data['header'] = $this->load->view('web/header', $dataHeader);
 	        $data['menu'] = $this->load->view('web/menu', array());
@@ -170,9 +198,9 @@ class Web extends CI_Controller{
 
 	  }
 
-	public function agregarPlatillo(){
+	public function addPlate(){
 
-			$dataHeader['PageTitle'] = "";
+			$dataHeader['PageTitle'] = "Agregar ";
 
 	        $data['header'] = $this->load->view('web/header', $dataHeader);
 	        $data['menu'] = $this->load->view('web/menu', array());
@@ -182,22 +210,21 @@ class Web extends CI_Controller{
 
 	  }
 
-		public function singup(){
+	public function singup(){
 
-				$dataHeader['PageTitle'] = "";
+			$dataHeader['PageTitle'] = "";
 
-		        $data['header'] = $this->load->view('web/header', $dataHeader);
-		        $data['menu'] = $this->load->view('web/menu', array());
+	        $data['header'] = $this->load->view('web/header', $dataHeader);
+	        $data['menu'] = $this->load->view('web/menu', array());
 
-		        $data['contenido'] = $this->load->view('web/singup', array());
-		        $data['footer'] = $this->load->view('web/footer', array());
+	        $data['contenido'] = $this->load->view('web/singup', array());
+	        $data['footer'] = $this->load->view('web/footer', array());
 
-		  }
+	  }
 
 
 	 /* Helpers*/
 	function UserSecurityCheck(){
-		$User = new User();
 		$user = $this->session->userdata('Group');
 		if ($user){
 			if($user == 3){
@@ -211,7 +238,6 @@ class Web extends CI_Controller{
 	}
 
 	function AssistantSecurityCheck(){
-		$User = new User();
 		$user = $this->session->userdata('Group');
 		if ($user){
 			if($user == 2){
@@ -225,7 +251,6 @@ class Web extends CI_Controller{
 	}
 
 	function AdminSecurityCheck(){
-		$User = new User();
 		$user = $this->session->userdata('Group');
 		if ($user){
 			if($user == 1){
@@ -233,14 +258,53 @@ class Web extends CI_Controller{
 			}else{
 				return false;
 			}
+		}else{
+			return false;
+		}
+	}
 
+	function CheckRestaurantAssistant($id_restaurant){
+		$user = $this->session->userdata('ID');
+		if ($user && !is_null($id_restaurant)){
+			$this->db->select('restaurant_assistants.id_restaurant');
+			$this->db->from('restaurant_assistants');
+			$this->db->where('restaurant_assistants.id_user', $user);
+
+			$restaurants = $this->db->get()->result_array();
+
+			foreach ($restaurants as $res){
+				if($res['id_restaurant'] == $id_restaurant){
+					return true;
+				}
+			}
+			return false;
+		}else{
+			return false;
+		}
+	}
+
+	function CheckDishAssistant($id_dish){
+		$user = $this->session->userdata('ID');
+		if ($user && !is_null($id_dish)){
+			$this->db->select('restaurant_assistants.id_user');
+			$this->db->from('restaurant_assistants');
+			$this->db->join('dish', 'dish.id_restaurant = restaurant_assistants.id_restaurant');
+			$this->db->where('dish.id_dish', $id_dish);
+
+			$restaurants = $this->db->get()->result_array();
+
+			foreach ($restaurants as $res){
+				if($res['id_user'] == $user){
+					return true;
+				}
+			}
+			return false;
 		}else{
 			return false;
 		}
 	}
 
 	function SecurityCheck(){
-		$User = new User();
 		$user = $this->session->userdata('Mail');
 		if ($user){
 			return True;

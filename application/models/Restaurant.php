@@ -76,7 +76,7 @@ class Restaurant extends CI_Model{
 			$restaurant = null;
 
 			$instance_CI->db->select('restaurant.id_restaurant, restaurant.name, restaurant.address, restaurant.phone, restaurant.owner');
-			$instance_CI->db->from(restaurant);
+			$instance_CI->db->from('restaurant');
 			$instance_CI->db->where('restaurant.id_restaurant', $id_restaurant);
 			$restaurant = $instance_CI->db->get()->row();
 
@@ -89,6 +89,8 @@ class Restaurant extends CI_Model{
 					$restaurant->address,
 					$restaurant->phone,
 					$restaurant->owner);
+				
+				return $restaurant_obj;
 			}else{
 				return null;
 			}
