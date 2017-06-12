@@ -143,7 +143,19 @@ class Web extends CI_Controller{
 
 	  }
 
-		
+		public function singup(){
+
+				$dataHeader['PageTitle'] = "";
+
+		        $data['header'] = $this->load->view('web/header', $dataHeader);
+		        $data['menu'] = $this->load->view('web/menu', array());
+
+		        $data['contenido'] = $this->load->view('web/singup', array());
+		        $data['footer'] = $this->load->view('web/footer', array());
+
+		  }
+
+
 	 /* Helpers*/
 	function UserSecurityCheck(){
 		$User = new User();
@@ -182,7 +194,7 @@ class Web extends CI_Controller{
 			}else{
 				return false;
 			}
-			
+
 		}else{
 			return false;
 		}

@@ -17,7 +17,7 @@
 				<li><a href="<?php echo site_url("web/restaurantes"); ?>">Restaurantes</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<?php 
+				<?php
 					if($this->session->Group){
 						$user = $this->session->userdata('Group');
 						if($user == 3){ ?>
@@ -28,6 +28,7 @@
 						<li><a href="<?php echo site_url("web/logout"); ?>">Cerrar Sesión</a></li>
 					<?php }else{?>
 						<li><a href="<?php echo site_url("web/login"); ?>">Inicia Sesión</a></li>
+						<li><a href="<?php echo site_url("web/singup"); ?>">Crear Cuenta</a></li>
 					<?php }
 				?>
 			</ul>
