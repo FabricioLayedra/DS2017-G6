@@ -121,8 +121,218 @@ class Admin extends CI_Controller{
 		}
 	}
 
+	public function restaurantes(){
+		$debug = false;
+
+		if ($this->AdminSecurityCheck()){
+			$titulo = "Restaurantes";
+
+            $crud = new grocery_CRUD();
+			$crud->set_table("restaurant");
+			$crud->set_subject( $titulo );
+
+			$crud->display_as( 'name' , 'Nombre' );
+			$crud->display_as( 'address' , 'Dirección' );
+			$crud->display_as( 'phone' , 'Teléfono' );
+			$crud->display_as( 'owner' , 'Propietario' );
+
+			$crud->field_type('address', 'string');
+
+			$crud->columns( 'name', 'address', 'phone', 'owner');
+			$crud->fields('name', 'address', 'phone', 'owner');
+			$crud->required_fields('name', 'address', 'phone', 'owner');
+
+			$crud->unset_print();
+			$crud->unset_read();
+
+			$output = $crud->render();
+
+			$dataHeader['PageTitle'] = $titulo;
+			$dataHeader['css_files'] = $output->css_files;
+			$dataFooter['js_files'] = $output->js_files;
+			$dataContent['debug'] = $debug;
+
+            $data['header'] = $this->load->view('admin/header', $dataHeader);
+			$data['menu'] = $this->load->view('admin/menu', $dataHeader );
+
+			$data['content'] = $this->load->view('admin/blank', $output);
+			$data['footer'] = $this->load->view('admin/footer-gc', $dataFooter);
+		}else{
+			redirect("admin/login");
+		}
+	}
+
+	public function asistentes(){
+		$debug = false;
+
+		if ($this->AdminSecurityCheck()){
+			$titulo = "Asistentes de restaurantes";
+
+            $crud = new grocery_CRUD();
+			$crud->set_table("restaurant_assistants");
+			$crud->set_subject( $titulo );
+
+			$crud->display_as( 'id_restaurant' , 'Nombre' );
+			$crud->display_as( 'id_user' , 'Asistente asignado' );
+
+			$crud->set_primary_key('id_user','user_assistants');
+			$crud->set_relation('id_restaurant', 'restaurant', 'name');
+			$crud->set_relation('id_user', 'user_assistants', 'full_name');
+
+			$crud->columns( 'id_restaurant', 'id_user');
+			$crud->fields( 'id_restaurant', 'id_user');
+			$crud->required_fields( 'id_restaurant', 'id_user');
+
+			$crud->unset_print();
+			$crud->unset_read();
+
+			$output = $crud->render();
+
+			$dataHeader['PageTitle'] = $titulo;
+			$dataHeader['css_files'] = $output->css_files;
+			$dataFooter['js_files'] = $output->js_files;
+			$dataContent['debug'] = $debug;
+
+            $data['header'] = $this->load->view('admin/header', $dataHeader);
+			$data['menu'] = $this->load->view('admin/menu', $dataHeader );
+
+			$data['content'] = $this->load->view('admin/blank', $output);
+			$data['footer'] = $this->load->view('admin/footer-gc', $dataFooter);
+		}else{
+			redirect("admin/login");
+		}
+	}
+
+	public function platillos(){
+		$debug = false;
+
+		if ($this->AdminSecurityCheck()){
+			$titulo = "Platillos";
+
+            $crud = new grocery_CRUD();
+			$crud->set_table("dish");
+			$crud->set_subject( $titulo );
+
+			$crud->display_as( 'id_restaurant' , 'Restaurante' );
+			$crud->display_as( 'name' , 'Nombre' );
+			$crud->display_as( 'descripcion' , 'Descripción' );
+			$crud->display_as( 'ingredient' , 'Ingredientes' );
+			$crud->display_as( 'temp' , 'Temperatura' );
+			$crud->display_as( 'img' , 'Imagen' );
+			$crud->display_as( 'id_category' , 'Categoría' );
+			$crud->display_as( 'id_type' , 'Tipo' );
+
+			$crud->set_relation('id_restaurant', 'restaurant', 'name');
+			$crud->set_relation('id_category', 'category', 'name');
+			$crud->set_relation('id_type', 'type', 'name');
+
+			$crud->set_field_upload('img', 'assets/uploads/dishes');
+
+			$crud->field_type('temp', 'dropdown', array(
+				'2' => 'Caliente',
+				'1' => 'Templado',
+				'0' => 'Frío'
+			));
+
+			$crud->columns( 'id_restaurant', 'name', 'descripcion', 'ingredient' , 'temp', 'img', 'id_category', 'id_type');
+			$crud->fields( 'id_restaurant', 'name', 'descripcion', 'ingredient' ,'temp', 'img', 'id_category', 'id_type');
+			$crud->required_fields( 'id_restaurant', 'name', 'descripcion', 'ingredient' ,'temp', 'id_category', 'id_type');
+
+			$crud->unset_print();
+			$crud->unset_read();
+
+			$output = $crud->render();
+
+			$dataHeader['PageTitle'] = $titulo;
+			$dataHeader['css_files'] = $output->css_files;
+			$dataFooter['js_files'] = $output->js_files;
+			$dataContent['debug'] = $debug;
+
+            $data['header'] = $this->load->view('admin/header', $dataHeader);
+			$data['menu'] = $this->load->view('admin/menu', $dataHeader );
+
+			$data['content'] = $this->load->view('admin/blank', $output);
+			$data['footer'] = $this->load->view('admin/footer-gc', $dataFooter);
+
+		}else{
+			redirect("admin/login");
+		}
+	}
+
+	public function categorias(){
+		$debug = false;
+
+		if ($this->AdminSecurityCheck()){
+			$titulo = "Categorías de platillos";
+
+            $crud = new grocery_CRUD();
+			$crud->set_table("category");
+			$crud->set_subject( $titulo );
+
+			$crud->display_as( 'name' , 'Nombre de la categoría' );
+
+			$crud->columns( 'name');
+			$crud->fields( 'name');
+			$crud->required_fields( 'name');
+
+			$crud->unset_print();
+			$crud->unset_read();
+
+			$output = $crud->render();
+
+			$dataHeader['PageTitle'] = $titulo;
+			$dataHeader['css_files'] = $output->css_files;
+			$dataFooter['js_files'] = $output->js_files;
+			$dataContent['debug'] = $debug;
+
+            $data['header'] = $this->load->view('admin/header', $dataHeader);
+			$data['menu'] = $this->load->view('admin/menu', $dataHeader );
+
+			$data['content'] = $this->load->view('admin/blank', $output);
+			$data['footer'] = $this->load->view('admin/footer-gc', $dataFooter);
+		}else{
+			redirect("admin/login");
+		}
+	}
+
+	public function tipos(){
+		$debug = false;
+
+		if ($this->AdminSecurityCheck()){
+			$titulo = "Tipos de platillos";
+
+            $crud = new grocery_CRUD();
+			$crud->set_table("type");
+			$crud->set_subject( $titulo );
+
+			$crud->display_as( 'name' , 'Nombre del tipo' );
+
+			$crud->columns( 'name');
+			$crud->fields( 'name');
+			$crud->required_fields( 'name');
+
+			$crud->unset_print();
+			$crud->unset_read();
+
+			$output = $crud->render();
+
+			$dataHeader['PageTitle'] = $titulo;
+			$dataHeader['css_files'] = $output->css_files;
+			$dataFooter['js_files'] = $output->js_files;
+			$dataContent['debug'] = $debug;
+
+            $data['header'] = $this->load->view('admin/header', $dataHeader);
+			$data['menu'] = $this->load->view('admin/menu', $dataHeader );
+
+			$data['content'] = $this->load->view('admin/blank', $output);
+			$data['footer'] = $this->load->view('admin/footer-gc', $dataFooter);
+		}else{
+			redirect("admin/login");
+		}
+	}
+
 	/* CRUD Ends*/
-	/* Helpers*/
+	/* Helpers Starts*/
 	function AdminSecurityCheck(){
 		$User = new User();
 		$user = $this->session->userdata('Group');
@@ -149,6 +359,8 @@ class Admin extends CI_Controller{
 	function set_password_input_to_empty() {
 		return "<input type='password' name='password' value='' />";
 	}
+
+	/* Helpers Ends*/
 }
 
 ?>

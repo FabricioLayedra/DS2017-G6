@@ -47,19 +47,34 @@
 									<a href="<?php echo site_url('admin/users'); ?>">Usuarios</a>
 								</li>
 							</ul>
+						</li>
+					</ul>
+					<ul class="nav nav-second-level">
+						<li>
+							<a href="#"><i class="fa fa-cutlery"></i> Restaurantes<span class="fa arrow"></span></a>
 							<ul class="nav nav-third-level">
 								<li>
-									<a href="<?php echo site_url('admin/roles'); ?>">Roles de usuarios</a>
+									<a href="<?php echo site_url('admin/restaurantes'); ?>">Restaurantes</a>
 								</li>
+								<li>
+									<a href="<?php echo site_url('admin/asistentes'); ?>">Asistentes</a>
+								</li>
+								
 							</ul>
 						</li>
 					</ul>
 					<ul class="nav nav-second-level">
 						<li>
-							<a href="#"><i class="fa fa-file"></i> Restaurantes<span class="fa arrow"></span></a>
+							<a href="#"><i class="fa fa-coffee"></i> Platillos<span class="fa arrow"></span></a>
 							<ul class="nav nav-third-level">
 								<li>
-									<a href="<?php echo site_url('admin/users'); ?>">Usuarios</a>
+									<a href="<?php echo site_url('admin/platillos'); ?>">Platillos</a>
+								</li>
+								<li>
+									<a href="<?php echo site_url('admin/categorias'); ?>">Categorías</a>
+								</li>
+								<li>
+									<a href="<?php echo site_url('admin/tipos'); ?>">Tipos</a>
 								</li>
 							</ul>
 						</li>
