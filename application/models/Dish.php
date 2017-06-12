@@ -126,9 +126,9 @@ class Dish extends CI_Model{
 			$dish = null;
 
 			$instance_CI->db->select('dish.id_dish, dish.id_restaurant, dish.name, dish.descripcion, dish.ingredient, dish.temp, dish.img, dish.id_category, dish.id_type');
-			$instance_CI->db->from(dish);
+			$instance_CI->db->from('dish');
 			$instance_CI->db->where('dish.id_dish', $id_dish);
-			$dish = instance_CI->db->get()->row();
+			$dish = $instance_CI->db->get()->row();
 
 			if (!is_null($dish)){
 				$dish_obj = new Dish();
@@ -140,7 +140,7 @@ class Dish extends CI_Model{
 					 $dish->descripcion,
 					 $dish->ingredient, 
 					 $dish->temp,
-					 ($dish->img != "" ? base_url('assets/uploads/dishes/')."/".$dish->img),
+					 ($dish->img != "") ? base_url('assets/uploads/dishes/')."/".$dish->img : "",
 					 Category::getCategoryById($dish->id_category),
 					 Type::getTypeById($dish->id_type)
 					);
@@ -153,6 +153,40 @@ class Dish extends CI_Model{
 		}
 	}
 
+	public static function getDishAssistant($id_restaurant, $id_dish){
+		if( !is_null($id_dish) && !is_null($id_restaurant)){
+			$instance_CI =& get_instance();
+
+			$dish = null;
+
+			$instance_CI->db->select('dish.id_dish, dish.id_restaurant, dish.name, dish.descripcion, dish.ingredient, dish.temp, dish.img, dish.id_category, dish.id_type');
+			$instance_CI->db->from('dish');
+			$instance_CI->db->where('dish.id_dish', $id_dish);
+			$instance_CI->db->where('dish.id_restaurant', $id_restaurant);
+			$dish = $instance_CI->db->get()->row();
+
+			if (!is_null($dish)){
+				$dish_obj = new Dish();
+
+				$dish_obj->setDish(
+					 $dish->id_dish,
+					 $dish->id_restaurant,
+					 $dish->name,
+					 $dish->descripcion,
+					 $dish->ingredient, 
+					 $dish->temp,
+					 ($dish->img != "") ? base_url('assets/uploads/dishes/')."/".$dish->img : "",
+					 Category::getCategoryById($dish->id_category),
+					 Type::getTypeById($dish->id_type)
+					);
+				return $dish_obj;
+			}else{
+				return null;
+			}
+		}else{
+			return null;
+		}
+	}
 
 	public static function getDishByRestaurant($id_restaurant){
 		if( !is_null($id_restaurant)){
@@ -163,7 +197,7 @@ class Dish extends CI_Model{
 			$instance_CI->db->select('dish.id_dish, dish.id_restaurant, dish.name, dish.descripcion, dish.ingredient, dish.temp, dish.img, dish.id_category, dish.id_type');
 			$instance_CI->db->from(dish);
 			$instance_CI->db->where('dish.id_restaurant', $id_restaurant);
-			$dishes = instance_CI->db->get()->$result_array();
+			$dishes = $instance_CI->db->get()->$result_array();
 
 			if (!is_null($dishes)){
 				$dishes_obj_array = array();
@@ -199,7 +233,7 @@ class Dish extends CI_Model{
 			$instance_CI->db->select('dish.id_dish, dish.id_restaurant, dish.name, dish.descripcion, dish.ingredient, dish.temp, dish.img, dish.id_category, dish.id_type');
 			$instance_CI->db->from(dish);
 			$instance_CI->db->where('dish.id_category', $id_category);
-			$dishes = instance_CI->db->get()->$result_array();
+			$dishes = $instance_CI->db->get()->$result_array();
 
 			if (!is_null($dishes)){
 				$dishes_obj_array = array();

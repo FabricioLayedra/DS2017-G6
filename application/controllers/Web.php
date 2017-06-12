@@ -11,6 +11,10 @@ class Web extends CI_Controller{
 		$this->load->helper(array('url'));
 		$this->load->library('form_validation');
 		$this->load->model('User');
+		$this->load->model('Type');
+		$this->load->model('Category');
+		$this->load->model('Dish');
+		$this->load->model('Restaurant');
 
 		date_default_timezone_set("America/Guayaquil");
 	}
@@ -94,15 +98,50 @@ class Web extends CI_Controller{
 
 	public function plates(){
 
-			$dataHeader['PageTitle'] = "";
+		if ($this->UserSecurityCheck()){
+			$dataHeader['PageTitle'] = "Platillo";
 
-	        $data['header'] = $this->load->view('web/header', $dataHeader);
-	        $data['menu'] = $this->load->view('web/menu', array());
+			$id_platillo = $this->uri->segment(3);
 
-	        $data['contenido'] = $this->load->view('web/plates', array());
-	        $data['footer'] = $this->load->view('web/footer', array());
+			$platillo_obj = Dish::getDishById($id_platillo);
 
-	  }
+			if (!is_null($platillo_obj)){
+				$data_content['platillo'] = $platillo_obj;
+
+				$data['header'] = $this->load->view('web/header', $dataHeader);
+		        $data['menu'] = $this->load->view('web/menu', array());
+
+		        $data['contenido'] = $this->load->view('web/plates', $data_content);
+		        $data['footer'] = $this->load->view('web/footer', array());
+			}else{
+				redirect('web/index');
+			}
+		}else{
+			if ($this->AssistantSecurityCheck()){
+				$dataHeader['PageTitle'] = "Platillo";
+
+				$id_restaurant = $this->uri->segment(3);
+				$id_platillo = $this->uri->segment(4);
+
+				$platillo_obj = Dish::getDishAssistant($id_restaurant, $id_restaurant);
+
+				if (!is_null($platillo_obj)){
+					$data_content['platillo'] = $platillo_obj;
+
+					$data['header'] = $this->load->view('web/header', $dataHeader);
+			        $data['menu'] = $this->load->view('web/menu', array());
+
+			        $data['contenido'] = $this->load->view('web/plates', $data_content);
+			        $data['footer'] = $this->load->view('web/footer', array());
+				}else{
+					redirect('web/index');
+				}
+
+			}else{
+				redirect('web/index');
+			}
+	  	}
+	}
 
 
 	public function assistant(){

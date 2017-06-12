@@ -1,7 +1,7 @@
 <?php 
 if( !defined('BASEPATH')) exit ("No direct script access allowed");
 
-class Dish extends CI_Model{
+class Type extends CI_Model{
 	private $ID;
 	private $name;
 
@@ -47,7 +47,7 @@ class Dish extends CI_Model{
 			$type = null;
 
 			$instance_CI->db->select('type.id_type, type.name');
-			$instance_CI->db->from(type);
+			$instance_CI->db->from('type');
 			$instance_CI->db->where('type.id_type', $id_type);
 			$type = $instance_CI->db->get()->row();
 
@@ -57,6 +57,7 @@ class Dish extends CI_Model{
 				$type_obj->setType(
 					$type->id_type,
 					$type->name);
+				return $type_obj;
 			}else{
 				return null;
 			}

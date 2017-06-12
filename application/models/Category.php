@@ -46,7 +46,7 @@ class Category extends CI_Model{
 			$category = null;
 
 			$instance_CI->db->select('category.id_category, category.name');
-			$instance_CI->db->from(category);
+			$instance_CI->db->from('category');
 			$instance_CI->db->where('category.id_category', $id_category);
 			$category = $instance_CI->db->get()->row();
 
@@ -56,6 +56,7 @@ class Category extends CI_Model{
 				$category_obj->setCategory(
 					$category->id_category,
 					$category->name);
+				return $category_obj;
 			}else{
 				return null;
 			}
