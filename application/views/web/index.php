@@ -185,7 +185,7 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<h1 class="section1-title">
-						Tenemos variados platos en muchas categorías
+						¡Platos en diferentes categorías, para todos los gustos!
 					</h1>
 				</div>
 			</div>
