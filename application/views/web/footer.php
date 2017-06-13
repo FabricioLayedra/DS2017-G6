@@ -38,7 +38,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="<?php echo base_url('assets/js/web/index.js'); ?>"></script>
   	<script src="<?php echo base_url('assets/js/web/owl.carousel.js'); ?>"></script>
-		<script src="<?php echo base_url('assets/js/web/assistantFilter.js'); ?>"></script>
+		<script src="<?php echo base_url('assets/js/web/dishFilters.js'); ?>"></script>
 
 </footer>
 </html>
