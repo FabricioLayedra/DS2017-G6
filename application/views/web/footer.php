@@ -28,7 +28,7 @@
 		<div class="footer-icons">
 			<a href="https://www.facebook.com/espol"><i class="fa fa-facebook"></i></a>
 			<a href="https://twitter.com/bienestarespol"><i class="fa fa-twitter"></i></a>
-			<a href="https://bienestar.espol.edu.ec/"><i class="fa fa-envelope"></i></a>
+			<a href="http://www.bienestar.espol.edu.ec/"><i class="fa fa-envelope"></i></a>
 		</div>
 	</div>
 

@@ -36,6 +36,11 @@
 .daw-clock:before {
   content: "\f046";
 }
+
+.daw-thumbs:before {
+  content: "\f164";
+}
+
 .daw-device:before {
   content: "\f27c";
 }

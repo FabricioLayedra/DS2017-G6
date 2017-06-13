@@ -2,7 +2,7 @@
 <div id="page-wrapper">
 	<div class="row">
 			<div class="col-lg-12"  class="owl-carousel">
-			
+
 
 				<br>
 			  <div id="restosCarousel" class="carousel slide" data-ride="carousel">
@@ -12,37 +12,38 @@
 			      <li data-target="#restosCarousel" data-slide-to="1"></li>
 			      <li data-target="#restosCarousel" data-slide-to="2"></li>
 			    </ol>
-
 			    <!-- Wrapper for slides -->
 			    <div class="carousel-inner" role="listbox">
 
 			      <div class="item active">
 			        <img src = "<?php echo base_url('assets/img/slideshow/inicio.png'); ?>" alt="start" >
 			        <div class="carousel-caption">
-			          <h2>Bienvenidos a El Comelón!</h2>
+			          <h1 style="font-size: 4.5em; ">Bienvenidos a El Comelón!</h1>
 						<p>
 							Servicio de difusión y administración de los Comedores
 							y Bares Politécnicos.
-						</p>			        
+						</p>
 					</div>
 			      </div>
 
 			      <div class="item">
 			        <img src = "<?php echo base_url('assets/img/slideshow/espol.png'); ?>"  alt="service" >
 			        <div class="carousel-caption">
+								<h1>Bienvenidos a El Comelón!</h1>
 			          <h3>¡Servirte es nuestra recompensa!</h3>
 			          <p>Visítanos en tu facultad.</p>
 			        </div>
 			      </div>
-			    
+
 			      <div class="item">
 			        <img src = "<?php echo base_url('assets/img/slideshow/bar-mes.png'); ?>"  alt="barofthemonth" >
 			        <div class="carousel-caption">
+								<h1>Bienvenidos a El Comelón!</h1>
 			          <h3>Bar del Mes</h3>
 			          <p>Frutanga. Patio de Comidas FIMCP.</p>
 			        </div>
 			      </div>
-			  
+
 			    </div>
 
 			    <!-- Left and right controls -->
@@ -54,12 +55,12 @@
 			      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
 			      <span class="sr-only">Next</span>
 			    </a>
-			  </div> 	
+			  </div>
 			</div>
 </div>
 </section>
 
-<section id="porque" class="pt-50 pb-50">
+<section id="porque" class="pt-20 pb-50">
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-lg-12">
@@ -68,14 +69,14 @@
 				</h1>
 			</div>
 		</div>
-		<div class="row mt-md-20">
+		<div class="row mt-md-20 pt-10">
 			<div class="col-lg-12">
 				<div class="container-fluid">
 					<div class="row">
 						<div class = 'container'>
 							<div class = 'row pt-15'>
 								<div class = 'col-md-4'>
-									<span class="daw-clock section2-icon align-center"></span>
+									<span class="daw-check section2-icon align-center"></span>
 									<div class="icon-label bold pt-lg-20 align-center">Calidad</div>
 									<div class="description">
 										Cada uno de nuestros bares siempre buscará ofrecer la más alta calidad en la elaboración de sus platillos.
@@ -89,7 +90,7 @@
 									</div>
 								</div>
 								<div class = 'col-md-4 pt-xs-15'>
-									<span class="daw-pen section2-icon align-center"></span>
+									<span class="daw-arrow-down section2-icon align-center"></span>
 									<div class="icon-label bold pt-lg-20 align-center">Confianza</div>
 									<div class="description">
 										Cada platillo se prepara bajo una exhaustiva revisión de asepsia para dar a nuestros clientes la tranquilidad de un buen producto.
@@ -184,46 +185,46 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<h1 class="section1-title">
-						Tenemos variados platos en 6 categorías
+						Tenemos variados platos en muchas categorías
 					</h1>
 				</div>
 			</div>
 			<br>
 			<br>
 			<div class = 'row pt-10'>
-				<div class = 'col-md-offset-1 col-md-3'>
+				<div class = 'col-md-4'>
 					<img src="<?php echo base_url('assets/img/categories/cat-1.png'); ?>" class = 'img-responsive align-center'>
-					<h4 class = 'align-center pt-5'>Almuerzos</h4>
+					<h4 class = 'align-center pt-5'></h4>
 				</div>
-				<div class = 'col-md-4 pt-sm-10'>
+				<div class = 'col-md-4'>
 					<img src="<?php echo base_url('assets/img/categories/cat-2.png'); ?>" class = 'img-responsive align-center'>
-					<h4 class = 'align-center pt-5'>Platos Típicos</h4>
+					<h4 class = 'align-center pt-5'></h4>
 				</div>
-			
-				<div class = 'col-md-4 pt-sm-10'>
+
+				<div class = 'col-md-4'>
 					<img src="<?php echo base_url('assets/img/categories/cat-3.png'); ?>" class = 'img-responsive align-center'>
-					<h4 class = 'align-center pt-5'>Platos de Mar</h4>
+					<h4 class = 'align-center pt-5'></h4>
 				</div>
 
 			</div>
-			<div class = 'row  pt-10'>
-				<div class = 'col-md-offset-1 col-md-3'>
+			<div class = 'row  pt-30'>
+				<div class = 'col-md-4'>
 					<img src="<?php echo base_url('assets/img/categories/cat-4.png'); ?>" class = 'img-responsive align-center'>
-					<h4 class = 'align-center pt-5'>Cocina Internacional</h4>
+					<h4 class = 'align-center pt-5'></h4>
 				</div>
-			
-				<div class = 'col-md-4 pt-sm-10'>
+
+				<div class = 'col-md-4'>
 					<img src="<?php echo base_url('assets/img/categories/cat-5.png'); ?>" class = 'img-responsive align-center'>
-					<h4 class = 'align-center pt-5'>Postres</h4>
+					<h4 class = 'align-center pt-5'></h4>
 				</div>
-				<div class = 'col-md-4 pt-sm-10'>
+				<div class = 'col-md-4'>
 					<img src="<?php echo base_url('assets/img/categories/cat-6.png'); ?>" class = 'img-responsive align-center'>
-					<h4 class = 'align-center pt-5'>Piqueos</h4>
+					<h4 class = 'align-center pt-5'></h4>
 				</div>
 			</div>
 		</div>
 	</section>
-	
+
     </div>
     <!-- /.container-fluid -->
 </div>
