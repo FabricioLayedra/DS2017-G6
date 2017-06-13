@@ -141,7 +141,7 @@ class Dish extends CI_Model{
 					 $dish->descripcion,
 					 $dish->ingredient, 
 					 $dish->temp,
-					 ($dish->img != "") ? base_url('assets/uploads/dishes/')."/".$dish->img : "",
+					 ($dish->img != "") ? base_url('assets/uploads/dishes/').$dish->img : "",
 					 Category::getCategoryById($dish->id_category),
 					 Type::getTypeById($dish->id_type)
 					);

@@ -42,6 +42,9 @@ nav{
 
 /*Utils*/
 
+.img-thumb{
+    max-height: 150px;
+}
 .align-center {
     margin: 0 auto;
     text-align: center;

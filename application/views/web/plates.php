@@ -6,7 +6,7 @@
 		if($this->session->Group){
 			$user = $this->session->userdata('Group');
 			if($user == 2){ ?>
-			<a type="button" class="btn btn-default" href = "<?php echo site_url('web/editDish/').$platillo->getId() ?>">
+			<a type="button" class="btn btn-default" href = "<?php echo site_url('web/editPlate/').$platillo->getId() ?>">
 				<span class="glyphicon glyphicon-pencil"></span> Editar
 			</a>
 			<a type="button" class="btn btn-default" href = "<?php echo site_url('web/deletePlate/').$platillo->getId() ?>">
@@ -37,6 +37,10 @@
 									<tr>
 										<td class = 'pull-right bold'>Categoría</td>
 										<td id='foodCategory'><?php echo $platillo->getCategory()->getName(); ?></td>
+									</tr>
+									<tr>
+										<td class = 'pull-right bold'>Tipo</td>
+										<td id='foodType'><?php echo $platillo->getType()->getName(); ?></td>
 									</tr>
 									<tr>
 										<td class = 'pull-right bold'>Ingredientes</td>

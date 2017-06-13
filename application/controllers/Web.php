@@ -180,22 +180,29 @@ class Web extends CI_Controller{
 	  	}
 	}
 
-	public function editDish(){
+	public function editPlate(){
 		if ($this->AssistantSecurityCheck()){
 
 			$id_platillo = $this->uri->segment(3);
 
 			if($this->CheckDishAssistant($id_platillo)){
+				$category_list = Category::getCategories();
+				$type_list = Type::getTypes();
+				$asociados = Restaurant::getRestaurantByAssistant($this->session->userdata('ID'));
+
+				$data_content['categorias'] = $category_list;
+				$data_content['tipos'] = $type_list;
+				$data_content['asociados'] = $asociados;
 
 				$platillo_obj = Dish::getDishById($id_platillo);
 				$data_content['platillo'] = $platillo_obj;
 
-				$dataHeader['PageTitle'] = "Editar";
+				$dataHeader['PageTitle'] = "Editar platillo";
 
 		        $data['header'] = $this->load->view('web/header', $dataHeader);
 		        $data['menu'] = $this->load->view('web/menu', array());
 
-		        $data['contenido'] = $this->load->view('web/agregarPlatillo', $data_content);
+		        $data['contenido'] = $this->load->view('web/editarPlatillo', $data_content);
 		        $data['footer'] = $this->load->view('web/footer', array());
 			}else{
 				redirect('web/index');
@@ -228,7 +235,7 @@ class Web extends CI_Controller{
 			$type_list = Type::getTypes();
 			$asociados = Restaurant::getRestaurantByAssistant($this->session->userdata('ID'));
 
-			$dataHeader['PageTitle'] = "Agregar ";
+			$dataHeader['PageTitle'] = "Agregar platillo";
 
 			$data_content['categorias'] = $category_list;
 			$data_content['tipos'] = $type_list;
@@ -319,6 +326,60 @@ class Web extends CI_Controller{
 
 		
         redirect("web/dish/".$restaurant.'/'.$id_dish);
+	}
+
+	public function editdish(){
+		//Start upload config
+		$config['upload_path']          = 'assets/uploads/dishes/';
+        $config['allowed_types']        = 'gif|jpeg|jpg|png|tiff';
+        $config['max_size']             = 2048;
+        $config['max_width']            = 1024;
+        $config['max_height']           = 768;
+        $config['encrypt_name']			= TRUE;
+        $config['remove_spaces']		= TRUE;
+        $config['detect_mime']			= TRUE;
+        //End config upload
+
+        $foto = "";
+
+        $id_platillo = $this->input->post('dish-id');
+        $name = $this->input->post("dish-name");
+		$restaurant = $this->input->post("dish-res");
+		$descripcion = $this->input->post("dish-description");
+		$ingredient = $this->input->post("dish-ingredient");
+		$temp = $this->input->post("dish-servido");
+		$id_category = $this->input->post("dish-cat");
+		$id_type = $this->input->post("dish-type");
+		$foto = $this->input->post('dish-prev-img');
+
+		if (!is_null($foto)){
+			$strip_foto = explode("/", $foto);
+			$foto = $strip_foto[7];
+		}
+		
+
+        $this->load->library('upload', $config);
+
+		if($this->upload->do_upload("dish-imagen")) {
+            $img_data = $this->upload->data();
+            $foto = $img_data["file_name"];
+        }
+
+        $data = array(
+        	'id_restaurant'=>$restaurant,
+			'name'=>$name,
+			'descripcion'=>$descripcion,
+			'ingredient'=>$ingredient,
+			'temp'=>$temp,
+			'img'=>$foto,
+			'id_category'=>$id_category,
+			'id_type'=>$id_type
+        );
+
+		$this->db->where('dish.id_dish', $id_platillo);
+		$this->db->update('dish', $data);
+		
+        redirect("web/dish/".$restaurant.'/'.$id_platillo);
 	}
 
 	public function newUser(){

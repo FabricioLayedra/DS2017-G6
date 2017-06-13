@@ -64,7 +64,7 @@
 										<h5> <?php echo Restaurant::getNameRestaurantNameById($rest['id_restaurant']);?></h5>
 									</div>
 									<div class = 'col-md-2'>
-										<span><a href = "">Editar</a></span>
+										<span><a href = "<?php echo site_url('web/editPlate/').$rest['id_dish']; ?>">Editar</a></span>
 										<span><a href = "<?php echo site_url('web/deletePlate/').$rest['id_dish']; ?>">Eliminar</a></span>
 									</div>
 								</div>
