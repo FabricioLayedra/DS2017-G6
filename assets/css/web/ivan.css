@@ -9,7 +9,21 @@ html, body {
     font-size:16px;
 }
 
-
+body {
+   position: relative;
+}
+body:after {
+    content : "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url("https://cmkt-image-prd.global.ssl.fastly.net/0.1.0/ps/27911/1160/772/m1/fpnw/wm0/1-.jpg?1373984858&s=785bdbec2c9035f29c7651ffb3da25bc");
+    width: 100%;
+    height: 100%;
+    opacity : 0.04;
+    z-index: -1;
+}
 
 #intro{
 

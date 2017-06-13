@@ -1,5 +1,8 @@
 
 <div class="container pt-30">
+		<a type="button" class="btn btn-default col-md-offset-1" href = "<?php echo site_url('web/')?>">
+			<span class="glyphicon glyphicon-home"></span> Regresar
+		</a>
 		<br>
 		<h1 class = 'align-center'>Administración: El Comelón</h1>
 
