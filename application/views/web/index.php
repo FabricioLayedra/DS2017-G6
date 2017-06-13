@@ -179,6 +179,7 @@
 			</div>
 		</div>
 	</section>
+<<<<<<< HEAD
 
 	<section id="logros" class="pt-lg-50 pb-lg-50">
 		<div class="container">
@@ -226,6 +227,9 @@
 	</section>
 
     </div>
+=======
+</div>
+>>>>>>> 3ede2621fe166577ab883dd4e3ae787d4ab54407
     <!-- /.container-fluid -->
 </div>
 <!-- /#page-wrapper -->

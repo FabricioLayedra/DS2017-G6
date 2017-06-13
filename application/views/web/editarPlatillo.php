@@ -10,7 +10,7 @@
 
 		<div class = 'row pt-20'>
 			<div class = 'col-md-offset-1 col-md-10'>
-			<?php echo form_open_multipart('web/editdish' , array('id' => 'frm-new')); ?>  
+			<?php echo form_open_multipart('web/editdish' , array('id' => 'frm-new')); ?>
 				<fieldset>
 					<input type="hidden" name="dish-id" value="<?php echo $platillo->getId(); ?>" />
 					<div class="form-group">
@@ -20,7 +20,7 @@
 					<div class="form-group">
 						<label for="dish-res">Restaurante</label>
 						<select id="dish-res" class="form-control" name="dish-res">
-							<?php foreach ($asociados as $aso) { 
+							<?php foreach ($asociados as $aso) {
 								if($aso['id_restaurant'] == $platillo->getRestaurant()->getID()){?>
 								<option selected id = "<?php echo $aso['id_restaurant'];?>" value = "<?php echo $aso['id_restaurant'];?>" ><?php echo $aso['name'];?></option>
 							<?php }else{ ?>
@@ -82,3 +82,4 @@
 		</div>
 	</div>
 </div>
+<div  class='pt-30'> </div>
