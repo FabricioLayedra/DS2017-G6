@@ -42,6 +42,7 @@
 						<div class="input-group">
 							<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
 							<?php echo form_input(array(
+								'id' => 'ra_mail',
 								'name' => 'ra_mail',
 								'value' => '',
 								'required' => 'required',
@@ -57,6 +58,7 @@
 					<div class="input-group">
 						<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
 						<?php echo form_input(array(
+							'id' => 'ra_username',
 							'name' => 'ra_username',
 							'value' => '',
 							'required' => 'required',
@@ -71,6 +73,7 @@
 						<div class="input-group">
 							<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
 							<?php echo form_password(array(
+								'id' => 'ra_password',
 								'name' => 'ra_password',
 								'value' => '',
 								'required' => 'required',
@@ -85,6 +88,7 @@
 						<div class="input-group">
 							<span class="input-group-addon"><i class="glyphicon glyphicon-alert"></i></span>
 							<?php echo form_password(array(
+								'id' => 'ra_val_password',
 								'name' => 'ra_val_password',
 								'value' => '',
 								'required' => 'required',

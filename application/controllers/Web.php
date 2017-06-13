@@ -404,6 +404,47 @@ class Web extends CI_Controller{
 	}
 
 	 /* Helpers*/
+
+	public function checkUsername(){
+		$username = $this->uri->segment(3);
+		$this->db->select('user.id_user');
+		$this->db->from('user');
+		$this->db->where('user.username', $username);
+
+		$res = $this->db->get()->row();
+		if(!is_null($res)){
+			print_r('1') ;
+		}else{
+			print_r('0');
+		}
+	}
+
+	function isEmailExist(){
+		$email = $this->input->post('email');
+		$this->db->select('user.id_user');
+		$this->db->from('user');
+		$this->db->where('user.email', $email);
+		$res = $this->db->get()->row();
+		if($res){
+			echo "Ese correo ya está registrado";
+		}else{
+			echo "";
+		}
+	}
+
+	function isUsernameExist(){
+		$email = $this->input->post('email');
+		$this->db->select('user.id_user');
+		$this->db->from('user');
+		$this->db->where('user.username', $email);
+		$res = $this->db->get()->row();
+		if($res){
+			echo "Ese nombre de usuario ya está registrado";
+		}else{
+			echo "";
+		}
+	}
+
 	function UserSecurityCheck(){
 		$user = $this->session->userdata('Group');
 		if ($user){
