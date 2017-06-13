@@ -60,8 +60,12 @@
 									<div class="col-md-4">
 										<h5><a href="<?php echo site_url('web/dish/').$aso['id_restaurant'].'/'.$rest['id_dish'] ?>"> <?php echo $rest['name']?></a></h5>
 									</div>
-									<div class="col-md-8">
+									<div class="col-md-6">
 										<h5> <?php echo Restaurant::getNameRestaurantNameById($rest['id_restaurant']);?></h5>
+									</div>
+									<div class = 'col-md-2'>
+										<span><a href = "">Editar</a></span>
+										<span><a href = "<?php echo site_url('web/deletePlate/').$rest['id_dish']; ?>">Eliminar</a></span>
 									</div>
 								</div>
 								<?php 

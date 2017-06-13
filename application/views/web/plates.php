@@ -3,12 +3,15 @@
 		<span class="glyphicon glyphicon-triangle-left"></span> Regresar
 	</button>
 	<?php
-					if($this->session->Group){
-						$user = $this->session->userdata('Group');
-						if($user == 2){ ?>
-	<a type="button" class="btn btn-default" href = "<?php echo site_url('web/editDish/').$platillo->getId() ?>">
-		<span class="glyphicon glyphicon-pencil"></span> Editar
-	</a>
+		if($this->session->Group){
+			$user = $this->session->userdata('Group');
+			if($user == 2){ ?>
+			<a type="button" class="btn btn-default" href = "<?php echo site_url('web/editDish/').$platillo->getId() ?>">
+				<span class="glyphicon glyphicon-pencil"></span> Editar
+			</a>
+			<a type="button" class="btn btn-default" href = "<?php echo site_url('web/deletePlate/').$platillo->getId() ?>">
+				<span class="glyphicon glyphicon-remove"></span> Eliminar
+			</a>
 	<?php }} ?>
 	<div class="row">
 		<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xs-offset-0 col-sm-offset-0 col-md-offset-2 col-lg-offset-2 toppad" >

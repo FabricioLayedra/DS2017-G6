@@ -242,7 +242,24 @@ class Web extends CI_Controller{
 	    }else{
 	    	redirect('web/index');
 	    }
-	  }
+	}
+
+	public function deletePlate(){
+		if ($this->AssistantSecurityCheck()){
+			$id_platillo = $this->uri->segment(3);
+
+			if($this->CheckDishAssistant($id_platillo)){
+				$this->db->where('dish.id_dish', $id_platillo);
+				$this->db->delete('dish');
+
+				redirect('web/assistant');
+			}else{
+				redirect('web/assistant');
+			}
+		}else{
+			redirect('web/index');
+		}
+	}
 
 	public function signup(){
 

@@ -165,7 +165,6 @@ class Restaurant extends CI_Model{
 					'phone'=>$res['phone'],
 					'owner'=>$res['owner']);
 			}
-
 			return $restaurants_obj_array;
 		}else{
 			return null;
