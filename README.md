@@ -5,18 +5,19 @@ La Asociación de Bares y Restaurantes de ESPOL desea crear una plataforma que l
 
 ## Deployment
 
-Para poder realizar un correcto deployment recomendamos utilizar [WAMP](www.wampserver.com/en/). Un ambiente de desarrollo Web que integra Apache, PHP5 y MySQL.
+Para poder realizar un correcto deployment recomendamos utilizar [WAMP](www.wampserver.com/en/). Un ambiente local de desarrollo Web que integra Apache, PHP5 y MySQL.
 
 1. Clone este repositorio.
 ```
 git clone https://github.com/FabricioLayedra/DS2017-G6
 ```
+2. Coloque el directorio clonado dentro de la carpeta `www` propia de WAMP. Usualmente localizada en `C:\\wamp\64`.
 
-2. Coloque el directorio clonado dentro de la carpeta `www` propia de WAMP. Usualmente localizada en `C:\\wamp\64`
+3. **Configurar la base de datos:** Ingrese las configuraciones de su MySQL local, editando el archivo `application/config/database.php`. Es decir: Hostname, Username & Password.
 
-3. Ingrese las configuraciones de su MySQL local en el archivo `application\config\database.php`.
+4. **Inicializar la base de datos:** En su gestor de MySQL tiene que ejecutar los comandos SQL que se encuentran en los archivos `sql/db-create.sql` y consecuentemente `sql/db-insert.sql`.
 
-4. La aplicacion esta lista para ser inicializada en `localhost`.
+5. La aplicacion esta lista para ser utilizada accediendo a `localhost:PUERTO_LOCAL`.
 
 ### Dependencias
 
@@ -26,7 +27,7 @@ git clone https://github.com/FabricioLayedra/DS2017-G6
 
 ### Credenciales
 
-Para poder acceder a la aplicacion, acceda a la seccion de `Iniciar Sesion`, y luego ingrese alguna de las siguientes credenciales:
+En la seccion de `Iniciar Sesion`, ingrese alguna de las siguientes credenciales dependiendo de las funcionalidades a probar:
 
 > **Administrador:** lkuffo:admin
 >
