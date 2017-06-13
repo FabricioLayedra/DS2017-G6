@@ -14,7 +14,9 @@ git clone https://github.com/FabricioLayedra/DS2017-G6
 
 2. Coloque el directorio clonado dentro de la carpeta `www` propia de WAMP. Usualmente localizada en `C:\\wamp\64`
 
-3. La aplicacion esta lista para ser inicializada en `localhost`.
+3. Ingrese las configuraciones de su MySQL local en el archivo `application\config\database.php`.
+
+4. La aplicacion esta lista para ser inicializada en `localhost`.
 
 ### Dependencias
 
@@ -26,7 +28,10 @@ git clone https://github.com/FabricioLayedra/DS2017-G6
 
 Para poder acceder a la aplicacion, acceda a la seccion de `Iniciar Sesion`, y luego ingrese alguna de las siguientes credenciales:
 
-> -**Administrador:** lkuffo:admin
-> -**Asistente:** flayedra:admin
-> -**Asistente:** jlmasson:pepe
-> -**Cliente:** jvpincay:testeo
+> **Administrador:** lkuffo:admin
+>
+> **Asistente:** flayedra:admin
+>
+> **Asistente:** jlmasson:pepe
+>
+> **Cliente:** jvpincay:testeo
