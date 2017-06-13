@@ -179,7 +179,9 @@
 			</div>
 		</div>
 	</section>
-</div>
+
+
+    </div>
     <!-- /.container-fluid -->
 </div>
 <!-- /#page-wrapper -->
