@@ -7,26 +7,26 @@ La Asociación de Bares y Restaurantes de ESPOL desea crear una plataforma que l
 
 Para poder realizar un correcto deployment recomendamos utilizar [WAMP](www.wampserver.com/en/). Un ambiente de desarrollo Web que integra Apache, PHP5 y MySQL.
 
-1. Clone este repositorio
+1. Clone este repositorio.
 ```
 git clone https://github.com/FabricioLayedra/DS2017-G6
 ```
 
-2. Coloque el directorio clonado dentro de la carpeta `www` propia de WAMP.
+2. Coloque el directorio clonado dentro de la carpeta `www` propia de WAMP. Usualmente localizada en `C:\\wamp\64`
 
 3. La aplicacion esta lista para ser inicializada en `localhost`.
 
 ### Dependencias
 
-1. PHP CodeIgniter.
+1. PHP5.
 2. MySQL.
+3. Apache.
 
 ### Credenciales
 
 Para poder acceder a la aplicacion, acceda a la seccion de `Iniciar Sesion`, y luego ingrese alguna de las siguientes credenciales:
 
-> **Administrador:** lkuffo:admin
-> **Asistente:** flayedra:admin
-> **Asistente:** jlmasson:pepe
-> **Cliente:** jvpincay:testeo
->
+> -**Administrador:** lkuffo:admin
+> -**Asistente:** flayedra:admin
+> -**Asistente:** jlmasson:pepe
+> -**Cliente:** jvpincay:testeo
