@@ -145,5 +145,31 @@ class Restaurant extends CI_Model{
 			return null;
 		}
 	}
+
+	public static function getRestaurants(){
+		$instance_CI =& get_instance();
+
+		$restaurants = null;
+
+		$instance_CI->db->select('restaurant.id_restaurant, restaurant.name, restaurant.address, restaurant.phone, restaurant.owner');
+		$instance_CI->db->from('restaurant');
+		$restaurants = $instance_CI->db->get()->result_array();
+
+		if(!is_null($restaurants)){
+			$restaurants_obj_array = array();
+			foreach ($restaurants as $res) {
+				$restaurants_obj_array[] = array(
+					'id_restaurant'=>$res['id_restaurant'],
+					'name'=>$res['name'],
+					'address'=>$res['address'],
+					'phone'=>$res['phone'],
+					'owner'=>$res['owner']);
+			}
+
+			return $restaurants_obj_array;
+		}else{
+			return null;
+		}
+	}
 }
 ?>

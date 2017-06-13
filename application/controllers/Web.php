@@ -207,14 +207,18 @@ class Web extends CI_Controller{
 
 
 	public function restaurantes(){
+
+		$restaurantes = Restaurant::getRestaurants();
+
+		$dataContent['restaurantes']= $restaurantes;
 		
-			$dataHeader['PageTitle'] = "";	
+		$dataHeader['PageTitle'] = "Restaurantes";	
 
-	        $data['header'] = $this->load->view('web/header', $dataHeader);
-	        $data['menu'] = $this->load->view('web/menu', array());
+        $data['header'] = $this->load->view('web/header', $dataHeader);
+        $data['menu'] = $this->load->view('web/menu', array());
 
-	        $data['contenido'] = $this->load->view('web/restaurantes', array());
-	        $data['footer'] = $this->load->view('web/footer', array());
+        $data['contenido'] = $this->load->view('web/restaurantes', $dataContent);
+        $data['footer'] = $this->load->view('web/footer', array());
 	    
 	  }
 
