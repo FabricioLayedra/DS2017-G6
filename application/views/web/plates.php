@@ -1,5 +1,5 @@
 <div class="container pt-70 pb-50">
-	
+
 	<?php
 		if($this->session->Group){
 			$user = $this->session->userdata('Group');
@@ -66,3 +66,4 @@
 	</div>
 
 </div>
+<div  class='pt-30'> </div>

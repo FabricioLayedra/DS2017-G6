@@ -68,7 +68,7 @@
 										<span><a href = "<?php echo site_url('web/deletePlate/').$rest['id_dish']; ?>">Eliminar</a></span>
 									</div>
 								</div>
-								<?php 
+								<?php
 										}
 									}
 								} ?>
@@ -82,3 +82,4 @@
 		</div>
 	</div>
 </section>
+<div  class='pt-30'> </div>

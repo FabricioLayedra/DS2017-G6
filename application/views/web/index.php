@@ -179,53 +179,7 @@
 			</div>
 		</div>
 	</section>
-
-	<section id="logros" class="pt-lg-50 pb-lg-50">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<h1 class="section1-title">
-						Tenemos variados platos en muchas categorías
-					</h1>
-				</div>
-			</div>
-			<br>
-			<br>
-			<div class = 'row pt-10'>
-				<div class = 'col-md-4'>
-					<img src="<?php echo base_url('assets/img/categories/cat-1.png'); ?>" class = 'img-responsive align-center'>
-					<h4 class = 'align-center pt-5'></h4>
-				</div>
-				<div class = 'col-md-4'>
-					<img src="<?php echo base_url('assets/img/categories/cat-2.png'); ?>" class = 'img-responsive align-center'>
-					<h4 class = 'align-center pt-5'></h4>
-				</div>
-
-				<div class = 'col-md-4'>
-					<img src="<?php echo base_url('assets/img/categories/cat-3.png'); ?>" class = 'img-responsive align-center'>
-					<h4 class = 'align-center pt-5'></h4>
-				</div>
-
-			</div>
-			<div class = 'row  pt-30'>
-				<div class = 'col-md-4'>
-					<img src="<?php echo base_url('assets/img/categories/cat-4.png'); ?>" class = 'img-responsive align-center'>
-					<h4 class = 'align-center pt-5'></h4>
-				</div>
-
-				<div class = 'col-md-4'>
-					<img src="<?php echo base_url('assets/img/categories/cat-5.png'); ?>" class = 'img-responsive align-center'>
-					<h4 class = 'align-center pt-5'></h4>
-				</div>
-				<div class = 'col-md-4'>
-					<img src="<?php echo base_url('assets/img/categories/cat-6.png'); ?>" class = 'img-responsive align-center'>
-					<h4 class = 'align-center pt-5'></h4>
-				</div>
-			</div>
-		</div>
-	</section>
-
-    </div>
+</div>
     <!-- /.container-fluid -->
 </div>
 <!-- /#page-wrapper -->

@@ -10,7 +10,7 @@
 
 		<div class = 'row pt-20'>
 			<div class = 'col-md-offset-1 col-md-10'>
-			<?php echo form_open_multipart('web/newdish' , array('id' => 'frm-new')); ?>  
+			<?php echo form_open_multipart('web/newdish' , array('id' => 'frm-new')); ?>
 				<fieldset>
 					<div class="form-group">
 						<label for="dish-title">Nombre</label>
@@ -70,3 +70,4 @@
 		</div>
 	</div>
 </div>
+<div  class='pt-30'> </div>
