@@ -383,11 +383,11 @@ class Web extends CI_Controller{
 	}
 
 	public function newUser(){
-		$name = $this->input->post("ra_name");
-		$last_name = $this->input->post("ra_lastname");
-		$username = $this->input->post("ra_username");
-		$email = $this->input->post("ra_mail");
-		$password = $this->input->post("ra_password");
+		$name = $this->input->post("ra_name-su");
+		$last_name = $this->input->post("ra_lastname-su");
+		$username = $this->input->post("ra_username-su");
+		$email = $this->input->post("ra_mail-su");
+		$password = $this->input->post("ra_password-su");
 
 		$data = array(
 			'name' => $name,
@@ -426,22 +426,22 @@ class Web extends CI_Controller{
 		$this->db->where('user.email', $email);
 		$res = $this->db->get()->row();
 		if($res){
-			echo "Ese correo ya está registrado";
+			echo "1";
 		}else{
-			echo "";
+			echo "0";
 		}
 	}
 
 	function isUsernameExist(){
-		$email = $this->input->post('email');
+		$email = $this->input->post('user');
 		$this->db->select('user.id_user');
 		$this->db->from('user');
 		$this->db->where('user.username', $email);
 		$res = $this->db->get()->row();
 		if($res){
-			echo "Ese nombre de usuario ya está registrado";
+			echo "1";
 		}else{
-			echo "";
+			echo "0";
 		}
 	}
 
