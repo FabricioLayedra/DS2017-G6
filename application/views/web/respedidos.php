@@ -1,7 +1,7 @@
 <div class="container pt-70" id = "restaurantes">
-	<h1 class = 'align-center pt-20'>Restaurantes dentro de ESPOL</h1>
+	<h1 class = 'align-center pt-20'>Restaurantes para hacer pedidos</h1>
 
-	<p class = 'mt-30'>En esta sección encontrarás los lugares de comida que existen dentro de ESPOL. ¡Conócelos! </p>
+	<p class = 'mt-30'>Selecciona el restaurante al cual quieres ver y pedir almuerzos </p>
 
 	<div class = 'container'>
 		<div class="row">
@@ -11,9 +11,12 @@
 				<p><?php echo $res['phone'];?></p>
 				<p><?php echo $res['address'];?></p>
 				<p>Propietario: <?php echo $res['owner'];?></p>
-				
+        <a type="button" class="btn btn-default col-md-offset-1" href = "<?php echo site_url('web/pedido')?>">
+          <span class="glyphicon glyphicon-cutlery"></span> Hacer Pedido
+        </a>
 			</div>
 		<?php } ?>
+
 		</div>
 	</div>
 </div>

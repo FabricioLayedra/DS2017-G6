@@ -218,16 +218,45 @@ class Web extends CI_Controller{
 		$restaurantes = Restaurant::getRestaurants();
 
 		$dataContent['restaurantes']= $restaurantes;
-		
-		$dataHeader['PageTitle'] = "Restaurantes";	
+
+		$dataHeader['PageTitle'] = "Restaurantes";
 
         $data['header'] = $this->load->view('web/header', $dataHeader);
         $data['menu'] = $this->load->view('web/menu', array());
 
         $data['contenido'] = $this->load->view('web/restaurantes', $dataContent);
         $data['footer'] = $this->load->view('web/footer', array());
-	    
+
 	  }
+
+		public function respedidos(){
+
+			$restaurantes = Restaurant::getRestaurants();
+
+			$dataContent['restaurantes']= $restaurantes;
+
+			$dataHeader['PageTitle'] = "Restaurantes Almuerzos";
+
+	        $data['header'] = $this->load->view('web/header', $dataHeader);
+	        $data['menu'] = $this->load->view('web/menu', array());
+
+	        $data['contenido'] = $this->load->view('web/respedidos', $dataContent);
+	        $data['footer'] = $this->load->view('web/footer', array());
+
+		 }
+
+		 public function pedido(){
+
+
+ 			$dataHeader['PageTitle'] = "Restaurantes Almuerzos";
+
+ 	        $data['header'] = $this->load->view('web/header', $dataHeader);
+ 	        $data['menu'] = $this->load->view('web/menu', array());
+
+ 	        $data['contenido'] = $this->load->view('web/pedido', array());
+ 	        $data['footer'] = $this->load->view('web/footer', array());
+
+ 		  }
 
 	public function addPlate(){
 		if ($this->AssistantSecurityCheck()){
@@ -324,7 +353,7 @@ class Web extends CI_Controller{
 		$this->db->insert('dish', $data);
         $id_dish = $this->db->insert_id();
 
-		
+
         redirect("web/dish/".$restaurant.'/'.$id_dish);
 	}
 
@@ -356,7 +385,7 @@ class Web extends CI_Controller{
 			$strip_foto = explode("/", $foto);
 			$foto = $strip_foto[7];
 		}
-		
+
 
         $this->load->library('upload', $config);
 
@@ -378,7 +407,7 @@ class Web extends CI_Controller{
 
 		$this->db->where('dish.id_dish', $id_platillo);
 		$this->db->update('dish', $data);
-		
+
         redirect("web/dish/".$restaurant.'/'.$id_platillo);
 	}
 
