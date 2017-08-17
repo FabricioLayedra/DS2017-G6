@@ -90,11 +90,7 @@
 
         </div>
 
-<<<<<<< HEAD
         <a type="button" class="btn btn-default mt-20" id="finalizarPedidoBtn">
-=======
-        <a type="button" class="btn btn-default mt-20" href = "<?php echo site_url('web/approved')?>">
->>>>>>> be39ac97535aaa7fabe71260f5a1363e40e8a717
           <span class="glyphicon glyphicon-ok"></span> Finalizar Pedido
         </a>
 
