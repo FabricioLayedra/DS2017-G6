@@ -102,7 +102,7 @@
 
   <!-- Trigger the modal with a button -->
   <!-- Modal -->
-  <div id="myModal" class="modal fade" role="dialog">
+  <div id="malModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
 
       <!-- Modal content-->
@@ -120,6 +120,31 @@
       </div>
 
     </div>
+  </div>
 
-</div>
+
+  <!-- Modal -->
+  <div id="buenModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+
+          <h4 class="modal-title">Pago Exitoso</h4>
+        </div>
+        <div class="modal-body">
+          <p class = 'mt-30' style ="text-align: center;">Su pedido ha sido realizado con éxito. </p>
+        <p class = 'mt-60' style ="color:#FF6A6A;font-size:26px;text-align: center;"> ORDEN No. 25</p>
+        </div>
+        <div class="modal-footer">
+          <a type="button" class="btn btn-default" href="<?php echo site_url('web/user')?>">
+            <span class="glyphicon glyphicon-ok"></span> Listo!
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
 <div  class='pt-30'> </div>
