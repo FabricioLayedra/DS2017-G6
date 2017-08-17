@@ -1,39 +1,33 @@
-$("#tipoAlmuerzo").on('change', function(){
-  $("#containerPedido").empty();
-  console.log($("#tipoAlmuerzo").val())
-  if ($("#tipoAlmuerzo").val() == "ejecutivo"){
-    $("#containerPedido").append("" +
-    "<div class='row'>" +
-      "<div class='col-md-8'>" +
-        "<p id='pedidoPlatoPrincipal'>Arroz Con Huevo y Sopa de Lentejas</p>" +
-        "<p id='pedidoBebida'> Jugo de Tamarindo </p>" +
-        "<p id='pedidoPostre' class='mb-10' > Gelatina </p>" +
-        "<p class='bold'> TOTAL: </p> " +
-      "</div>" +
-      "<div class='col-md-4'>" +
-        "<p id='valorPedidoPlatoPrincipal'>2.50</p>" +
-        "<input type='checkbox' name='bebida' id='valorPedidoBebida' >0.50</p>" +
-        "<input type='checkbox' name='postre' class='mb-10' id='valorPedidoPostre'>0.75</p>" +
-        "<p class='bold' id='totalPedido'> </p> " +
-      "</div>" +
-    "</div>" +
-    "");
-    var total = parseFloat($("#valorPedidoPlatoPrincipal").text()) + parseFloat($("#valorPedidoPostre").text()) + parseFloat($("#valorPedidoBebida").text());
-  } else if ($("#tipoAlmuerzo").val() == "estudiantil") {
-    $("#containerPedido").append("" +
-    "<div class='row'>" +
-      "<div class='col-md-8'>" +
-        "<p class='mb-10' id='pedidoPlatoPrincipal'>Arroz Con Huevo y Sopa de Lentejas</p>" +
-        "<p class='bold'> TOTAL: </p> " +
-      "</div>" +
-      "<div class='col-md-4'>" +
-        "<p class='mb-10' id='valorPedidoPlatoPrincipal'>2.50</p>" +
-        "<p class='bold' id='totalPedido'> </p> " +
-      "</div>" +
-    "</div>" +
-    "");
-    var total = parseFloat($("#valorPedidoPlatoPrincipal").text());
-  }
-  console.log(total);
-  $("#totalPedido").text(total);
-})
+$(document).ready(function(){
+
+
+  $("#tipoAlmuerzo").on('change', function(){
+
+    if ($("#tipoAlmuerzo").val() == "ejecutivo"){
+      $("#pedidoAlmuerzoEjecutivo").css("display", "inline");
+      $("#pedidoAlmuerzoEstudiantil").css("display", "none");
+
+      var total = parseFloat($("#valorPedidoPlatoPrincipal").text()) + parseFloat($("#valorPedidoPostre").text()) + parseFloat($("#valorPedidoBebida").text());
+    } else if ($("#tipoAlmuerzo").val() == "estudiantil") {
+      $("#pedidoAlmuerzoEstudiantil").css("display", "inline");
+      $("#pedidoAlmuerzoEjecutivo").css("display", "none");
+      var total = parseFloat($("#valorPedidoPlatoPrincipal").text());
+    }
+
+    $("#totalPedido").text(total);
+
+  });
+
+
+  $("#tipoPagoAlmuerzo").on("change", function(){
+    console.log($("#tipoPagoAlmuerzo").val());
+    if ($("#tipoPagoAlmuerzo").val() == "tarjeta"){
+      $("#containerPago").css("display", "inline");
+    } else {
+      $("#containerPago").css("display", "none");
+      $("#finalizarPedidoBtn").attr("href", "<?php echo site_url('web/approved')?>");
+      $("#finalizarPedidoBtn").attr("data-toggle", "modal");
+      $("#finalizarPedidoBtn").attr("data-target", "#myModal");
+    }
+  });
+});
