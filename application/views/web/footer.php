@@ -37,13 +37,14 @@
 		<script src="https://code.jquery.com/jquery-2.2.1.js"></script>
 	<?php else: ?>
 		<script  src="https://code.jquery.com/jquery-3.2.1.js"></script>
-	<?php endif ?>	
+	<?php endif ?>
 
-	
+
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="<?php echo base_url('assets/js/web/index.js'); ?>"></script>
   	<script src="<?php echo base_url('assets/js/web/owl.carousel.js'); ?>"></script>
 	<script src="<?php echo base_url('assets/js/web/dishFilters.js'); ?>"></script>
+	<script src="<?php echo base_url('assets/js/web/pedido.js'); ?>"></script>
 
 </footer>
 </html>

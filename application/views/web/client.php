@@ -9,15 +9,22 @@
 <section id="semanas-body" class="container pt-20">
 	<div class="row">
 		<div class="col-lg-offset-1 col-lg-10">
+			<div class="row">
+				<div class="col-md-9">
+					<p>Busca un plato:
+						<input type="text" id="dishQuery" name="dishQuery">
+						<button type="button" id="dishSearch" class="btn btn-default">
+							<span class="glyphicon glyphicon-search"></span> Buscar
+						</button>
+					</p>
+				</div>
+				<div class="col-md-3 pb-20">
+					<a type="button" class="btn btn-default col-md-offset-1" href = "<?php echo site_url('web/respedidos')?>">
+						<span class="glyphicon glyphicon-cutlery"></span> Hacer Pedido
+					</a>
+				</div>
+			</div>
 
-			<p>Busca un plato:
-				<input type="text" id="dishQuery" name="dishQuery">
-				<button type="button" id="dishSearch" class="btn btn-default">
-					<span class="glyphicon glyphicon-search"></span> Buscar
-				</button>
-			</p>
-
-			<br>
 
 			<?php foreach ($categorias as $index => $cat) {?>
 			<div class="panel-group" id="<?php echo 'accordion'.$cat['id_category']; ?>" role="tablist" aria-multiselectable="true">
