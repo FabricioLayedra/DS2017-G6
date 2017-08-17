@@ -47,7 +47,7 @@
 
         </div>
 
-        <a type="button" class="btn btn-default mt-20" href = "<?php echo site_url('web/pedido')?>">
+        <a type="button" class="btn btn-default mt-20" href = "<?php echo site_url('web/approved')?>">
           <span class="glyphicon glyphicon-ok"></span> Finalizar Pedido
         </a>
 
