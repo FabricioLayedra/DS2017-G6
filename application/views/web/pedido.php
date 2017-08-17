@@ -1,4 +1,8 @@
 <div class="container pt-70" id = "restaurantes">
+
+  <a type="button" class="btn btn-default" href = "<?php echo site_url('web/respedidos/') ?>">
+		<span class="glyphicon glyphicon-triangle-left"></span> Regresar a Restaurantes
+	</a>
 	<h1 class = 'align-center pt-20'>Realizar Pedido a : XXXX</h1>
 
 	<p class = 'mt-30'>Por favor, llena la informacion correspondiente para realizar tu pedido! </p>
