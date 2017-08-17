@@ -1,12 +1,20 @@
+-- --------------------------------------------------------
+-- Host:                         127.0.0.1
+-- Server version:               10.2.6-MariaDB - mariadb.org binary distribution
+-- Server OS:                    Win64
+-- HeidiSQL Version:             9.4.0.5125
+-- --------------------------------------------------------
+
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET NAMES utf8 */;
 /*!50503 SET NAMES utf8mb4 */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
-DELETE FROM `category`;
+-- Dumping data for table ds2017.category: ~6 rows (approximately)
 /*!40000 ALTER TABLE `category` DISABLE KEYS */;
 INSERT INTO `category` (`id_category`, `name`) VALUES
+	(8, 'Almuerzos'),
 	(7, 'Cafetería'),
 	(6, 'Comida italiana'),
 	(1, 'Platos de Mar'),
@@ -14,18 +22,58 @@ INSERT INTO `category` (`id_category`, `name`) VALUES
 	(2, 'Platos típicos');
 /*!40000 ALTER TABLE `category` ENABLE KEYS */;
 
-DELETE FROM `dish`;
+-- Dumping data for table ds2017.dish: ~5 rows (approximately)
 /*!40000 ALTER TABLE `dish` DISABLE KEYS */;
 INSERT INTO `dish` (`id_dish`, `id_restaurant`, `name`, `descripcion`, `ingredient`, `temp`, `img`, `id_category`, `id_type`) VALUES
 	(1, 1, 'Bolón de verde', 'Rico bolón de verde bañado en salsa de queso', 'Verde, chicharrón, queso', 2, 'f2e76-bolon.jpg', 2, 1),
 	(2, 1, 'Moros con pollo', 'Riquísimo moro con nuestra sazón secreta de la abuela acompañados de patacones y ensalada', 'Arroz, frijoles, pollo, verde, lechuga, tomate, ve', 2, 'abdf1-moro.jpg', 2, 2),
 	(3, 1, 'Green chicken', 'Ensalada con pollo y patacones para los paladares más exigentes', 'Lechuga, tomate, queso, verde, pollo', 1, '529ea-greenchicken.jpg', 2, 2),
-	(4, 2, 'Tarta de jamón y queso', 'Deliciosa tarta que puedes acompañar con un capuccino', 'Masa de harina blanca, huevos, jamón, queso', 1, 'dcbb7-tarta.jpg', 7, 5),
-	(5, 2, 'Tartaleta de acelga', 'Querido Sweet & Coffee: Gracias por existir', 'Masa de harina blanca, queso, acelga', 2, '55f79-tartaleta.jpg', 7, 5),
+	(4, 2, 'Tarta de jamón y queso', 'Deliciosa tarta que puedes acompañar con un capuccino', 'Masa de harina blanca, huevos, jamón, queso', 0, 'dcbb7-tarta.jpg', 7, 5),
 	(6, 2, 'Frappelate', 'Frappelate directo al alma', 'Leche, café, crema, canela en polvo', 0, 'ccd14-frappe.png', 7, 4);
 /*!40000 ALTER TABLE `dish` ENABLE KEYS */;
 
-DELETE FROM `rbac_group`;
+-- Dumping data for table ds2017.lunch: ~1 rows (approximately)
+/*!40000 ALTER TABLE `lunch` DISABLE KEYS */;
+INSERT INTO `lunch` (`id_lunch`, `id_restaurant`, `date`) VALUES
+	(1, 3, '2017-08-16');
+/*!40000 ALTER TABLE `lunch` ENABLE KEYS */;
+
+-- Dumping data for table ds2017.lunch_plates: ~4 rows (approximately)
+/*!40000 ALTER TABLE `lunch_plates` DISABLE KEYS */;
+INSERT INTO `lunch_plates` (`id_lunch`, `id_plate`, `is_executive`) VALUES
+	(1, 1, 0),
+	(1, 2, 0),
+	(1, 3, 0),
+	(1, 4, 0);
+/*!40000 ALTER TABLE `lunch_plates` ENABLE KEYS */;
+
+-- Dumping data for table ds2017.lunch_price: ~4 rows (approximately)
+/*!40000 ALTER TABLE `lunch_price` DISABLE KEYS */;
+INSERT INTO `lunch_price` (`id_price`, `name`, `value`) VALUES
+	(1, 'Estudiantil', 2.5),
+	(2, 'Ejecutivo', 3),
+	(3, 'Bebida ejecutivo', 0.5),
+	(4, 'Postre', 0.75);
+/*!40000 ALTER TABLE `lunch_price` ENABLE KEYS */;
+
+-- Dumping data for table ds2017.order: ~0 rows (approximately)
+/*!40000 ALTER TABLE `order` DISABLE KEYS */;
+/*!40000 ALTER TABLE `order` ENABLE KEYS */;
+
+-- Dumping data for table ds2017.order_items: ~0 rows (approximately)
+/*!40000 ALTER TABLE `order_items` DISABLE KEYS */;
+/*!40000 ALTER TABLE `order_items` ENABLE KEYS */;
+
+-- Dumping data for table ds2017.plates: ~4 rows (approximately)
+/*!40000 ALTER TABLE `plates` DISABLE KEYS */;
+INSERT INTO `plates` (`id_plate`, `name`, `type`) VALUES
+	(1, 'Sopa de fideo', 0),
+	(2, 'Arroz con menestra y carne asad', 1),
+	(3, 'Quaker', 2),
+	(4, 'Gelatina', 3);
+/*!40000 ALTER TABLE `plates` ENABLE KEYS */;
+
+-- Dumping data for table ds2017.rbac_group: ~3 rows (approximately)
 /*!40000 ALTER TABLE `rbac_group` DISABLE KEYS */;
 INSERT INTO `rbac_group` (`id_group`, `name`) VALUES
 	(1, 'Administrator'),
@@ -33,22 +81,26 @@ INSERT INTO `rbac_group` (`id_group`, `name`) VALUES
 	(3, 'Usuario');
 /*!40000 ALTER TABLE `rbac_group` ENABLE KEYS */;
 
-DELETE FROM `restaurant`;
+-- Dumping data for table ds2017.restaurant: ~3 rows (approximately)
 /*!40000 ALTER TABLE `restaurant` DISABLE KEYS */;
-INSERT INTO `restaurant` (`id_restaurant`, `name`, `address`, `phone`, `owner`) VALUES
-	(1, 'Pikeos de Neo', 'ESPOL. Patio de comidas de EDCOM', '099 130 5772', 'Chico TransESPOL'),
-	(2, 'Sweet & Coffee', 'ESPOL. Diagonal al edificio de matemáticas', '046022900', 'Richard Peet');
+INSERT INTO `restaurant` (`id_restaurant`, `name`, `address`, `phone`, `owner`, `has_lunch`, `color`) VALUES
+	(1, 'Pikeos de Neo', 'ESPOL. Patio de comidas de EDCOM', '099 130 5772', 'Chico TransESPOL', 0, ''),
+	(2, 'Sweet & Coffee', 'ESPOL. Diagonal al edificio de matemáticas', '046022900', 'Richard Peet', 0, ''),
+	(3, 'La Malicia', 'ESPOL. FSCH', '0986020515', 'Sanchez', 1, '');
 /*!40000 ALTER TABLE `restaurant` ENABLE KEYS */;
 
-DELETE FROM `restaurant_assistants`;
+-- Dumping data for table ds2017.restaurant_assistants: ~6 rows (approximately)
 /*!40000 ALTER TABLE `restaurant_assistants` DISABLE KEYS */;
 INSERT INTO `restaurant_assistants` (`id_restaurant`, `id_user`) VALUES
 	(1, 2),
+	(1, 4),
 	(2, 2),
-	(2, 6);
+	(2, 6),
+	(2, 7),
+	(3, 2);
 /*!40000 ALTER TABLE `restaurant_assistants` ENABLE KEYS */;
 
-DELETE FROM `type`;
+-- Dumping data for table ds2017.type: ~4 rows (approximately)
 /*!40000 ALTER TABLE `type` DISABLE KEYS */;
 INSERT INTO `type` (`id_type`, `name`) VALUES
 	(1, 'Aperitivo'),
@@ -57,16 +109,19 @@ INSERT INTO `type` (`id_type`, `name`) VALUES
 	(5, 'Postre');
 /*!40000 ALTER TABLE `type` ENABLE KEYS */;
 
-DELETE FROM `user`;
+-- Dumping data for table ds2017.user: ~9 rows (approximately)
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 INSERT INTO `user` (`id_user`, `name`, `last_name`, `username`, `email`, `password`, `id_group`) VALUES
 	(1, 'Leonardo', 'Kuffo', 'lkuffo', 'lkuffo@espol.edu.ec', '21232f297a57a5a743894a0e4a801fc3', 1),
 	(2, 'Fabricio', 'Layedra', 'flayedra', 'flayedra@espol.edu.ec', '21232f297a57a5a743894a0e4a801fc3', 2),
 	(3, 'Madelyne', 'Velasco', 'mvelasco', 'mvelasco@espol.edu.ec', '21232f297a57a5a743894a0e4a801fc3', 1),
-	(4, 'Jhonny', 'Pincay', 'jvpincay', 'jvpincay@espol.edu.ec', 'a494bfd29b0333678e84861e0bd71c23', 3),
+	(4, 'Jhonny', 'Pincay', 'jvpincay', 'jvpincay@espol.edu.ec', 'a494bfd29b0333678e84861e0bd71c23', 2),
 	(5, 'Juanma ', 'Victoria', 'jvictoria', 'juanmavictoria@gmail.com', '9f2c150cd9dae9ab851b187ccaedaa55', 3),
 	(6, 'José Luis', 'Masson', 'jlmasson', 'jlmasson@espol.edu.ec', '926e27eecdbc7a18858b3798ba99bddd', 2),
-	(7, 'Rodrigo', 'Castro', 'rfcastro', 'rfcastro@espol.edu.ec', '2e247e2eb505c42b362e80ed4d05b078', 2);
+	(7, 'Rodrigo', 'Castro', 'rfcastro', 'rfcastro@espol.edu.ec', '2e247e2eb505c42b362e80ed4d05b078', 2),
+	(8, 'Galo', 'Castillo', 'gadacast', 'gadacast@espol.edu.ec', '21232f297a57a5a743894a0e4a801fc3', 3),
+	(9, 'Carmen', 'Vaca', 'cvaca', 'cvaca@espol.edu.ec', '21232f297a57a5a743894a0e4a801fc3', 3),
+	(11, 'Rafael', 'Bonilla', 'rabonilla', 'rabonilla@fiec.espol.edu.ec', '21232f297a57a5a743894a0e4a801fc3', 3);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
