@@ -212,6 +212,24 @@ class Web extends CI_Controller{
 	    }
 	}
 
+	public function almuerzohoy(){
+		if ($this->AssistantSecurityCheck()){
+
+			$asociados = Restaurant::getRestaurantByAssistant($this->session->userdata('ID'));
+
+			$data_content['restaurantes'] = $asociados;
+
+			$dataHeader['PageTitle'] = "Almuerzo del día";
+
+	        $data['header'] = $this->load->view('web/header', $dataHeader);
+	        $data['menu'] = $this->load->view('web/menu', array());
+
+	        $data['contenido'] = $this->load->view('web/almuerzohoy', $data_content );
+	        $data['footer'] = $this->load->view('web/footer', array());
+	    }else{
+	    	redirect('web/index');
+	    }
+	}
 
 	public function restaurantes(){
 
@@ -229,59 +247,59 @@ class Web extends CI_Controller{
 
 	  }
 
-		public function respedidos(){
+	public function respedidos(){
 
-			$restaurantes = Restaurant::getRestaurants();
+		$restaurantes = Restaurant::getRestaurants();
 
-			$dataContent['restaurantes']= $restaurantes;
+		$dataContent['restaurantes']= $restaurantes;
 
-			$dataHeader['PageTitle'] = "Restaurantes Almuerzos";
+		$dataHeader['PageTitle'] = "Restaurantes Almuerzos";
 
-	        $data['header'] = $this->load->view('web/header', $dataHeader);
-	        $data['menu'] = $this->load->view('web/menu', array());
+        $data['header'] = $this->load->view('web/header', $dataHeader);
+        $data['menu'] = $this->load->view('web/menu', array());
 
-	        $data['contenido'] = $this->load->view('web/respedidos', $dataContent);
-	        $data['footer'] = $this->load->view('web/footer', array());
+        $data['contenido'] = $this->load->view('web/respedidos', $dataContent);
+        $data['footer'] = $this->load->view('web/footer', array());
 
-		 }
+	 }
 
-		 public function pedido(){
-
-
- 			$dataHeader['PageTitle'] = "Restaurantes Almuerzos";
-
- 	        $data['header'] = $this->load->view('web/header', $dataHeader);
- 	        $data['menu'] = $this->load->view('web/menu', array());
-
- 	        $data['contenido'] = $this->load->view('web/pedido', array());
- 	        $data['footer'] = $this->load->view('web/footer', array());
-
- 		  }
-
- 		  public function pedidoPrueba(){
+	 public function pedido(){
 
 
- 			$dataHeader['PageTitle'] = "Almuerzos";
+		$dataHeader['PageTitle'] = "Restaurantes Almuerzos";
 
- 	        $data['header'] = $this->load->view('web/header', $dataHeader);
- 	        $data['menu'] = $this->load->view('web/menu', array());
+        $data['header'] = $this->load->view('web/header', $dataHeader);
+        $data['menu'] = $this->load->view('web/menu', array());
 
- 	        $data['contenido'] = $this->load->view('web/pedidoPrueba', array());
- 	        $data['footer'] = $this->load->view('web/footer', array());
+        $data['contenido'] = $this->load->view('web/pedido', array());
+        $data['footer'] = $this->load->view('web/footer', array());
 
- 		  }
- 		  public function approved(){
+	  }
+
+	  public function pedidoPrueba(){
 
 
- 			$dataHeader['PageTitle'] = "Pago aprobado";
+		$dataHeader['PageTitle'] = "Almuerzos";
 
- 	        $data['header'] = $this->load->view('web/header', $dataHeader);
- 	        $data['menu'] = $this->load->view('web/menu', array());
+        $data['header'] = $this->load->view('web/header', $dataHeader);
+        $data['menu'] = $this->load->view('web/menu', array());
 
- 	        $data['contenido'] = $this->load->view('web/approved', array());
- 	        $data['footer'] = $this->load->view('web/footer', array());
+        $data['contenido'] = $this->load->view('web/pedidoPrueba', array());
+        $data['footer'] = $this->load->view('web/footer', array());
 
- 		  }
+	  }
+	  public function approved(){
+
+
+		$dataHeader['PageTitle'] = "Pago aprobado";
+
+        $data['header'] = $this->load->view('web/header', $dataHeader);
+        $data['menu'] = $this->load->view('web/menu', array());
+
+        $data['contenido'] = $this->load->view('web/approved', array());
+        $data['footer'] = $this->load->view('web/footer', array());
+
+	  }
 
 	public function addPlate(){
 		if ($this->AssistantSecurityCheck()){
@@ -324,15 +342,15 @@ class Web extends CI_Controller{
 
 	public function signup(){
 
-			$dataHeader['PageTitle'] = "Crea tu cuenta";
+		$dataHeader['PageTitle'] = "Crea tu cuenta";
 
-	        $data['header'] = $this->load->view('web/header', $dataHeader);
-	        $data['menu'] = $this->load->view('web/menu', array());
+        $data['header'] = $this->load->view('web/header', $dataHeader);
+        $data['menu'] = $this->load->view('web/menu', array());
 
-	        $data['contenido'] = $this->load->view('web/singup', array());
-	        $data['footer'] = $this->load->view('web/footer', array());
+        $data['contenido'] = $this->load->view('web/singup', array());
+        $data['footer'] = $this->load->view('web/footer', array());
 
-	  }
+	}
 
 	/* FORM UPLOADS*/
 
