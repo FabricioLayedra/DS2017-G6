@@ -2,7 +2,7 @@ $(document).ready(function(){
   console.log("hola");
 	$.ajax({
 		type:'GET',
-		url:"/DS2017-G6/index.php/services/getLunches",
+		url:"/food/index.php/services/getLunches",
 		success:function(response){
 			for (var i = 0; i < response.length; i++){
 
