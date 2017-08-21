@@ -21,7 +21,6 @@
               <td rowspan="2" >Restaurante</td>
               <th colspan="2" scope="colgroup">Estudiantil</th>
               <th colspan="4" scope="colgroup">Ejecutivo</th>
-              <td rowspan="2">Pago en línea</td>
             </tr>
             <tr>
               <th scope="col">Sopas</th>
@@ -32,7 +31,8 @@
               <th scope="col">Postres</th>
             </tr>
             <tr>
-              <th scope="row">Malicia</th>
+              <th scope="row"><p>Malicia</p>
+              <p>AQUI EL BOTON</p></th>
               <td>
                 <p>Sopa Pobre 1</p>
                 <p>Sopa Pobre 2</p>
@@ -50,7 +50,6 @@
               <td><p>Segundo Bueno 1</p></td>
               <td><p>Bebida 1</p></td>
               <td><p>Postre 1</p></td>
-              <td>AQUI EL BOTON</td>
             </tr>
           </table>
           </div>
