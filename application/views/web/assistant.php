@@ -13,6 +13,9 @@
 			<a type="button" class="btn btn-default" href="<?php echo site_url("web/addPlate"); ?>">
 				<span> Agregar Platillo </span>
 			</a>
+			<a type="button" class="btn btn-default" href="<?php echo site_url("web/almuerzohoy"); ?>">
+				<span> Almuerzos de hoy </span>
+			</a>
 			<hr>
 			<p>Selecciona un Restaurante:
 				<select id="selectedRes" name="selectedRes">

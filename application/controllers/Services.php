@@ -63,6 +63,40 @@ class Services extends CI_Controller {
         echo json_encode($resultado);
     }
 
+    public function getLunchesByRestaurantId(){
+
+        $query = $this->input->post();
+
+        $restaurant = $query['restaurant'];
+
+        $date = new DateTime("now");
+        $curr_date = $date->format('Y-m-d ');
+
+        $this->db->select("lunch.id_lunch, lunch.id_restaurant");
+        $this->db->from('lunch');
+        $this->db->where('lunch.id_restaurant', $restaurant);
+        $this->db->where('lunch.date', $curr_date);
+        $lunch = $this->db->get()->row_array();
+
+        $row_array = array();
+
+        if(!is_null($lunch)){
+            $id_lunch = $lunch['id_lunch'];
+
+            $this->db->select("lunch_plates.id_plate, plates.name, lunch_plates.is_executive, plates.type");
+            $this->db->from('lunch_plates');
+            $this->db->join('plates', 'plates.id_plate = lunch_plates.id_plate');
+            $this->db->where('lunch_plates.id_lunch', $id_lunch);
+            $this->db->order_by('plates.type', 'asc');
+            $plates = $this->db->get()->result_array();
+
+            $row_array = $plates;
+        }
+
+        header('Content-type: application/json');
+        echo json_encode($row_array);
+    }
+
 }
 
 ?>
