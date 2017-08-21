@@ -257,8 +257,7 @@ class Web extends CI_Controller{
  	        $data['footer'] = $this->load->view('web/footer', array());
 
  		  }
-
- 		  public function pedidoPrueba(){
+ 		   public function almuerzos(){
 
 
  			$dataHeader['PageTitle'] = "Almuerzos";
@@ -266,11 +265,11 @@ class Web extends CI_Controller{
  	        $data['header'] = $this->load->view('web/header', $dataHeader);
  	        $data['menu'] = $this->load->view('web/menu', array());
 
- 	        $data['contenido'] = $this->load->view('web/pedidoPrueba', array());
+ 	        $data['contenido'] = $this->load->view('web/almuerzos', array());
  	        $data['footer'] = $this->load->view('web/footer', array());
 
  		  }
- 		  public function approved(){
+  public function approved(){
 
 
  			$dataHeader['PageTitle'] = "Pago aprobado";
