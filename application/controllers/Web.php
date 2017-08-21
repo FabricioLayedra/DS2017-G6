@@ -287,7 +287,7 @@ class Web extends CI_Controller{
         $data['menu'] = $this->load->view('web/menu', array());
 
 
-        $data['contenido'] = $this->load->view('web/pedidoPrueba', array());
+        $data['contenido'] = $this->load->view('web/almuerzos', array());
         $data['footer'] = $this->load->view('web/footer', array());
 
 	}

@@ -13,7 +13,7 @@
     <div class="col-md-1"></div>
       <div class="col-md-10">
         <div class="table-responsive align-center" >
-          <table class="table table-striped table-bordered" id="tablaAlmuerzos">
+          <table class="table table-striped table-bordered ">
             <col>
             <colgroup span="2"></colgroup>
             <colgroup span="2"></colgroup>
@@ -29,6 +29,27 @@
               <th scope="col">Segundos</th>
               <th scope="col">Bebidas</th>
               <th scope="col">Postres</th>
+            </tr>
+            <tr>
+              <th scope="row"><p>Malicia</p>
+              <p>AQUI EL BOTON</p></th>
+              <td>
+                <p>Sopa Pobre 1</p>
+                <p>Sopa Pobre 2</p>
+                <p>Sopa Pobre 3</p>
+                <p>Sopa Pobre 4</p>
+              </td>
+              <td>
+                <p>Segundo Pobre 1</p>
+                <p>Segundo Pobre 2</p>
+              </td>
+              <td>
+                <p>Sopa Buena 1</p>
+                <p>Sopa Buena 2</p>
+              </td>
+              <td><p>Segundo Bueno 1</p></td>
+              <td><p>Bebida 1</p></td>
+              <td><p>Postre 1</p></td>
             </tr>
           </table>
           </div>
