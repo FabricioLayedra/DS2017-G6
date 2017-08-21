@@ -65,7 +65,7 @@ CREATE TABLE IF NOT EXISTS `lunch` (
   PRIMARY KEY (`id_lunch`),
   KEY `FK_lunch_restaurant` (`id_restaurant`),
   CONSTRAINT `FK_lunch_restaurant` FOREIGN KEY (`id_restaurant`) REFERENCES `restaurant` (`id_restaurant`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- Data exporting was unselected.
 -- Dumping structure for table ds2017.lunch_plates
@@ -135,7 +135,7 @@ CREATE TABLE IF NOT EXISTS `plates` (
   `name` varchar(200) DEFAULT NULL,
   `type` int(11) DEFAULT NULL COMMENT '0: soup, 1: plate, 2:drink, 3:dessert',
   PRIMARY KEY (`id_plate`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 -- Data exporting was unselected.
 -- Dumping structure for table ds2017.rbac_group
@@ -153,7 +153,8 @@ CREATE TABLE IF NOT EXISTS `restaurant` (
   `address` text NOT NULL,
   `phone` varchar(50) NOT NULL,
   `owner` varchar(50) NOT NULL,
-  `has_lunch` tinyint(4) NOT NULL DEFAULT 0 COMMENT '0: No, 1: Si',
+  `has_lunch` tinyint(4) NOT NULL DEFAULT 0,
+  `has_online` tinyint(4) NOT NULL DEFAULT 0,
   `color` varchar(7) NOT NULL DEFAULT '' COMMENT 'Hex format. Include # ',
   PRIMARY KEY (`id_restaurant`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
