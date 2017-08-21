@@ -146,6 +146,32 @@ class Restaurant extends CI_Model{
 		}
 	}
 
+	public static function getRestaurantByAssistantLunch($id_user){
+		if(!is_null($id_user)){
+			$instance_CI =& get_instance();
+
+			$restaurant = null;
+
+			$instance_CI->db->select('restaurant_assistants.id_restaurant, restaurant.name');
+			$instance_CI->db->from('restaurant_assistants');
+			$instance_CI->db->join('restaurant', 'restaurant.id_restaurant = restaurant_assistants.id_restaurant');
+			$instance_CI->db->where('restaurant_assistants.id_user', $id_user);
+			$instance_CI->db->where('restaurant.has_lunch', '1');
+			$restaurant = $instance_CI->db->get()->result_array();
+
+			$restaurant_obj_array = array();
+
+			if (!is_null($restaurant)){
+				return $restaurant;
+			}else{
+				return null;
+			}
+
+		}else{
+			return null;
+		}
+	}
+
 	public static function getRestaurants(){
 		$instance_CI =& get_instance();
 

@@ -215,9 +215,9 @@ class Web extends CI_Controller{
 	public function almuerzohoy(){
 		if ($this->AssistantSecurityCheck()){
 
-			$asociados = Restaurant::getRestaurantByAssistant($this->session->userdata('ID'));
+			$asociados = Restaurant::getRestaurantByAssistantLunch($this->session->userdata('ID'));
 
-			$data_content['restaurantes'] = $asociados;
+			$data_content['asociados'] = $asociados;
 
 			$dataHeader['PageTitle'] = "Almuerzo del día";
 
