@@ -257,6 +257,19 @@ class Web extends CI_Controller{
  	        $data['footer'] = $this->load->view('web/footer', array());
 
  		  }
+
+ 		  public function pedidoPrueba(){
+
+
+ 			$dataHeader['PageTitle'] = "Almuerzos";
+
+ 	        $data['header'] = $this->load->view('web/header', $dataHeader);
+ 	        $data['menu'] = $this->load->view('web/menu', array());
+
+ 	        $data['contenido'] = $this->load->view('web/pedidoPrueba', array());
+ 	        $data['footer'] = $this->load->view('web/footer', array());
+
+ 		  }
  		  public function approved(){
 
 

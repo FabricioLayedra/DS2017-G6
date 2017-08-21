@@ -15,6 +15,7 @@
 			<ul class="nav navbar-nav">
 				<li><a href="<?php echo site_url("web/index"); ?>">Inicio <span class="sr-only">(current)</span></a></li>
 				<li><a href="<?php echo site_url("web/restaurantes"); ?>">Restaurantes</a></li>
+				<li><a href="<?php echo site_url("web/pedido"); ?>">Almuerzos</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<?php
