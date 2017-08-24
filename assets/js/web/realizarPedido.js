@@ -1,5 +1,7 @@
 $(document).ready(function(){
   console.log("hola");
+  var splittedUrl = window.location.href.split("/");
+  var idRes = splittedUrl[splittedUrl.length - 1];
 	$.ajax({
 		type:'GET',
 		url:"/DS2017-G6/index.php/services/getLunches",
@@ -13,7 +15,7 @@ $(document).ready(function(){
         var plates = response[i].plates;
         var id = restaurant.id_restaurant;
 
-        if (payFlag === "0"){
+        if (id !== idRes){
           continue;
         }
 
@@ -62,6 +64,23 @@ $(document).ready(function(){
       }
 		}
 	});
+
+  $("#tipoAlmuerzo").on('change', function(){
+
+    if ($("#tipoAlmuerzo").val() == "ejecutivo"){
+      $("#bebidas").css("display", "inline");
+      $("#postres").css("display", "inline");
+
+      var total = parseFloat($("#valorPedidoPlatoPrincipal").text()) + parseFloat($("#valorPedidoPostre").text()) + parseFloat($("#valorPedidoBebida").text());
+    } else if ($("#tipoAlmuerzo").val() == "estudiantil") {
+      $("#bebidas").css("display", "none");
+      $("#postres").css("display", "none");
+      var total = parseFloat($("#valorPedidoPlatoPrincipal").text());
+    }
+
+    $("#totalPedido").text(total);
+
+  });
 
 
   $("#tipoPagoAlmuerzo").on("change", function(){
