@@ -291,13 +291,16 @@ class Web extends CI_Controller{
 	        $data['footer'] = $this->load->view('web/footer', array());
 
     	}elseif ($this->AssistantSecurityCheck()){
+    		$asociados = Restaurant::getRestaurantByAssistantLunch($this->session->userdata('ID'));
+    		$data_content['asociados'] = $asociados;
+
     		$dataHeader['PageTitle'] = "Registrar almuerzo";
 
 	        $data['header'] = $this->load->view('web/header', $dataHeader);
 	        $data['menu'] = $this->load->view('web/menu', array());
 
 
-	        $data['contenido'] = $this->load->view('web/almuerzohoy', array());
+	        $data['contenido'] = $this->load->view('web/almuerzohoy', $data_content);
 	        $data['footer'] = $this->load->view('web/footer', array());
     	}else{
     		redirect("web/login");

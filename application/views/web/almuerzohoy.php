@@ -34,22 +34,22 @@
 						</tr>
 						<tr>
 							<td class = 'soup-student'>
-								<p>Sopa Pobre 1</p>
+								<p></p>
 							</td>
 							<td class = 'sec-student'>
-								<p>Segundo Pobre 1</p>
+								<p></p>
 							</td>
 							<td class = 'soup-exec'>
-								<p>Sopa Buena 1</p>
+								<p></p>
 							</td>
 							<td class = 'sec-exec'>
-								<p>Segundo Bueno 1</p>
+								<p></p>
 							</td>
 							<td class = 'drinks'>
-								<p>Bebida 1</p>
+								<p></p>
 							</td>
 							<td class = 'desserts'>
-								<p>Postre 1</p>
+								<p></p>
 							</td>
 						</tr>
 					</table>
