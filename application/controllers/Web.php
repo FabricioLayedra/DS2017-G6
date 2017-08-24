@@ -288,18 +288,27 @@ class Web extends CI_Controller{
 		$type = $this->input->post("dish-name");
 		$hora = $this->input->post("horaAlmuerzoPedido");
 		$pago = $this->input->post("tipoPagoAlmuerzo");
+		$valor = $this->input->post("total");
 
 		$date = new DateTime("now");
         $curr_date = $date->format('Y-m-d ');
 
+        $time = strotime($hora);
+        $startTime = date("H:i");
+		$endTime = date("H:i", strtotime('+30 minutes', $time));
+
 		$data = array(
 			'user_id'=>$this->session->userdata('ID'),
-			'date'=>$,
-			'pickup_init'=>$,
-			'pickup_expire'=>$,
-			'payment_type'=>$,
-			'total_amount'=>$
+			'date'=>$curr_date,
+			'pickup_init'=>$startTime,
+			'pickup_expire'=>$endTime,
+			'payment_type'=>($pago=="tarjeta")? 0 : 1,
+			'total_amount'=>$valor
 		);
+
+		$this->db->insert('order', $data);
+        $id_order = $this->db->insert_id();
+
 		if ($type = "ejecutivo"){
 			$sopa = $this->input->post("sopaEjecutivo");
 			$segundo = $this->input->post("segundoEjecutivo");
@@ -307,6 +316,7 @@ class Web extends CI_Controller{
 			$postre = $this->input->post("postre");
 
 			$data = array(
+				'order'=>$id_order,
 				'id_lunch'=>$lunch,
 				'date'=>$today,
 				'id_soup'=>$sopa,
@@ -320,6 +330,7 @@ class Web extends CI_Controller{
 			$segundo = $this->input->post("segundoEstudiantil");
 
 			$data = array(
+				'order'=>$id_order,
 				'id_lunch'=>$lunch,
 				'date'=>$today,
 				'id_soup'=>$sopa,
@@ -329,13 +340,25 @@ class Web extends CI_Controller{
 		}	
 
 		$this->db->insert('order_items', $data);
-        $id_order = $this->db->insert_id();
 
-
-		print_r($data);
-		die();
+		redirect("web/success");
 	}
 
+	public function success(){
+		if ($this->UserSecurityCheck()){
+			$dataHeader['PageTitle'] = "Pedido exitoso";
+
+	        $data['header'] = $this->load->view('web/header', $dataHeader);
+	        $data['menu'] = $this->load->view('web/menu', array());
+
+
+	        $data['contenido'] = $this->load->view('web/success', array());
+	        $data['footer'] = $this->load->view('web/footer', array());
+
+		}else{
+			redirect("web/index");
+		}
+	}
  	public function almuerzos(){
 
  		if ($this->UserSecurityCheck()){
