@@ -275,7 +275,7 @@ class Web extends CI_Controller{
         $data['footer'] = $this->load->view('web/footer', array());
 
 
-	  }
+	}
 
 
  	public function almuerzos(){
@@ -304,6 +304,16 @@ class Web extends CI_Controller{
     	}
 	}
 	  
+	public function procesarPago(){
+		$dataHeader['PageTitle'] = "Pago en línea";
+
+        $data['header'] = $this->load->view('web/header', $dataHeader);
+        $data['menu'] = $this->load->view('web/menu', array());
+
+
+        $data['contenido'] = $this->load->view('web/almuerzos', array());
+        $data['footer'] = $this->load->view('web/footer', array());	
+	}
 	public function approved(){
 
         $data['contenido'] = $this->load->view('web/almuerzos', array());

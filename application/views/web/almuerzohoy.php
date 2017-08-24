@@ -4,6 +4,7 @@
 <section class="container pt-20">
 	<div class="row">
 		<div class = 'col-md-offset-1 col-md-10'>
+
 			<?php foreach($asociados as $aso) {?>
 				<a type="button" class="btn btn-default" onclick="updateMenuToday(<?php echo $aso['id_restaurant']; ?>)">
 					<span> <?php echo $aso['name']; ?> </span>

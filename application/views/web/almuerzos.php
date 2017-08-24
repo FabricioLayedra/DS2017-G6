@@ -32,7 +32,7 @@
             </tr>
             <tr>
               <th scope="row"><p>Malicia</p>
-        <a type="button" class="btn btn-default mt-20" href="" id="todoPedidoBtn">Hacer Pedido</th>
+        <a type="button" class="btn btn-default mt-20" href="<?php echo site_url("web/pedido"); ?>" id="todoPedidoBtn">Hacer Pedido</th>
               <td>
                 <p>Sopa Pobre 1</p>
                 <p>Sopa Pobre 2</p>

@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  console.log("hola");
+  //console.log("hola");
 	$.ajax({
 		type:'GET',
 		url:"/DS2017-G6/index.php/services/getLunches",
@@ -85,7 +85,7 @@ $(document).ready(function(){
     console.log($("#tipoPagoAlmuerzo").val());
     if ($("#tipoPagoAlmuerzo").val() == "tarjeta"){
       $("#containerPago").css("display", "inline");
-      if (Math.random() > 0.70){
+      if (Math.random() > 0.40){
         $("#finalizarPedidoBtn").attr("data-toggle", "modal");
         $("#finalizarPedidoBtn").attr("data-target", "#malModal");
       } else {
@@ -94,7 +94,7 @@ $(document).ready(function(){
       }
     } else {
       $("#containerPago").css("display", "none");
-      if (Math.random() > 0.70){
+      if (Math.random() > 0.40){
         $("#finalizarPedidoBtn").attr("data-toggle", "modal");
         $("#finalizarPedidoBtn").attr("data-target", "#malModal");
       } else {
