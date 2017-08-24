@@ -62,31 +62,7 @@ $.ajax({
 	}
 });
 
-<<<<<<< HEAD
 
-  $("#tipoPagoAlmuerzo").on("change", function(){
-    console.log($("#tipoPagoAlmuerzo").val());
-    if ($("#tipoPagoAlmuerzo").val() == "tarjeta"){
-      $("#containerPago").css("display", "inline");
-      if (Math.random() > 0.70){
-        $("#finalizarPedidoBtn").attr("data-toggle", "modal");
-        $("#finalizarPedidoBtn").attr("data-target", "#malModal");
-      } else {
-        $("#finalizarPedidoBtn").attr("data-toggle", "modal");
-        $("#finalizarPedidoBtn").attr("data-target", "#buenModal");
-      }
-    } else {
-      $("#containerPago").css("display", "none");
-      if (Math.random() > 0.70){
-        $("#finalizarPedidoBtn").attr("data-toggle", "modal");
-        $("#finalizarPedidoBtn").attr("data-target", "#malModal");
-      } else {
-        $("#finalizarPedidoBtn").attr("data-toggle", "modal");
-        $("#finalizarPedidoBtn").attr("data-target", "#buenModal");
-      }
-    }
-  });
-=======
 $("#tipoAlmuerzoPedido").on('change', function(){
 
 	if ($("#tipoAlmuerzoPedido").val() == "ejecutivo"){
@@ -102,7 +78,6 @@ $("#tipoAlmuerzoPedido").on('change', function(){
 
 	$("#totalPedido").text(total);
 	enable();
->>>>>>> a61676ac447c1a85804e07ce38c0902444c7fd07
 });
 
 
