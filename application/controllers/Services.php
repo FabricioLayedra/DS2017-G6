@@ -26,9 +26,11 @@ class Services extends CI_Controller {
         $date = new DateTime("now");
         $curr_date = $date->format('Y-m-d ');
 
-        $this->db->select('restaurant.id_restaurant, restaurant.name, restaurant.has_online');
+        $this->db->select('restaurant.id_restaurant, restaurant.name, restaurant.has_online, lunch.id_lunch');
         $this->db->from('restaurant');
+        $this->db->join('lunch', 'lunch.id_restaurant = restaurant.id_restaurant');
         $this->db->where('restaurant.has_lunch', 1);
+        $this->db->where('lunch.date', $curr_date);
         $consulta = $this->db->get()->result_array();
 
         $resultado = array();

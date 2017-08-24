@@ -15,6 +15,7 @@ class Web extends CI_Controller{
 		$this->load->model('Category');
 		$this->load->model('Dish');
 		$this->load->model('Restaurant');
+		$this->load->model('Lunch');
 
 		date_default_timezone_set("America/Guayaquil");
 	}
@@ -264,23 +265,35 @@ class Web extends CI_Controller{
 	 }
 
 	 public function pedido(){
+	 	if ($this->UserSecurityCheck()){
+	 		$id_lunch = $this->uri->segment(3);
 
+			$dataHeader['PageTitle'] = "Pedido de almuerzo";
 
-		$dataHeader['PageTitle'] = "Restaurantes Almuerzos";
+			$data_content['estudiantil'] = Lunch::getLunchStudent($id_lunch);
+			$data_content['ejecutivo'] = Lunch::getLunchExecutive($id_lunch);
 
-        $data['header'] = $this->load->view('web/header', $dataHeader);
-        $data['menu'] = $this->load->view('web/menu', array());
+		    $data['header'] = $this->load->view('web/header', $dataHeader);
+		    $data['menu'] = $this->load->view('web/menu', array());
 
-        $data['contenido'] = $this->load->view('web/pedido', array());
-        $data['footer'] = $this->load->view('web/footer', array());
+		    $data['contenido'] = $this->load->view('web/pedido', $data_content);
+		    $data['footer'] = $this->load->view('web/footer', array());
 
-
+        }else{
+        	redirect("web/login");
+        }
 	}
 
+	public function newOrder(){
+		
+	}
 
  	public function almuerzos(){
 
  		if ($this->UserSecurityCheck()){
+
+ 		
+
 			$dataHeader['PageTitle'] = "Pedir almuerzo";
 
 	        $data['header'] = $this->load->view('web/header', $dataHeader);
