@@ -76,53 +76,5 @@ $("#tipoAlmuerzoPedido").on('change', function(){
 	}
 
 	$("#totalPedido").text(total);
-	enable();
 });
 
-
-$("#tipoPagoAlmuerzo").on("change", function(){
-
-	if ($("#tipoPagoAlmuerzo").val() == "tarjeta"){
-
-		$("#containerPago").css("display", "inline");
-		enable();
-		if($("#finalizarPedidoBtn").attr("disabled")!='disabled'){
-			if (Math.random() > 0.40){
-				$("#finalizarPedidoBtn").attr("data-toggle", "modal");
-				$("#finalizarPedidoBtn").attr("data-target", "#malModal");
-			} else {
-				$("#finalizarPedidoBtn").attr("data-toggle", "modal");
-				$("#finalizarPedidoBtn").attr("data-target", "#buenModal");
-			}
-		}
-
-	} else {
-		enable();
-		$("#containerPago").css("display", "none");
-		if($("#finalizarPedidoBtn").attr("disabled")!='disabled'){
-			if (Math.random() > 0.40){
-				$("#finalizarPedidoBtn").attr("data-toggle", "modal");
-				$("#finalizarPedidoBtn").attr("data-target", "#malModal");
-			} else {
-				$("#finalizarPedidoBtn").attr("data-toggle", "modal");
-				$("#finalizarPedidoBtn").attr("data-target", "#buenModal");
-			}}
-
-		}
-
-	});
-});
-
-function enable (){
-	var empty = false;
-
-	if (($("#tipoAlmuerzo").val() == null) || ($("#tipoPagoAlmuerzo").val() == null) || ($("#horaSelection").val() == null)){
-		empty = true;
-	}
-
-	if (empty) {
-$('#finalizarPedidoBtn').attr('disabled', 'disabled'); // updated according to http://stackoverflow.com/questions/7637790/how-to-remove-disabled-attribute-with-jquery-ie
-} else {
-$('#finalizarPedidoBtn').removeAttr('disabled'); // updated according to http://stackoverflow.com/questions/7637790/how-to-remove-disabled-attribute-with-jquery-ie
-}
-}
