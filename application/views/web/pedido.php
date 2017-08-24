@@ -63,7 +63,7 @@
         <br>		
               
         <p> Elige la hora en que recogerás tu pedido: </p>		
-        <select name="horaAlmuerzoPedido">		
+        <select name="horaAlmuerzoPedido" id="horaSelection">		
           <option disabled selected value> -- Seleccione -- </option>		
           <option value="1130">11:30 a 12:00</option>		
           <option value="1200">12:00 a 12:30</option>		
@@ -111,7 +111,7 @@
         </div>	
 
         <a type="button" class="btn btn-default mt-20" href = "<?php echo site_url('web/almuerzos') ?>"> <span class="glyphicon glyphicon-triangle-left"></span>Volver </a>
-        <a type="button" class="btn btn-default mt-20" id="finalizarPedidoBtn" ><span class="glyphicon glyphicon-ok"></span> Finalizar Pedido		
+        <a type="button" class="btn btn-default mt-20" id="finalizarPedidoBtn" disabled="disabled"><span class="glyphicon glyphicon-ok" ></span> Finalizar Pedido		
         </a>		
 
         <br>
@@ -155,7 +155,7 @@
           <p>Su solicitud ha sido procesada, por favor retire su pedido en la hora escogida.</p>    
         </div>    
         <div class="modal-footer">    
-          <button type="button" class="btn btn-default" data-dismiss="modal">Volver</button>    
+          <button type="button" class="btn btn-default" data-dismiss="modal" href="<?php echo site_url('web/almuerzos') ?>">Volver</button>    
         </div>    
       </div>    
     </div>

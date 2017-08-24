@@ -77,30 +77,55 @@ $(document).ready(function(){
     }
 
     $("#totalPedido").text(total);
-
+    enable();
   });
 
 
   $("#tipoPagoAlmuerzo").on("change", function(){
     console.log($("#tipoPagoAlmuerzo").val());
-    if ($("#tipoPagoAlmuerzo").val() == "tarjeta"){
-      $("#containerPago").css("display", "inline");
-      if (Math.random() > 0.40){
-        $("#finalizarPedidoBtn").attr("data-toggle", "modal");
-        $("#finalizarPedidoBtn").attr("data-target", "#malModal");
+    
+      if ($("#tipoPagoAlmuerzo").val() == "tarjeta"){
+        
+        $("#containerPago").css("display", "inline");
+        enable();
+        if($("#finalizarPedidoBtn").attr("disabled")!='disabled'){
+        if (Math.random() > 0.40){
+          $("#finalizarPedidoBtn").attr("data-toggle", "modal");
+          $("#finalizarPedidoBtn").attr("data-target", "#malModal");
+        } else {
+          $("#finalizarPedidoBtn").attr("data-toggle", "modal");
+          $("#finalizarPedidoBtn").attr("data-target", "#buenModal");
+        }}
+        
       } else {
-        $("#finalizarPedidoBtn").attr("data-toggle", "modal");
-        $("#finalizarPedidoBtn").attr("data-target", "#buenModal");
+        enable();
+        $("#containerPago").css("display", "none");
+        if($("#finalizarPedidoBtn").attr("disabled")!='disabled'){
+        if (Math.random() > 0.40){
+          $("#finalizarPedidoBtn").attr("data-toggle", "modal");
+          $("#finalizarPedidoBtn").attr("data-target", "#malModal");
+        } else {
+          $("#finalizarPedidoBtn").attr("data-toggle", "modal");
+          $("#finalizarPedidoBtn").attr("data-target", "#buenModal");
+        }}
+
       }
-    } else {
-      $("#containerPago").css("display", "none");
-      if (Math.random() > 0.40){
-        $("#finalizarPedidoBtn").attr("data-toggle", "modal");
-        $("#finalizarPedidoBtn").attr("data-target", "#malModal");
-      } else {
-        $("#finalizarPedidoBtn").attr("data-toggle", "modal");
-        $("#finalizarPedidoBtn").attr("data-target", "#buenModal");
-      }
-    }
+    
   });
 });
+
+function enable (){
+  var empty = false;
+
+  if (($("#tipoAlmuerzo").val() == null) || ($("#tipoPagoAlmuerzo").val() == null) || ($("#horaSelection").val() == null)){
+      empty = true;
+  }
+
+  if (empty) {
+    console.log("no lo hace")
+      $('#finalizarPedidoBtn').attr('disabled', 'disabled'); // updated according to http://stackoverflow.com/questions/7637790/how-to-remove-disabled-attribute-with-jquery-ie
+  } else {
+      console.log("remueve")
+      $('#finalizarPedidoBtn').removeAttr('disabled'); // updated according to http://stackoverflow.com/questions/7637790/how-to-remove-disabled-attribute-with-jquery-ie
+  }
+}
