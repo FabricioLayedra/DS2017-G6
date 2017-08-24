@@ -19,7 +19,7 @@ $(document).ready(function(){
 
         $("#tablaAlmuerzos").append("<tr>" +
                       "<th scope='row'><p>"+name+"</p>" +
-                      "<a class='btn btn-default' href='/food/index.php/web/pedido/"+ id+"'>Hacer Pedido</a>" +
+                      "<a class='btn btn-default' href='/DS2017-G6/index.php/web/pedido/"+ id+"'>Hacer Pedido</a>" +
                       "</th>" +
                       "<td id='normalSopa-" + id + "'>" +
                       "</td>" +

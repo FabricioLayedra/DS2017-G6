@@ -13,7 +13,7 @@
     <div class="col-md-1"></div>
       <div class="col-md-10">
         <div class="table-responsive align-center" >
-          <table class="table table-striped table-bordered ">
+          <table class="table table-striped table-bordered" id="tablaAlmuerzos">
             <col>
             <colgroup span="2"></colgroup>
             <colgroup span="2"></colgroup>
