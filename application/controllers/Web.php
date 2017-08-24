@@ -15,6 +15,7 @@ class Web extends CI_Controller{
 		$this->load->model('Category');
 		$this->load->model('Dish');
 		$this->load->model('Restaurant');
+		$this->load->model('Lunch');
 
 		date_default_timezone_set("America/Guayaquil");
 	}
@@ -264,34 +265,142 @@ class Web extends CI_Controller{
 	 }
 
 	 public function pedido(){
+	 	if ($this->UserSecurityCheck()){
+	 		$id_lunch = $this->uri->segment(3);
+
+			$dataHeader['PageTitle'] = "Pedido de almuerzo";
+
+			$data_content['estudiantil'] = Lunch::getLunchStudent($id_lunch);
+			$data_content['ejecutivo'] = Lunch::getLunchExecutive($id_lunch);
+
+		    $data['header'] = $this->load->view('web/header', $dataHeader);
+		    $data['menu'] = $this->load->view('web/menu', array());
+
+		    $data['contenido'] = $this->load->view('web/pedido', $data_content);
+		    $data['footer'] = $this->load->view('web/footer', array());
+
+        }else{
+        	redirect("web/login");
+        }
+	}
+
+	public function newOrder(){
+		$type = $this->input->post("dish-name");
+		$hora = $this->input->post("horaAlmuerzoPedido");
+		$pago = $this->input->post("tipoPagoAlmuerzo");
+		$valor = $this->input->post("total");
+
+		$date = new DateTime("now");
+        $curr_date = $date->format('Y-m-d ');
+
+        $time = strotime($hora);
+        $startTime = date("H:i");
+		$endTime = date("H:i", strtotime('+30 minutes', $time));
+
+		$data = array(
+			'user_id'=>$this->session->userdata('ID'),
+			'date'=>$curr_date,
+			'pickup_init'=>$startTime,
+			'pickup_expire'=>$endTime,
+			'payment_type'=>($pago=="tarjeta")? 0 : 1,
+			'total_amount'=>$valor
+		);
+
+		$this->db->insert('order', $data);
+        $id_order = $this->db->insert_id();
+
+		if ($type = "ejecutivo"){
+			$sopa = $this->input->post("sopaEjecutivo");
+			$segundo = $this->input->post("segundoEjecutivo");
+			$bebida = $this->input->post("bebida");
+			$postre = $this->input->post("postre");
+
+			$data = array(
+				'order'=>$id_order,
+				'id_lunch'=>$lunch,
+				'date'=>$today,
+				'id_soup'=>$sopa,
+				'id_second'=>$segundo,
+				'id_dessert'=>$bebida,
+				'id_drink'=>$postre,
+				'id_executive'=>($type=="ejecutivo")? 0 : 1
+			);
+		}else{
+			$sopa = $this->input->post("sopaEstudiantil");
+			$segundo = $this->input->post("segundoEstudiantil");
+
+			$data = array(
+				'order'=>$id_order,
+				'id_lunch'=>$lunch,
+				'date'=>$today,
+				'id_soup'=>$sopa,
+				'id_second'=>$segundo,
+				'id_executive'=>($type!="ejecutivo")? 0 : 1
+			);
+		}	
+
+		$this->db->insert('order_items', $data);
+
+		redirect("web/success");
+	}
+
+	public function success(){
+		if ($this->UserSecurityCheck()){
+			$dataHeader['PageTitle'] = "Pedido exitoso";
+
+	        $data['header'] = $this->load->view('web/header', $dataHeader);
+	        $data['menu'] = $this->load->view('web/menu', array());
 
 
-		$dataHeader['PageTitle'] = "Restaurantes Almuerzos";
+	        $data['contenido'] = $this->load->view('web/success', array());
+	        $data['footer'] = $this->load->view('web/footer', array());
 
-        $data['header'] = $this->load->view('web/header', $dataHeader);
-        $data['menu'] = $this->load->view('web/menu', array());
-
-        $data['contenido'] = $this->load->view('web/pedido', array());
-        $data['footer'] = $this->load->view('web/footer', array());
-
-
-	  }
-
-
+		}else{
+			redirect("web/index");
+		}
+	}
  	public function almuerzos(){
 
+ 		if ($this->UserSecurityCheck()){
 
-		$dataHeader['PageTitle'] = "Almuerzos";
+ 		
+
+			$dataHeader['PageTitle'] = "Pedir almuerzo";
+
+	        $data['header'] = $this->load->view('web/header', $dataHeader);
+	        $data['menu'] = $this->load->view('web/menu', array());
+
+
+	        $data['contenido'] = $this->load->view('web/almuerzos', array());
+	        $data['footer'] = $this->load->view('web/footer', array());
+
+    	}elseif ($this->AssistantSecurityCheck()){
+    		$asociados = Restaurant::getRestaurantByAssistantLunch($this->session->userdata('ID'));
+    		$data_content['asociados'] = $asociados;
+
+    		$dataHeader['PageTitle'] = "Registrar almuerzo";
+
+	        $data['header'] = $this->load->view('web/header', $dataHeader);
+	        $data['menu'] = $this->load->view('web/menu', array());
+
+
+	        $data['contenido'] = $this->load->view('web/almuerzohoy', $data_content);
+	        $data['footer'] = $this->load->view('web/footer', array());
+    	}else{
+    		redirect("web/login");
+    	}
+	}
+	  
+	public function procesarPago(){
+		$dataHeader['PageTitle'] = "Pago en línea";
 
         $data['header'] = $this->load->view('web/header', $dataHeader);
         $data['menu'] = $this->load->view('web/menu', array());
 
 
         $data['contenido'] = $this->load->view('web/almuerzos', array());
-        $data['footer'] = $this->load->view('web/footer', array());
-
+        $data['footer'] = $this->load->view('web/footer', array());	
 	}
-	  
 	public function approved(){
 
         $data['contenido'] = $this->load->view('web/almuerzos', array());

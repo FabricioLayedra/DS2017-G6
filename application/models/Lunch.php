@@ -119,56 +119,94 @@ class Lunch extends CI_Model{
 
 	/*DATABASE GETTING FUNCION*/
 
-	public static function getLunchById($id_lunch){
+	public static function getLunchExecutive($id_lunch){
 		if(!is_null($id_lunch)){
 			$instance_CI =& get_instance();
 
-			$lunch = null;
 			$soups = null;
 			$seconds = null;
 			$drinks = null;
 			$desserts = null;
 
-			$instance_CI->db->select('lunch.id_lunch, lunch.id_restaurant, lunch.date');
-			$instance_CI->db->from('lunch');
-			$instance_CI->db->where('lunch.id_restaurant', $id_lunch);
-			$lunch = $instance_CI->db->get()->row();
-
 			$instance_CI->db->select('lunch_plates.id_plate, plates.name, lunch_plates.is_executive');
 			$instance_CI->db->from('lunch_plates');
-			$instance_CI->db->join('plates', 'plates.id_plate = lunch_plates.id_plate')
+			$instance_CI->db->join('plates', 'plates.id_plate = lunch_plates.id_plate');
 			$instance_CI->db->where('plates.type', 0);
+			$instance_CI->db->where('lunch_plates.is_executive', 1);
+			$instance_CI->db->where('lunch_plates.id_lunch', $id_lunch);
 			$soups = $instance_CI->db->get()->result_array();
 
 			$instance_CI->db->select('lunch_plates.id_plate, plates.name, lunch_plates.is_executive');
 			$instance_CI->db->from('lunch_plates');
-			$instance_CI->db->join('plates', 'plates.id_plate = lunch_plates.id_plate')
+			$instance_CI->db->join('plates', 'plates.id_plate = lunch_plates.id_plate');
 			$instance_CI->db->where('plates.type', 1);
+			$instance_CI->db->where('lunch_plates.is_executive', 1);
+			$instance_CI->db->where('lunch_plates.id_lunch', $id_lunch);
 			$seconds = $instance_CI->db->get()->result_array();
 
 
 			$instance_CI->db->select('lunch_plates.id_plate, plates.name, lunch_plates.is_executive');
 			$instance_CI->db->from('lunch_plates');
-			$instance_CI->db->join('plates', 'plates.id_plate = lunch_plates.id_plate')
+			$instance_CI->db->join('plates', 'plates.id_plate = lunch_plates.id_plate');
 			$instance_CI->db->where('plates.type', 2);
+			$instance_CI->db->where('lunch_plates.id_lunch', $id_lunch);
 			$drinks = $instance_CI->db->get()->result_array();
 
 			$instance_CI->db->select('lunch_plates.id_plate, plates.name, lunch_plates.is_executive');
 			$instance_CI->db->from('lunch_plates');
-			$instance_CI->db->join('plates', 'plates.id_plate = lunch_plates.id_plate')
+			$instance_CI->db->join('plates', 'plates.id_plate = lunch_plates.id_plate');
 			$instance_CI->db->where('plates.type', 3);
+			$instance_CI->db->where('lunch_plates.id_lunch', $id_lunch);
 			$desserts = $instance_CI->db->get()->result_array();
 
+			$resultado = array();
 
-			if(!is_null($lunch)){
+			array_push($resultado, $soups);
+			array_push($resultado, $seconds);
+			array_push($resultado, $drinks);
+			array_push($resultado, $desserts);
 
-			}else{
-				return null;
-			}
+			return $resultado;
+
 
 		}else{
 			return null;
 		}
+	}
+
+	public static function getLunchStudent($id_lunch){
+		if(!is_null($id_lunch)){
+			$instance_CI =& get_instance();
+
+			$soups = null;
+			$seconds = null;
+
+			$instance_CI->db->select('lunch_plates.id_plate, plates.name, lunch_plates.is_executive');
+			$instance_CI->db->from('lunch_plates');
+			$instance_CI->db->join('plates', 'plates.id_plate = lunch_plates.id_plate');
+			$instance_CI->db->where('plates.type', 0);
+			$instance_CI->db->where('lunch_plates.is_executive', 0);
+			$instance_CI->db->where('lunch_plates.id_lunch', $id_lunch);
+			$soups = $instance_CI->db->get()->result_array();
+
+			$instance_CI->db->select('lunch_plates.id_plate, plates.name, lunch_plates.is_executive');
+			$instance_CI->db->from('lunch_plates');
+			$instance_CI->db->join('plates', 'plates.id_plate = lunch_plates.id_plate');
+			$instance_CI->db->where('plates.type', 1);
+			$instance_CI->db->where('lunch_plates.is_executive', 0);
+			$instance_CI->db->where('lunch_plates.id_lunch', $id_lunch);
+			$seconds = $instance_CI->db->get()->result_array();
+
+			$resultado = array();
+
+			array_push($resultado, $soups);
+			array_push($resultado, $seconds);
+
+			return $resultado;
+		}else{
+			return null;
+		}
+
 	}
 }
 ?>

@@ -4,6 +4,7 @@
 <section class="container pt-20">
 	<div class="row">
 		<div class = 'col-md-offset-1 col-md-10'>
+
 			<?php foreach($asociados as $aso) {?>
 				<a type="button" class="btn btn-default" onclick="updateMenuToday(<?php echo $aso['id_restaurant']; ?>)">
 					<span> <?php echo $aso['name']; ?> </span>
@@ -33,22 +34,22 @@
 						</tr>
 						<tr>
 							<td class = 'soup-student'>
-								<p>Sopa Pobre 1</p>
+								<p></p>
 							</td>
 							<td class = 'sec-student'>
-								<p>Segundo Pobre 1</p>
+								<p></p>
 							</td>
 							<td class = 'soup-exec'>
-								<p>Sopa Buena 1</p>
+								<p></p>
 							</td>
 							<td class = 'sec-exec'>
-								<p>Segundo Bueno 1</p>
+								<p></p>
 							</td>
 							<td class = 'drinks'>
-								<p>Bebida 1</p>
+								<p></p>
 							</td>
 							<td class = 'desserts'>
-								<p>Postre 1</p>
+								<p></p>
 							</td>
 						</tr>
 					</table>

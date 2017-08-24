@@ -17,12 +17,12 @@
             <col>
             <colgroup span="2"></colgroup>
             <colgroup span="2"></colgroup>
-            <tr>
+            <tr style = "background-color: #FF6A6A;">
               <td rowspan="2" >Restaurante</td>
               <th colspan="2" scope="colgroup">Estudiantil</th>
               <th colspan="4" scope="colgroup">Ejecutivo</th>
             </tr>
-            <tr>
+            <tr style = "background-color: #FF6A6A;">
               <th scope="col">Sopas</th>
               <th scope="col">Segundos</th>
               <th scope="col">Sopas</th>
@@ -30,6 +30,7 @@
               <th scope="col">Bebidas</th>
               <th scope="col">Postres</th>
             </tr>
+
           </table>
           </div>
         </div>

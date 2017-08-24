@@ -77,7 +77,8 @@ $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
 	'username' => 'root',
-	'password' => '',
+	'password' => 'rubik',
+
 	'database' => 'ds2017',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
