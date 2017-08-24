@@ -26,7 +26,7 @@
 				<div class="col-md-4">		
 					<h3>Detalle</h3>		
 					<p> Elige el tipo de almuerzo: </p>		
-					<select name="tipoAlmuerzoPedido" id="tipoAlmuerzo">		
+					<select name="tipoAlmuerzoPedido" id="tipoAlmuerzoPedido">		
 						<option disabled selected value> -- Seleccione -- </option>		
 						<option value="ejecutivo">Ejecutivo</option>		
 						<option value="estudiantil">Estudiantil</option>		
@@ -69,13 +69,13 @@
 								<?php } ?>	
 							</select>	
 							<select name="bebida" id="bebida" >	
-								<option disabled selected value> -- Seleccione -- </option>		
+								<option value = "0" selected > Ninguno </option>		
 								<?php foreach ($ejecutivo[2] as $value) { ?>
 									<option value="<?php echo $value['id_plate'];?>"><?php echo $value['name'];?></option>
 								<?php } ?>	
 							</select>	
-							<select name="postre" id="postre" >		
-								<option disabled selected value> -- Seleccione -- </option>	
+							<select value = "0" name="postre" id="postre" >		
+								<option value = "0" selected > Ninguno </option>	
 								<?php foreach ($ejecutivo[3] as $value) { ?>
 									<option value="<?php echo $value['id_plate'];?>"><?php echo $value['name'];?></option>
 								<?php } ?>	
@@ -91,15 +91,15 @@
 					<br>		
 
 					<p> Elige la hora en que recogerás tu pedido: </p>		
-					<select name="horaAlmuerzoPedido">		
+					<select name="horaAlmuerzoPedido" id = "horaAlmuerzoPedido">		
 						<option disabled selected value> -- Seleccione -- </option>		
-						<option value="1130">11:30 a 12:00</option>		
-						<option value="1200">12:00 a 12:30</option>		
-						<option value="1230">12:30 a 13:00</option>		
-						<option value="1300">13:00 a 13:30</option>		
-						<option value="1330">13:30 a 14:00</option>		
-						<option value="1400">14:00 a 14:30</option>		
-						<option value="1430">14:30 a 15:00</option>		
+						<option value="11:30">11:30 a 12:00</option>		
+						<option value="12:00">12:00 a 12:30</option>		
+						<option value="12:30">12:30 a 13:00</option>		
+						<option value="13:00">13:00 a 13:30</option>		
+						<option value="13:30">13:30 a 14:00</option>		
+						<option value="14:00">14:00 a 14:30</option>		
+						<option value="14:30">14:30 a 15:00</option>		
 					</select>	
 
 					<br>
@@ -108,7 +108,7 @@
 				</div>		
 				<div class="col-md-6">		
 					<h3>Información de Pago</h3>		
-					<select name="pagoAlmuerzoPedido" id="tipoPagoAlmuerzo">		
+					<select name="tipoPagoAlmuerzo" id="tipoPagoAlmuerzo">		
 						<option disabled selected value> -- Seleccione -- </option>		
 						<option value="tarjeta">Tarjeta de Crédito</option>		
 						<option value="carne">Carnet Inteligente</option>		
@@ -138,10 +138,10 @@
 						</div>		
 					</div>	
 
-					<a type="button" class="btn btn-default mt-20" href = "<?php echo site_url('web/almuerzos') ?>"> <span class="glyphicon glyphicon-triangle-left"></span>Volver </a>
-					<a type="button" class="btn btn-default mt-20" id="finalizarPedidoBtn" ><span class="glyphicon glyphicon-ok"></span> Finalizar Pedido		
-					</a>		
-
+					<a type="button" class="btn btn-default mt-20" href = "<?php echo site_url('web/almuerzos') ?>"> <span class="glyphicon glyphicon-triangle-left"></span>Volver </a>	
+					<button type="submit" class="btn btn-default " id="finalizarPedidoBtn">
+						<span class="glyphicon glyphicon-ok"></span> Finalizar Pedido
+					</button>
 					<br>
 					<br>
 

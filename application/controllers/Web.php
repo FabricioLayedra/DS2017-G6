@@ -285,7 +285,55 @@ class Web extends CI_Controller{
 	}
 
 	public function newOrder(){
-		
+		$type = $this->input->post("dish-name");
+		$hora = $this->input->post("horaAlmuerzoPedido");
+		$pago = $this->input->post("tipoPagoAlmuerzo");
+
+		$date = new DateTime("now");
+        $curr_date = $date->format('Y-m-d ');
+
+		$data = array(
+			'user_id'=>$this->session->userdata('ID'),
+			'date'=>$,
+			'pickup_init'=>$,
+			'pickup_expire'=>$,
+			'payment_type'=>$,
+			'total_amount'=>$
+		);
+		if ($type = "ejecutivo"){
+			$sopa = $this->input->post("sopaEjecutivo");
+			$segundo = $this->input->post("segundoEjecutivo");
+			$bebida = $this->input->post("bebida");
+			$postre = $this->input->post("postre");
+
+			$data = array(
+				'id_lunch'=>$lunch,
+				'date'=>$today,
+				'id_soup'=>$sopa,
+				'id_second'=>$segundo,
+				'id_dessert'=>$bebida,
+				'id_drink'=>$postre,
+				'id_executive'=>($type=="ejecutivo")? 0 : 1
+			);
+		}else{
+			$sopa = $this->input->post("sopaEstudiantil");
+			$segundo = $this->input->post("segundoEstudiantil");
+
+			$data = array(
+				'id_lunch'=>$lunch,
+				'date'=>$today,
+				'id_soup'=>$sopa,
+				'id_second'=>$segundo,
+				'id_executive'=>($type!="ejecutivo")? 0 : 1
+			);
+		}	
+
+		$this->db->insert('order_items', $data);
+        $id_order = $this->db->insert_id();
+
+
+		print_r($data);
+		die();
 	}
 
  	public function almuerzos(){
