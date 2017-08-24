@@ -78,6 +78,7 @@ $db['default'] = array(
 	'hostname' => 'localhost',
 	'username' => 'root',
 	'password' => 'turtoise',
+
 	'database' => 'ds2017',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',

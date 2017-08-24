@@ -30,27 +30,7 @@
               <th scope="col">Bebidas</th>
               <th scope="col">Postres</th>
             </tr>
-            <tr>
-              <th scope="row"><p>Malicia</p>
-        <a type="button" class="btn btn-default mt-20" href="<?php echo site_url("web/pedido"); ?>" id="todoPedidoBtn">Hacer Pedido</th>
-              <td>
-                <p>Sopa Pobre 1</p>
-                <p>Sopa Pobre 2</p>
-                <p>Sopa Pobre 3</p>
-                <p>Sopa Pobre 4</p>
-              </td>
-              <td>
-                <p>Segundo Pobre 1</p>
-                <p>Segundo Pobre 2</p>
-              </td>
-              <td>
-                <p>Sopa Buena 1</p>
-                <p>Sopa Buena 2</p>
-              </td>
-              <td><p>Segundo Bueno 1</p></td>
-              <td><p>Bebida 1</p></td>
-              <td><p>Postre 1</p></td>
-            </tr>
+
           </table>
           </div>
         </div>
