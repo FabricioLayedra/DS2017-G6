@@ -280,16 +280,28 @@ class Web extends CI_Controller{
 
  	public function almuerzos(){
 
+ 		if ($this->UserSecurityCheck()){
+			$dataHeader['PageTitle'] = "Pedir almuerzo";
 
-		$dataHeader['PageTitle'] = "Almuerzos";
-
-        $data['header'] = $this->load->view('web/header', $dataHeader);
-        $data['menu'] = $this->load->view('web/menu', array());
+	        $data['header'] = $this->load->view('web/header', $dataHeader);
+	        $data['menu'] = $this->load->view('web/menu', array());
 
 
-        $data['contenido'] = $this->load->view('web/almuerzos', array());
-        $data['footer'] = $this->load->view('web/footer', array());
+	        $data['contenido'] = $this->load->view('web/almuerzos', array());
+	        $data['footer'] = $this->load->view('web/footer', array());
 
+    	}elseif ($this->AssistantSecurityCheck()){
+    		$dataHeader['PageTitle'] = "Registrar almuerzo";
+
+	        $data['header'] = $this->load->view('web/header', $dataHeader);
+	        $data['menu'] = $this->load->view('web/menu', array());
+
+
+	        $data['contenido'] = $this->load->view('web/almuerzohoy', array());
+	        $data['footer'] = $this->load->view('web/footer', array());
+    	}else{
+    		redirect("web/login");
+    	}
 	}
 	  
 	public function approved(){

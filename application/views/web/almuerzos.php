@@ -17,12 +17,12 @@
             <col>
             <colgroup span="2"></colgroup>
             <colgroup span="2"></colgroup>
-            <tr>
+            <tr style = "background-color: #FF6A6A;">
               <td rowspan="2" >Restaurante</td>
               <th colspan="2" scope="colgroup">Estudiantil</th>
               <th colspan="4" scope="colgroup">Ejecutivo</th>
             </tr>
-            <tr>
+            <tr style = "background-color: #FF6A6A;">
               <th scope="col">Sopas</th>
               <th scope="col">Segundos</th>
               <th scope="col">Sopas</th>
@@ -32,7 +32,7 @@
             </tr>
             <tr>
               <th scope="row"><p>Malicia</p>
-              <p>AQUI EL BOTON</p></th>
+        <a type="button" class="btn btn-default mt-20" href="" id="todoPedidoBtn">Hacer Pedido</th>
               <td>
                 <p>Sopa Pobre 1</p>
                 <p>Sopa Pobre 2</p>
