@@ -15,6 +15,7 @@ class Web extends CI_Controller{
 		$this->load->model('Category');
 		$this->load->model('Dish');
 		$this->load->model('Restaurant');
+		$this->load->model('Lunch');
 
 		date_default_timezone_set("America/Guayaquil");
 	}
@@ -212,22 +213,209 @@ class Web extends CI_Controller{
 	    }
 	}
 
+	public function almuerzohoy(){
+		if ($this->AssistantSecurityCheck()){
+
+			$asociados = Restaurant::getRestaurantByAssistantLunch($this->session->userdata('ID'));
+
+			$data_content['asociados'] = $asociados;
+
+			$dataHeader['PageTitle'] = "Almuerzo del día";
+
+	        $data['header'] = $this->load->view('web/header', $dataHeader);
+	        $data['menu'] = $this->load->view('web/menu', array());
+
+	        $data['contenido'] = $this->load->view('web/almuerzohoy', $data_content );
+	        $data['footer'] = $this->load->view('web/footer', array());
+	    }else{
+	    	redirect('web/index');
+	    }
+	}
 
 	public function restaurantes(){
 
 		$restaurantes = Restaurant::getRestaurants();
 
 		$dataContent['restaurantes']= $restaurantes;
-		
-		$dataHeader['PageTitle'] = "Restaurantes";	
+
+		$dataHeader['PageTitle'] = "Restaurantes";
 
         $data['header'] = $this->load->view('web/header', $dataHeader);
         $data['menu'] = $this->load->view('web/menu', array());
 
         $data['contenido'] = $this->load->view('web/restaurantes', $dataContent);
         $data['footer'] = $this->load->view('web/footer', array());
-	    
+
 	  }
+
+	public function respedidos(){
+
+		$restaurantes = Restaurant::getRestaurants();
+
+		$dataContent['restaurantes']= $restaurantes;
+
+		$dataHeader['PageTitle'] = "Restaurantes Almuerzos";
+
+        $data['header'] = $this->load->view('web/header', $dataHeader);
+        $data['menu'] = $this->load->view('web/menu', array());
+
+        $data['contenido'] = $this->load->view('web/respedidos', $dataContent);
+        $data['footer'] = $this->load->view('web/footer', array());
+
+	 }
+
+	 public function pedido(){
+	 	if ($this->UserSecurityCheck()){
+	 		$id_lunch = $this->uri->segment(3);
+
+			$dataHeader['PageTitle'] = "Pedido de almuerzo";
+
+			$data_content['estudiantil'] = Lunch::getLunchStudent($id_lunch);
+			$data_content['ejecutivo'] = Lunch::getLunchExecutive($id_lunch);
+
+		    $data['header'] = $this->load->view('web/header', $dataHeader);
+		    $data['menu'] = $this->load->view('web/menu', array());
+
+		    $data['contenido'] = $this->load->view('web/pedido', $data_content);
+		    $data['footer'] = $this->load->view('web/footer', array());
+
+        }else{
+        	redirect("web/login");
+        }
+	}
+
+	public function newOrder(){
+		$type = $this->input->post("dish-name");
+		$hora = $this->input->post("horaAlmuerzoPedido");
+		$pago = $this->input->post("tipoPagoAlmuerzo");
+		$valor = $this->input->post("total");
+
+		$date = new DateTime("now");
+        $curr_date = $date->format('Y-m-d ');
+
+        $time = strotime($hora);
+        $startTime = date("H:i");
+		$endTime = date("H:i", strtotime('+30 minutes', $time));
+
+		$data = array(
+			'user_id'=>$this->session->userdata('ID'),
+			'date'=>$curr_date,
+			'pickup_init'=>$startTime,
+			'pickup_expire'=>$endTime,
+			'payment_type'=>($pago=="tarjeta")? 0 : 1,
+			'total_amount'=>$valor
+		);
+
+		$this->db->insert('order', $data);
+        $id_order = $this->db->insert_id();
+
+		if ($type = "ejecutivo"){
+			$sopa = $this->input->post("sopaEjecutivo");
+			$segundo = $this->input->post("segundoEjecutivo");
+			$bebida = $this->input->post("bebida");
+			$postre = $this->input->post("postre");
+
+			$data = array(
+				'order'=>$id_order,
+				'id_lunch'=>$lunch,
+				'date'=>$today,
+				'id_soup'=>$sopa,
+				'id_second'=>$segundo,
+				'id_dessert'=>$bebida,
+				'id_drink'=>$postre,
+				'id_executive'=>($type=="ejecutivo")? 0 : 1
+			);
+		}else{
+			$sopa = $this->input->post("sopaEstudiantil");
+			$segundo = $this->input->post("segundoEstudiantil");
+
+			$data = array(
+				'order'=>$id_order,
+				'id_lunch'=>$lunch,
+				'date'=>$today,
+				'id_soup'=>$sopa,
+				'id_second'=>$segundo,
+				'id_executive'=>($type!="ejecutivo")? 0 : 1
+			);
+		}	
+
+		$this->db->insert('order_items', $data);
+
+		redirect("web/success");
+	}
+
+	public function success(){
+		if ($this->UserSecurityCheck()){
+			$dataHeader['PageTitle'] = "Pedido exitoso";
+
+	        $data['header'] = $this->load->view('web/header', $dataHeader);
+	        $data['menu'] = $this->load->view('web/menu', array());
+
+
+	        $data['contenido'] = $this->load->view('web/success', array());
+	        $data['footer'] = $this->load->view('web/footer', array());
+
+		}else{
+			redirect("web/index");
+		}
+	}
+ 	public function almuerzos(){
+
+ 		if ($this->UserSecurityCheck()){
+
+ 		
+
+			$dataHeader['PageTitle'] = "Pedir almuerzo";
+
+	        $data['header'] = $this->load->view('web/header', $dataHeader);
+	        $data['menu'] = $this->load->view('web/menu', array());
+
+
+	        $data['contenido'] = $this->load->view('web/almuerzos', array());
+	        $data['footer'] = $this->load->view('web/footer', array());
+
+    	}elseif ($this->AssistantSecurityCheck()){
+    		$asociados = Restaurant::getRestaurantByAssistantLunch($this->session->userdata('ID'));
+    		$data_content['asociados'] = $asociados;
+
+    		$dataHeader['PageTitle'] = "Registrar almuerzo";
+
+	        $data['header'] = $this->load->view('web/header', $dataHeader);
+	        $data['menu'] = $this->load->view('web/menu', array());
+
+
+	        $data['contenido'] = $this->load->view('web/almuerzohoy', $data_content);
+	        $data['footer'] = $this->load->view('web/footer', array());
+    	}else{
+    		redirect("web/login");
+    	}
+	}
+	  
+	public function procesarPago(){
+		$dataHeader['PageTitle'] = "Pago en línea";
+
+        $data['header'] = $this->load->view('web/header', $dataHeader);
+        $data['menu'] = $this->load->view('web/menu', array());
+
+
+        $data['contenido'] = $this->load->view('web/almuerzos', array());
+        $data['footer'] = $this->load->view('web/footer', array());	
+	}
+	public function approved(){
+
+        $data['contenido'] = $this->load->view('web/almuerzos', array());
+        $data['footer'] = $this->load->view('web/footer', array());
+
+
+		$dataHeader['PageTitle'] = "Pago aprobado";
+
+        $data['header'] = $this->load->view('web/header', $dataHeader);
+        $data['menu'] = $this->load->view('web/menu', array());
+
+        $data['contenido'] = $this->load->view('web/approved', array());
+        $data['footer'] = $this->load->view('web/footer', array());
+
+	}
 
 	public function addPlate(){
 		if ($this->AssistantSecurityCheck()){
@@ -270,15 +458,15 @@ class Web extends CI_Controller{
 
 	public function signup(){
 
-			$dataHeader['PageTitle'] = "Crea tu cuenta";
+		$dataHeader['PageTitle'] = "Crea tu cuenta";
 
-	        $data['header'] = $this->load->view('web/header', $dataHeader);
-	        $data['menu'] = $this->load->view('web/menu', array());
+        $data['header'] = $this->load->view('web/header', $dataHeader);
+        $data['menu'] = $this->load->view('web/menu', array());
 
-	        $data['contenido'] = $this->load->view('web/singup', array());
-	        $data['footer'] = $this->load->view('web/footer', array());
+        $data['contenido'] = $this->load->view('web/singup', array());
+        $data['footer'] = $this->load->view('web/footer', array());
 
-	  }
+	}
 
 	/* FORM UPLOADS*/
 
@@ -324,7 +512,7 @@ class Web extends CI_Controller{
 		$this->db->insert('dish', $data);
         $id_dish = $this->db->insert_id();
 
-		
+
         redirect("web/dish/".$restaurant.'/'.$id_dish);
 	}
 
@@ -356,7 +544,7 @@ class Web extends CI_Controller{
 			$strip_foto = explode("/", $foto);
 			$foto = $strip_foto[7];
 		}
-		
+
 
         $this->load->library('upload', $config);
 
@@ -378,7 +566,7 @@ class Web extends CI_Controller{
 
 		$this->db->where('dish.id_dish', $id_platillo);
 		$this->db->update('dish', $data);
-		
+
         redirect("web/dish/".$restaurant.'/'.$id_platillo);
 	}
 

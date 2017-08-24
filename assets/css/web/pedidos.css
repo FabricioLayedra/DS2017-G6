@@ -1,0 +1,17 @@
+#almuerzos{
+	align:center;
+}
+
+.form-group label {
+	width: 8em;
+	display: inline-block;
+}
+
+.form-group input {
+	width: 15em;
+	display: inline-block;
+}
+
+.subtitle{
+	color: #FF6A6A;
+}

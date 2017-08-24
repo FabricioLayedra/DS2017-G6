@@ -11,6 +11,7 @@
 				<p><?php echo $res['phone'];?></p>
 				<p><?php echo $res['address'];?></p>
 				<p>Propietario: <?php echo $res['owner'];?></p>
+				
 			</div>
 		<?php } ?>
 		</div>
