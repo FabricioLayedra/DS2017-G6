@@ -62,6 +62,7 @@ $.ajax({
 	}
 });
 
+
 $("#tipoAlmuerzoPedido").on('change', function(){
 
 	if ($("#tipoAlmuerzoPedido").val() == "ejecutivo"){
@@ -78,3 +79,30 @@ $("#tipoAlmuerzoPedido").on('change', function(){
 	$("#totalPedido").text(total);
 });
 
+$("#tipoPagoAlmuerzo").on("change", function(){
+
+	if ($("#tipoPagoAlmuerzo").val() == "tarjeta"){
+
+		$("#containerPago").css("display", "inline");
+			if (Math.random() > 0.40){
+				$("#finalizarPedidoBtn").attr("data-toggle", "modal");
+				$("#finalizarPedidoBtn").attr("data-target", "#malModal");
+			} else {
+				$("#finalizarPedidoBtn").attr("data-toggle", "modal");
+				$("#finalizarPedidoBtn").attr("data-target", "#buenModal");
+			}
+		
+	} else {
+		$("#containerPago").css("display", "none");
+			if (Math.random() > 0.40){
+				$("#finalizarPedidoBtn").attr("data-toggle", "modal");
+				$("#finalizarPedidoBtn").attr("data-target", "#malModal");
+			} else {
+				$("#finalizarPedidoBtn").attr("data-toggle", "modal");
+				$("#finalizarPedidoBtn").attr("data-target", "#buenModal");
+			}
+
+		}
+
+	});
+});

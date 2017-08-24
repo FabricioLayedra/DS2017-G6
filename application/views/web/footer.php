@@ -48,5 +48,6 @@
   	<script src="<?php echo base_url('assets/js/web/owl.carousel.js'); ?>"></script>
 	<script src="<?php echo base_url('assets/js/web/dishFilters.js'); ?>"></script>
 	<script src="<?php echo base_url('assets/js/web/pedido.js'); ?>"></script>
+	<script src="<?php echo base_url('assets/js/web/realizarPedido.js'); ?>"></script>
 	<script src="<?php echo base_url('assets/js/web/assistant.js'); ?>"></script>
 </html>
